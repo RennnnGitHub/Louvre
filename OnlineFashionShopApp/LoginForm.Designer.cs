@@ -51,7 +51,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.Black;
+            pictureBox1.BackColor = Color.FromArgb(8, 8, 8);
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(332, 41);
@@ -82,6 +82,7 @@
             label4.Size = new Size(66, 15);
             label4.TabIndex = 6;
             label4.Text = "Louvre Ltd.";
+            label4.Click += label4_Click;
             // 
             // button1
             // 
@@ -90,16 +91,16 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(800, 5);
+            button1.Location = new Point(799, 6);
             button1.Name = "button1";
-            button1.Size = new Size(23, 24);
+            button1.Size = new Size(24, 23);
             button1.TabIndex = 2;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.ControlText;
+            panel2.BackColor = Color.FromArgb(8, 8, 8);
             panel2.Controls.Add(linkLabel2);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(linkLabel1);
@@ -154,6 +155,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(229, 23);
             textBox3.TabIndex = 4;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label3
             // 
@@ -172,6 +174,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(229, 23);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged_1;
             // 
             // label2
             // 
@@ -179,9 +182,10 @@
             label2.ForeColor = Color.FromArgb(223, 169, 74);
             label2.Location = new Point(76, 79);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 1;
-            label2.Text = "Username";
+            label2.Text = "Email";
+            label2.Click += label2_Click;
             // 
             // label1
             // 
