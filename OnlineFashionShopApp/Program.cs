@@ -13,6 +13,8 @@ namespace OnlineFashionShopApp
             ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
             Application.Run(new RegisterForm());
+            Application.Run(new HomeFormCustomer());
+            Application.Run(new HomeFormAdmin());
         }
     }
 }
