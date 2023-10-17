@@ -1,10 +1,37 @@
+using System.Drawing.Drawing2D;
+
 namespace OnlineFashionShopApp
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Attach the Paint event handler to the form.
+            this.Paint += Form1_Paint;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            int borderRadius = 20; // Adjust this value to control the roundness of the bottom corners.
+            Rectangle bounds = new Rectangle(0, 0, this.Width, this.Height);
+            GraphicsPath path = new GraphicsPath();
+
+            // Add squared rectangle to the GraphicsPath.
+            path.AddLine(bounds.X, bounds.Y, bounds.Right, bounds.Y);
+            path.AddLine(bounds.Right, bounds.Y, bounds.Right, bounds.Bottom - borderRadius);
+
+            // Add rounded corners to the GraphicsPath (bottom left and bottom right).
+            path.AddArc(bounds.Right - borderRadius * 2, bounds.Bottom - borderRadius * 2, borderRadius * 2, borderRadius * 2, 0, 90);
+            path.AddArc(bounds.X, bounds.Bottom - borderRadius * 2, borderRadius * 2, borderRadius * 2, 90, 90);
+
+            // Close the path.
+            path.CloseFigure();
+
+            // Set the region of the form to the custom shape.
+            this.Region = new Region(path);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -24,7 +51,7 @@ namespace OnlineFashionShopApp
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            textBox1.BorderStyle = BorderStyle.None;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,6 +60,31 @@ namespace OnlineFashionShopApp
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

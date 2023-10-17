@@ -1,6 +1,6 @@
 ﻿namespace OnlineFashionShopApp
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            textBox2 = new TextBox();
+            label4 = new Label();
             button1 = new Button();
             panel2 = new Panel();
+            linkLabel2 = new LinkLabel();
             button2 = new Button();
             linkLabel1 = new LinkLabel();
             textBox3 = new TextBox();
@@ -41,14 +42,16 @@
             textBox1 = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            linkLabel2 = new LinkLabel();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Black;
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(332, 41);
@@ -62,37 +65,41 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(223, 169, 74);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(826, 35);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
-            // textBox2
+            // label4
             // 
-            textBox2.BackColor = Color.FromArgb(223, 169, 74);
-            textBox2.ForeColor = Color.FromArgb(29, 65, 115);
-            textBox2.Location = new Point(3, 7);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(159, 23);
-            textBox2.TabIndex = 4;
-            textBox2.Text = "Louvre Shopping Application";
-            textBox2.TextChanged += textBox2_TextChanged;
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(223, 169, 74);
+            label4.Location = new Point(12, 10);
+            label4.Name = "label4";
+            label4.Size = new Size(66, 15);
+            label4.TabIndex = 6;
+            label4.Text = "Louvre Ltd.";
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(223, 169, 74);
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Location = new Point(791, 0);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(800, 5);
             button1.Name = "button1";
-            button1.Size = new Size(35, 35);
+            button1.Size = new Size(23, 24);
             button1.TabIndex = 2;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.ControlText;
             panel2.Controls.Add(linkLabel2);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(linkLabel1);
@@ -105,6 +112,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(376, 336);
             panel2.TabIndex = 4;
+            // 
+            // linkLabel2
+            // 
+            linkLabel2.AutoSize = true;
+            linkLabel2.LinkColor = Color.White;
+            linkLabel2.Location = new Point(100, 300);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(187, 15);
+            linkLabel2.TabIndex = 6;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "Don't have account? Sign up now!";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // button2
             // 
@@ -167,27 +186,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(223, 169, 74);
-            label1.Location = new Point(156, 11);
+            label1.Location = new Point(154, 17);
             label1.Name = "label1";
-            label1.Size = new Size(61, 28);
+            label1.Size = new Size(73, 32);
             label1.TabIndex = 0;
             label1.Text = "Login";
             label1.Click += label1_Click;
             // 
-            // linkLabel2
+            // pictureBox2
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(100, 289);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(187, 15);
-            linkLabel2.TabIndex = 6;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Don't have account? Sign up now!";
+            pictureBox2.BackColor = Color.FromArgb(255, 224, 192);
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 35);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(826, 537);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
             // 
-            // Form1
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -196,14 +215,17 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "LoginForm";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -212,7 +234,6 @@
         private PictureBox pictureBox1;
         private Panel panel1;
         private Button button1;
-        private TextBox textBox2;
         private Panel panel2;
         private Label label1;
         private LinkLabel linkLabel1;
@@ -222,5 +243,7 @@
         private Label label2;
         private Button button2;
         private LinkLabel linkLabel2;
+        private Label label4;
+        private PictureBox pictureBox2;
     }
 }
