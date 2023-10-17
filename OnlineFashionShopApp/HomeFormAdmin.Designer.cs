@@ -49,6 +49,7 @@
             panel1 = new Panel();
             label2 = new Label();
             button1 = new Button();
+            pictureBox9 = new PictureBox();
             pictureBox8 = new PictureBox();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -60,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
@@ -306,15 +308,26 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.FromArgb(41, 40, 38);
+            pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
+            pictureBox9.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox9.Location = new Point(449, 262);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(101, 79);
+            pictureBox9.TabIndex = 9;
+            pictureBox9.TabStop = false;
+            // 
             // pictureBox8
             // 
             pictureBox8.BackColor = Color.FromArgb(255, 224, 192);
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.Location = new Point(0, 35);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(826, 539);
+            pictureBox8.Size = new Size(995, 539);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox8.TabIndex = 8;
+            pictureBox8.TabIndex = 10;
             pictureBox8.TabStop = false;
             // 
             // HomeFormAdmin
@@ -322,6 +335,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(pictureBox9);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(panel2);
@@ -341,6 +355,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -368,6 +383,7 @@
         private Panel panel1;
         private Label label2;
         private Button button1;
+        private PictureBox pictureBox9;
         private PictureBox pictureBox8;
     }
 }

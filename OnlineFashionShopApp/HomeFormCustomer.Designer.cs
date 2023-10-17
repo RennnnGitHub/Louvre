@@ -50,6 +50,7 @@
             button5 = new Button();
             label1 = new Label();
             pictureBox8 = new PictureBox();
+            pictureBox9 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -300,7 +302,7 @@
             label1.BackColor = Color.FromArgb(64, 64, 64);
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(362, 55);
+            label1.Location = new Point(341, 55);
             label1.Name = "label1";
             label1.Size = new Size(309, 45);
             label1.TabIndex = 3;
@@ -313,16 +315,28 @@
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.Location = new Point(0, 35);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(826, 539);
+            pictureBox8.Size = new Size(995, 539);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 5;
             pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.FromArgb(41, 40, 38);
+            pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
+            pictureBox9.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox9.Location = new Point(449, 262);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(101, 79);
+            pictureBox9.TabIndex = 6;
+            pictureBox9.TabStop = false;
             // 
             // HomeFormCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(pictureBox9);
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(button1);
@@ -343,6 +357,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -370,5 +385,6 @@
         private PictureBox pictureBox2;
         private Label label1;
         private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
     }
 }
