@@ -50,9 +50,7 @@
             label2 = new Label();
             button11 = new Button();
             button10 = new Button();
-            label7 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
             textBox6 = new TextBox();
             label6 = new Label();
             label5 = new Label();
@@ -325,44 +323,27 @@
             button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(596, 301);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 15);
-            label7.TabIndex = 44;
-            label7.Text = "Zipcode";
-            // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(266, 301);
+            label8.Location = new Point(400, 311);
             label8.Name = "label8";
             label8.Size = new Size(88, 15);
             label8.TabIndex = 43;
             label8.Text = "Phone Number";
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(596, 319);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(147, 23);
-            textBox5.TabIndex = 42;
-            textBox5.TextChanged += textBox5_TextChanged;
-            // 
             // textBox6
             // 
-            textBox6.Location = new Point(266, 318);
+            textBox6.Location = new Point(400, 328);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(147, 23);
+            textBox6.Size = new Size(222, 23);
             textBox6.TabIndex = 41;
             textBox6.TextChanged += textBox6_TextChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(596, 226);
+            label6.Location = new Point(554, 226);
             label6.Name = "label6";
             label6.Size = new Size(57, 15);
             label6.TabIndex = 40;
@@ -380,7 +361,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(596, 154);
+            label4.Location = new Point(554, 153);
             label4.Name = "label4";
             label4.Size = new Size(63, 15);
             label4.TabIndex = 38;
@@ -397,9 +378,9 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(596, 244);
+            textBox3.Location = new Point(554, 243);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(147, 23);
+            textBox3.Size = new Size(222, 23);
             textBox3.TabIndex = 36;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
@@ -407,15 +388,15 @@
             // 
             textBox4.Location = new Point(266, 243);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(147, 23);
+            textBox4.Size = new Size(222, 23);
             textBox4.TabIndex = 35;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(596, 172);
+            textBox2.Location = new Point(554, 171);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(147, 23);
+            textBox2.Size = new Size(222, 23);
             textBox2.TabIndex = 34;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
@@ -436,7 +417,7 @@
             // 
             textBox1.Location = new Point(266, 171);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 23);
+            textBox1.Size = new Size(222, 23);
             textBox1.TabIndex = 32;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -444,7 +425,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(427, 55);
+            label1.Location = new Point(436, 55);
             label1.Name = "label1";
             label1.Size = new Size(149, 38);
             label1.TabIndex = 31;
@@ -457,9 +438,7 @@
             ClientSize = new Size(826, 573);
             Controls.Add(button11);
             Controls.Add(button10);
-            Controls.Add(label7);
             Controls.Add(label8);
-            Controls.Add(textBox5);
             Controls.Add(textBox6);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -514,9 +493,7 @@
         private Button button6;
         private Button button11;
         private Button button10;
-        private Label label7;
         private Label label8;
-        private TextBox textBox5;
         private TextBox textBox6;
         private Label label6;
         private Label label5;

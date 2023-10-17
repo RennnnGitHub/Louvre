@@ -316,7 +316,7 @@
             // 
             textBox1.Location = new Point(275, 171);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(147, 23);
+            textBox1.Size = new Size(205, 23);
             textBox1.TabIndex = 6;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -327,7 +327,7 @@
             button9.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point);
             button9.Location = new Point(436, 445);
             button9.Name = "button9";
-            button9.Size = new Size(166, 59);
+            button9.Size = new Size(149, 59);
             button9.TabIndex = 10;
             button9.Text = "Save Changes";
             button9.UseVisualStyleBackColor = false;
@@ -335,17 +335,17 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(605, 172);
+            textBox2.Location = new Point(554, 171);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(147, 23);
+            textBox2.Size = new Size(205, 23);
             textBox2.TabIndex = 11;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(605, 244);
+            textBox3.Location = new Point(554, 243);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(147, 23);
+            textBox3.Size = new Size(205, 23);
             textBox3.TabIndex = 13;
             textBox3.TextChanged += textBox3_TextChanged;
             // 
@@ -353,7 +353,7 @@
             // 
             textBox4.Location = new Point(275, 243);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(147, 23);
+            textBox4.Size = new Size(205, 23);
             textBox4.TabIndex = 12;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
@@ -370,7 +370,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(605, 154);
+            label4.Location = new Point(554, 153);
             label4.Name = "label4";
             label4.Size = new Size(63, 15);
             label4.TabIndex = 17;
@@ -389,7 +389,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(605, 226);
+            label6.Location = new Point(554, 225);
             label6.Name = "label6";
             label6.Size = new Size(57, 15);
             label6.TabIndex = 19;
@@ -398,7 +398,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(605, 361);
+            label7.Location = new Point(554, 360);
             label7.Name = "label7";
             label7.Size = new Size(50, 15);
             label7.TabIndex = 27;
@@ -415,9 +415,9 @@
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(605, 379);
+            textBox5.Location = new Point(554, 378);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(147, 23);
+            textBox5.Size = new Size(205, 23);
             textBox5.TabIndex = 23;
             textBox5.TextChanged += textBox5_TextChanged;
             // 
@@ -425,7 +425,7 @@
             // 
             textBox6.Location = new Point(275, 378);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(147, 23);
+            textBox6.Size = new Size(205, 23);
             textBox6.TabIndex = 22;
             textBox6.TextChanged += textBox6_TextChanged;
             // 
@@ -445,7 +445,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(605, 300);
+            label9.Location = new Point(554, 299);
             label9.Name = "label9";
             label9.Size = new Size(120, 15);
             label9.TabIndex = 32;
@@ -462,16 +462,16 @@
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(605, 318);
+            textBox7.Location = new Point(554, 317);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(147, 23);
+            textBox7.Size = new Size(205, 23);
             textBox7.TabIndex = 30;
             // 
             // textBox8
             // 
             textBox8.Location = new Point(275, 317);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(147, 23);
+            textBox8.Size = new Size(205, 23);
             textBox8.TabIndex = 29;
             // 
             // SettingsFormCustomer
