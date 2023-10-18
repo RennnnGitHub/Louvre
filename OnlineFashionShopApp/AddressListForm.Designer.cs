@@ -1,6 +1,6 @@
 ﻿namespace OnlineFashionShopApp
 {
-    partial class SettingsFormCustomer
+    partial class AddressListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsFormCustomer));
-            button1 = new Button();
-            panel1 = new Panel();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddressListForm));
+            label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
             pictureBox7 = new PictureBox();
@@ -48,26 +46,18 @@
             button4 = new Button();
             button7 = new Button();
             button5 = new Button();
-            label1 = new Label();
+            panel1 = new Panel();
+            button1 = new Button();
+            label2 = new Label();
+            listView1 = new ListView();
+            Number = new ColumnHeader();
+            Address = new ColumnHeader();
+            ZipCode = new ColumnHeader();
+            label3 = new Label();
             textBox1 = new TextBox();
             button9 = new Button();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
             button10 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            panel1.SuspendLayout();
+            button11 = new Button();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -77,39 +67,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // label1
             // 
-            button1.BackColor = Color.FromArgb(223, 169, 74);
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Location = new Point(799, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(24, 23);
-            button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(223, 169, 74);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(826, 35);
-            panel1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 10);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 15);
-            label2.TabIndex = 3;
-            label2.Text = "Louvre Ltd.";
+            label1.AutoSize = true;
+            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(414, 67);
+            label1.Name = "label1";
+            label1.Size = new Size(220, 38);
+            label1.TabIndex = 43;
+            label1.Text = "Address List";
             // 
             // panel2
             // 
@@ -118,7 +87,7 @@
             panel2.Location = new Point(0, 55);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 493);
-            panel2.TabIndex = 4;
+            panel2.TabIndex = 42;
             // 
             // panel3
             // 
@@ -184,6 +153,7 @@
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox5
             // 
@@ -207,6 +177,7 @@
             button3.TabIndex = 3;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // pictureBox4
             // 
@@ -230,6 +201,7 @@
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // pictureBox3
             // 
@@ -253,6 +225,7 @@
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // pictureBox2
             // 
@@ -276,6 +249,7 @@
             button4.TabIndex = 4;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button7
             // 
@@ -289,6 +263,7 @@
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button5
             // 
@@ -302,211 +277,130 @@
             button5.TabIndex = 5;
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
-            // label1
+            // panel1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(436, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(149, 38);
-            label1.TabIndex = 5;
-            label1.Text = "Settings";
+            panel1.BackColor = Color.FromArgb(223, 169, 74);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(826, 35);
+            panel1.TabIndex = 41;
             // 
-            // textBox1
+            // button1
             // 
-            textBox1.Location = new Point(275, 171);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(205, 23);
-            textBox1.TabIndex = 6;
-            textBox1.TextChanged += textBox1_TextChanged;
+            button1.BackColor = Color.FromArgb(223, 169, 74);
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.Location = new Point(799, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(24, 23);
+            button1.TabIndex = 5;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // button9
+            // label2
             // 
-            button9.BackColor = Color.FromArgb(223, 169, 74);
-            button9.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
-            button9.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(436, 445);
-            button9.Name = "button9";
-            button9.Size = new Size(149, 59);
-            button9.TabIndex = 10;
-            button9.Text = "Save Changes";
-            button9.UseVisualStyleBackColor = false;
-            button9.Click += button9_Click;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(66, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Louvre Ltd.";
             // 
-            // textBox2
+            // listView1
             // 
-            textBox2.Location = new Point(554, 171);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(205, 23);
-            textBox2.TabIndex = 11;
-            textBox2.TextChanged += textBox2_TextChanged;
+            listView1.Columns.AddRange(new ColumnHeader[] { Number, Address, ZipCode });
+            listView1.Location = new Point(247, 167);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(550, 334);
+            listView1.TabIndex = 44;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
             // 
-            // textBox3
+            // Number
             // 
-            textBox3.Location = new Point(554, 243);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(205, 23);
-            textBox3.TabIndex = 13;
-            textBox3.TextChanged += textBox3_TextChanged;
+            Number.Text = "No";
             // 
-            // textBox4
+            // Address
             // 
-            textBox4.Location = new Point(275, 243);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(205, 23);
-            textBox4.TabIndex = 12;
-            textBox4.TextChanged += textBox4_TextChanged;
+            Address.Text = "Address";
+            Address.Width = 180;
+            // 
+            // ZipCode
+            // 
+            ZipCode.Text = "Zip Code";
+            ZipCode.Width = 125;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(275, 153);
+            label3.Location = new Point(247, 127);
             label3.Name = "label3";
-            label3.Size = new Size(64, 15);
-            label3.TabIndex = 16;
-            label3.Text = "First Name";
-            label3.Click += label3_Click;
+            label3.Size = new Size(96, 15);
+            label3.TabIndex = 45;
+            label3.Text = "Selected Address";
             // 
-            // label4
+            // textBox1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(554, 153);
-            label4.Name = "label4";
-            label4.Size = new Size(63, 15);
-            label4.TabIndex = 17;
-            label4.Text = "Last Name";
-            label4.Click += label4_Click;
+            textBox1.Location = new Point(349, 124);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(448, 23);
+            textBox1.TabIndex = 46;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // label5
+            // button9
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(275, 226);
-            label5.Name = "label5";
-            label5.Size = new Size(81, 15);
-            label5.TabIndex = 18;
-            label5.Text = "Email Address";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(554, 225);
-            label6.Name = "label6";
-            label6.Size = new Size(57, 15);
-            label6.TabIndex = 19;
-            label6.Text = "Password";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(554, 360);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 15);
-            label7.TabIndex = 27;
-            label7.Text = "Zipcode";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(275, 361);
-            label8.Name = "label8";
-            label8.Size = new Size(88, 15);
-            label8.TabIndex = 26;
-            label8.Text = "Phone Number";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(554, 378);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(205, 23);
-            textBox5.TabIndex = 23;
-            textBox5.TextChanged += textBox5_TextChanged;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(275, 378);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(205, 23);
-            textBox6.TabIndex = 22;
-            textBox6.TextChanged += textBox6_TextChanged;
+            button9.Location = new Point(722, 520);
+            button9.Name = "button9";
+            button9.Size = new Size(75, 23);
+            button9.TabIndex = 47;
+            button9.Text = "Confirm";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button10
             // 
-            button10.BackColor = Color.Brown;
-            button10.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
-            button10.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(675, 517);
+            button10.Location = new Point(631, 520);
             button10.Name = "button10";
-            button10.Size = new Size(139, 44);
-            button10.TabIndex = 28;
-            button10.Text = "Delete Account";
-            button10.UseVisualStyleBackColor = false;
+            button10.Size = new Size(75, 23);
+            button10.TabIndex = 48;
+            button10.Text = "Select";
+            button10.UseVisualStyleBackColor = true;
             button10.Click += button10_Click;
             // 
-            // label9
+            // button11
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(554, 299);
-            label9.Name = "label9";
-            label9.Size = new Size(120, 15);
-            label9.TabIndex = 32;
-            label9.Text = "Apt / Suite (Optional)";
+            button11.Location = new Point(541, 520);
+            button11.Name = "button11";
+            button11.Size = new Size(75, 23);
+            button11.TabIndex = 49;
+            button11.Text = "Cancel";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(275, 300);
-            label10.Name = "label10";
-            label10.Size = new Size(109, 15);
-            label10.TabIndex = 31;
-            label10.Text = "Residential Address";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(554, 317);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(205, 23);
-            textBox7.TabIndex = 30;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(275, 317);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(205, 23);
-            textBox8.TabIndex = 29;
-            // 
-            // SettingsFormCustomer
+            // AddressListForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(textBox7);
-            Controls.Add(textBox8);
+            Controls.Add(button11);
             Controls.Add(button10);
-            Controls.Add(label7);
-            Controls.Add(label8);
-            Controls.Add(textBox5);
-            Controls.Add(textBox6);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox3);
-            Controls.Add(textBox4);
-            Controls.Add(textBox2);
             Controls.Add(button9);
             Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(listView1);
             Controls.Add(label1);
             Controls.Add(panel2);
-            Controls.Add(button1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "SettingsFormCustomer";
+            Name = "AddressListForm";
             Text = "Form1";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -516,15 +410,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Panel panel1;
-        private Label label2;
+        private Label label1;
         private Panel panel2;
         private Panel panel3;
         private PictureBox pictureBox7;
@@ -541,24 +435,17 @@
         private Button button4;
         private Button button7;
         private Button button5;
-        private Label label1;
+        private Panel panel1;
+        private Button button1;
+        private Label label2;
+        private ListView listView1;
+        private ColumnHeader Number;
+        private ColumnHeader Address;
+        private ColumnHeader ZipCode;
+        private Label label3;
         private TextBox textBox1;
         private Button button9;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private TextBox textBox5;
-        private TextBox textBox6;
         private Button button10;
-        private Label label9;
-        private Label label10;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private Button button11;
     }
 }

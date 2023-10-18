@@ -18,6 +18,9 @@ namespace OnlineFashionShopApp
             Application.Run(new SettingsFormCustomer());
             Application.Run(new SettingsFormAdmin());
             Application.Run(new CartForm());
+            Application.Run(new AccessLogForm());
+            Application.Run(new AddressForm());
+            Application.Run(new AddressListForm());
         }
     }
 }
