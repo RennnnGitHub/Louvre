@@ -86,5 +86,10 @@ namespace OnlineFashionShopApp
         {
 
         }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

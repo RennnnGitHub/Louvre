@@ -32,9 +32,6 @@
             button1 = new Button();
             panel1 = new Panel();
             label2 = new Label();
-            pictureBox21 = new PictureBox();
-            textBox40 = new TextBox();
-            button22 = new Button();
             panel4 = new Panel();
             panel17 = new Panel();
             button20 = new Button();
@@ -171,8 +168,8 @@
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             button6 = new Button();
+            button23 = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox21).BeginInit();
             panel4.SuspendLayout();
             panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
@@ -242,35 +239,6 @@
             label2.Size = new Size(66, 15);
             label2.TabIndex = 3;
             label2.Text = "Louvre Ltd.";
-            // 
-            // pictureBox21
-            // 
-            pictureBox21.Image = (Image)resources.GetObject("pictureBox21.Image");
-            pictureBox21.Location = new Point(485, 62);
-            pictureBox21.Name = "pictureBox21";
-            pictureBox21.Size = new Size(24, 23);
-            pictureBox21.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox21.TabIndex = 16;
-            pictureBox21.TabStop = false;
-            // 
-            // textBox40
-            // 
-            textBox40.ForeColor = Color.DarkGray;
-            textBox40.Location = new Point(515, 62);
-            textBox40.Name = "textBox40";
-            textBox40.Size = new Size(166, 23);
-            textBox40.TabIndex = 15;
-            // 
-            // button22
-            // 
-            button22.BackColor = Color.FromArgb(223, 169, 74);
-            button22.FlatStyle = FlatStyle.Flat;
-            button22.Location = new Point(694, 62);
-            button22.Name = "button22";
-            button22.Size = new Size(75, 23);
-            button22.TabIndex = 14;
-            button22.Text = "Search";
-            button22.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
@@ -1385,7 +1353,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(229, 47);
+            label1.Location = new Point(229, 48);
             label1.Name = "label1";
             label1.Size = new Size(165, 38);
             label1.TabIndex = 12;
@@ -1583,15 +1551,25 @@
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
             // 
+            // button23
+            // 
+            button23.BackColor = Color.FromArgb(0, 192, 0);
+            button23.FlatAppearance.BorderSize = 3;
+            button23.FlatStyle = FlatStyle.Flat;
+            button23.Location = new Point(630, 48);
+            button23.Name = "button23";
+            button23.Size = new Size(139, 38);
+            button23.TabIndex = 32;
+            button23.Text = "+ Add Product";
+            button23.UseVisualStyleBackColor = false;
+            // 
             // ProductAdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(button23);
             Controls.Add(panel2);
-            Controls.Add(pictureBox21);
-            Controls.Add(textBox40);
-            Controls.Add(button22);
             Controls.Add(panel4);
             Controls.Add(label1);
             Controls.Add(button1);
@@ -1601,7 +1579,6 @@
             Text = "Form1";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox21).EndInit();
             panel4.ResumeLayout(false);
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
@@ -1660,9 +1637,6 @@
         private Button button1;
         private Panel panel1;
         private Label label2;
-        private PictureBox pictureBox21;
-        private TextBox textBox40;
-        private Button button22;
         private Panel panel4;
         private Panel panel17;
         private Button button20;
@@ -1799,5 +1773,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Button button6;
+        private Button button23;
     }
 }

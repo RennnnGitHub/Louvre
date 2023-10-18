@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OnlineFashionShopApp
 {
-    public partial class TrackingForm : Form
+    public partial class AddProductForm : Form
     {
-        public TrackingForm()
+        public AddProductForm()
         {
             InitializeComponent();
         }

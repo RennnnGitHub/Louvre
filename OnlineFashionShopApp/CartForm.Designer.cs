@@ -346,6 +346,7 @@
             vScrollBar1.Name = "vScrollBar1";
             vScrollBar1.Size = new Size(17, 290);
             vScrollBar1.TabIndex = 41;
+            vScrollBar1.Scroll += vScrollBar1_Scroll;
             // 
             // button10
             // 

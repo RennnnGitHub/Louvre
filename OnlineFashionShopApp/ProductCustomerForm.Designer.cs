@@ -170,9 +170,9 @@
             label4 = new Label();
             label3 = new Label();
             pictureBox8 = new PictureBox();
-            button22 = new Button();
-            textBox40 = new TextBox();
             pictureBox21 = new PictureBox();
+            textBox40 = new TextBox();
+            button22 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -1563,27 +1563,6 @@
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
             // 
-            // button22
-            // 
-            button22.BackColor = Color.FromArgb(223, 169, 74);
-            button22.FlatStyle = FlatStyle.Flat;
-            button22.Location = new Point(698, 64);
-            button22.Name = "button22";
-            button22.Size = new Size(75, 23);
-            button22.TabIndex = 9;
-            button22.Text = "Search";
-            button22.UseVisualStyleBackColor = false;
-            button22.Click += button22_Click;
-            // 
-            // textBox40
-            // 
-            textBox40.ForeColor = Color.DarkGray;
-            textBox40.Location = new Point(519, 64);
-            textBox40.Name = "textBox40";
-            textBox40.Size = new Size(166, 23);
-            textBox40.TabIndex = 10;
-            textBox40.TextChanged += textBox40_TextChanged;
-            // 
             // pictureBox21
             // 
             pictureBox21.Image = (Image)resources.GetObject("pictureBox21.Image");
@@ -1591,8 +1570,27 @@
             pictureBox21.Name = "pictureBox21";
             pictureBox21.Size = new Size(24, 23);
             pictureBox21.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox21.TabIndex = 11;
+            pictureBox21.TabIndex = 19;
             pictureBox21.TabStop = false;
+            // 
+            // textBox40
+            // 
+            textBox40.ForeColor = Color.DarkGray;
+            textBox40.Location = new Point(519, 64);
+            textBox40.Name = "textBox40";
+            textBox40.Size = new Size(166, 23);
+            textBox40.TabIndex = 18;
+            // 
+            // button22
+            // 
+            button22.BackColor = Color.FromArgb(223, 169, 74);
+            button22.FlatStyle = FlatStyle.Flat;
+            button22.Location = new Point(698, 64);
+            button22.Name = "button22";
+            button22.Size = new Size(75, 23);
+            button22.TabIndex = 17;
+            button22.Text = "Search";
+            button22.UseVisualStyleBackColor = false;
             // 
             // ProductCustomerForm
             // 
@@ -1808,8 +1806,8 @@
         private Label label34;
         private Label label35;
         private PictureBox pictureBox18;
-        private Button button22;
-        private TextBox textBox40;
         private PictureBox pictureBox21;
+        private TextBox textBox40;
+        private Button button22;
     }
 }
