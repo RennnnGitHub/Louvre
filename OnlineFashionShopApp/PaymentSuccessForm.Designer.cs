@@ -76,6 +76,7 @@
             button1.Size = new Size(24, 23);
             button1.TabIndex = 9;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -169,6 +170,7 @@
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox5
             // 
@@ -192,6 +194,7 @@
             button3.TabIndex = 3;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // pictureBox4
             // 
@@ -215,6 +218,7 @@
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // pictureBox3
             // 
@@ -238,6 +242,7 @@
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // pictureBox2
             // 
@@ -261,6 +266,7 @@
             button4.TabIndex = 4;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button7
             // 
@@ -274,6 +280,7 @@
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button5
             // 
@@ -287,6 +294,7 @@
             button5.TabIndex = 5;
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label1
             // 
@@ -307,6 +315,7 @@
             button9.TabIndex = 12;
             button9.Text = "Continue browsing";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button10
             // 
@@ -316,6 +325,7 @@
             button10.TabIndex = 13;
             button10.Text = "Return to home";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // label3
             // 
@@ -333,6 +343,7 @@
             textBox1.Size = new Size(301, 23);
             textBox1.TabIndex = 15;
             textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // PaymentSuccessForm
             // 
