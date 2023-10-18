@@ -10,7 +10,7 @@ namespace OnlineFashionShopApp
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+           /* ApplicationConfiguration.Initialize();
             Application.Run(new LoginForm());
             Application.Run(new RegisterForm());
             Application.Run(new HomeFormCustomer());
@@ -21,6 +21,9 @@ namespace OnlineFashionShopApp
             Application.Run(new AccessLogForm());
             Application.Run(new AddressForm());
             Application.Run(new AddressListForm());
+            Application.Run(new PaymentForm());
+            Application.Run(new PaymentSuccessForm());*/
+            Application.Run(new ProductCustomerForm());
         }
     }
 }

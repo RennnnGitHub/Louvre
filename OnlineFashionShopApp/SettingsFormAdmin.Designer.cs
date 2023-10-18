@@ -48,7 +48,6 @@
             button1 = new Button();
             panel1 = new Panel();
             label2 = new Label();
-            button11 = new Button();
             button10 = new Button();
             label8 = new Label();
             textBox6 = new TextBox();
@@ -297,19 +296,6 @@
             label2.TabIndex = 3;
             label2.Text = "Louvre Ltd.";
             // 
-            // button11
-            // 
-            button11.BackColor = Color.OliveDrab;
-            button11.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
-            button11.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button11.Location = new Point(236, 517);
-            button11.Name = "button11";
-            button11.Size = new Size(139, 44);
-            button11.TabIndex = 46;
-            button11.Text = "Delete Customer Account";
-            button11.UseVisualStyleBackColor = false;
-            button11.Click += button11_Click;
-            // 
             // button10
             // 
             button10.BackColor = Color.Brown;
@@ -436,7 +422,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
-            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(label8);
             Controls.Add(textBox6);
@@ -491,7 +476,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Button button6;
-        private Button button11;
         private Button button10;
         private Label label8;
         private TextBox textBox6;

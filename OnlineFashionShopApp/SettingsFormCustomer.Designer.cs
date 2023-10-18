@@ -58,15 +58,11 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label7 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
             textBox6 = new TextBox();
             button10 = new Button();
-            label9 = new Label();
-            label10 = new Label();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
+            button11 = new Button();
+            button12 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -326,7 +322,7 @@
             button9.BackColor = Color.FromArgb(223, 169, 74);
             button9.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
             button9.Font = new Font("Georgia", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.Location = new Point(436, 445);
+            button9.Location = new Point(446, 380);
             button9.Name = "button9";
             button9.Size = new Size(149, 59);
             button9.TabIndex = 10;
@@ -381,7 +377,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(275, 226);
+            label5.Location = new Point(275, 225);
             label5.Name = "label5";
             label5.Size = new Size(81, 15);
             label5.TabIndex = 18;
@@ -396,35 +392,18 @@
             label6.TabIndex = 19;
             label6.Text = "Password";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(554, 360);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 15);
-            label7.TabIndex = 27;
-            label7.Text = "Zipcode";
-            // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(275, 361);
+            label8.Location = new Point(412, 300);
             label8.Name = "label8";
             label8.Size = new Size(88, 15);
             label8.TabIndex = 26;
             label8.Text = "Phone Number";
             // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(554, 378);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(205, 23);
-            textBox5.TabIndex = 23;
-            textBox5.TextChanged += textBox5_TextChanged;
-            // 
             // textBox6
             // 
-            textBox6.Location = new Point(275, 378);
+            textBox6.Location = new Point(412, 317);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(205, 23);
             textBox6.TabIndex = 22;
@@ -443,51 +422,39 @@
             button10.UseVisualStyleBackColor = false;
             button10.Click += button10_Click;
             // 
-            // label9
+            // button11
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(554, 299);
-            label9.Name = "label9";
-            label9.Size = new Size(120, 15);
-            label9.TabIndex = 32;
-            label9.Text = "Apt / Suite (Optional)";
+            button11.BackColor = Color.Green;
+            button11.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
+            button11.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button11.Location = new Point(243, 517);
+            button11.Name = "button11";
+            button11.Size = new Size(139, 44);
+            button11.TabIndex = 32;
+            button11.Text = "Change/View Address";
+            button11.UseVisualStyleBackColor = false;
             // 
-            // label10
+            // button12
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(275, 300);
-            label10.Name = "label10";
-            label10.Size = new Size(109, 15);
-            label10.TabIndex = 31;
-            label10.Text = "Residential Address";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(554, 317);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(205, 23);
-            textBox7.TabIndex = 30;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(275, 317);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(205, 23);
-            textBox8.TabIndex = 29;
+            button12.BackColor = Color.Turquoise;
+            button12.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
+            button12.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button12.Location = new Point(456, 517);
+            button12.Name = "button12";
+            button12.Size = new Size(139, 44);
+            button12.TabIndex = 33;
+            button12.Text = "Change/View Payment";
+            button12.UseVisualStyleBackColor = false;
             // 
             // SettingsFormCustomer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
-            Controls.Add(label9);
-            Controls.Add(label10);
-            Controls.Add(textBox7);
-            Controls.Add(textBox8);
+            Controls.Add(button12);
+            Controls.Add(button11);
             Controls.Add(button10);
-            Controls.Add(label7);
             Controls.Add(label8);
-            Controls.Add(textBox5);
             Controls.Add(textBox6);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -551,14 +518,10 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
         private Label label8;
-        private TextBox textBox5;
         private TextBox textBox6;
         private Button button10;
-        private Label label9;
-        private Label label10;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private Button button11;
+        private Button button12;
     }
 }

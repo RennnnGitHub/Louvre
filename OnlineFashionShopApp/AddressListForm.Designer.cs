@@ -52,7 +52,6 @@
             listView1 = new ListView();
             Number = new ColumnHeader();
             Address = new ColumnHeader();
-            ZipCode = new ColumnHeader();
             label3 = new Label();
             textBox1 = new TextBox();
             button9 = new Button();
@@ -314,7 +313,7 @@
             // 
             // listView1
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { Number, Address, ZipCode });
+            listView1.Columns.AddRange(new ColumnHeader[] { Number, Address });
             listView1.Location = new Point(247, 167);
             listView1.Name = "listView1";
             listView1.Size = new Size(550, 334);
@@ -326,16 +325,12 @@
             // Number
             // 
             Number.Text = "No";
+            Number.Width = 100;
             // 
             // Address
             // 
             Address.Text = "Address";
-            Address.Width = 180;
-            // 
-            // ZipCode
-            // 
-            ZipCode.Text = "Zip Code";
-            ZipCode.Width = 125;
+            Address.Width = 300;
             // 
             // label3
             // 
@@ -441,7 +436,6 @@
         private ListView listView1;
         private ColumnHeader Number;
         private ColumnHeader Address;
-        private ColumnHeader ZipCode;
         private Label label3;
         private TextBox textBox1;
         private Button button9;
