@@ -56,6 +56,7 @@
             textBox2 = new TextBox();
             button10 = new Button();
             button11 = new Button();
+            button12 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -376,11 +377,24 @@
             button11.UseVisualStyleBackColor = true;
             button11.Click += button11_Click;
             // 
+            // button12
+            // 
+            button12.BackColor = Color.Green;
+            button12.FlatStyle = FlatStyle.Flat;
+            button12.ForeColor = Color.White;
+            button12.Location = new Point(456, 368);
+            button12.Name = "button12";
+            button12.Size = new Size(114, 58);
+            button12.TabIndex = 41;
+            button12.Text = "Save Changes";
+            button12.UseVisualStyleBackColor = false;
+            // 
             // AddressForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(button12);
             Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(textBox2);
@@ -438,5 +452,6 @@
         private TextBox textBox2;
         private Button button10;
         private Button button11;
+        private Button button12;
     }
 }
