@@ -16,5 +16,10 @@ namespace OnlineFashionShopApp
         {
             InitializeComponent();
         }
+
+        private void OrderFormAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

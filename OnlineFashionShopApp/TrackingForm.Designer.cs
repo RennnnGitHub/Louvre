@@ -48,6 +48,12 @@
             button4 = new Button();
             button7 = new Button();
             button5 = new Button();
+            label1 = new Label();
+            label3 = new Label();
+            textBox1 = new TextBox();
+            button9 = new Button();
+            label4 = new Label();
+            textBox2 = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -284,11 +290,73 @@
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(250, 55);
+            label1.Name = "label1";
+            label1.Size = new Size(219, 38);
+            label1.TabIndex = 13;
+            label1.Text = "Track Order";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Georgia", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(366, 172);
+            label3.Name = "label3";
+            label3.Size = new Size(272, 29);
+            label3.TabIndex = 14;
+            label3.Text = "Check Tracking Number";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(298, 204);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(395, 23);
+            textBox1.TabIndex = 15;
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // button9
+            // 
+            button9.BackColor = Color.FromArgb(223, 169, 74);
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Location = new Point(456, 233);
+            button9.Name = "button9";
+            button9.Size = new Size(78, 23);
+            button9.TabIndex = 16;
+            button9.Text = "Track";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Georgia", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(350, 377);
+            label4.Name = "label4";
+            label4.Size = new Size(119, 23);
+            label4.TabIndex = 17;
+            label4.Text = "Order Status";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(475, 377);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(163, 23);
+            textBox2.TabIndex = 18;
+            // 
             // TrackingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(textBox2);
+            Controls.Add(label4);
+            Controls.Add(button9);
+            Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(button1);
             Controls.Add(panel1);
@@ -307,6 +375,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -330,5 +399,11 @@
         private Button button4;
         private Button button7;
         private Button button5;
+        private Label label1;
+        private Label label3;
+        private TextBox textBox1;
+        private Button button9;
+        private Label label4;
+        private TextBox textBox2;
     }
 }
