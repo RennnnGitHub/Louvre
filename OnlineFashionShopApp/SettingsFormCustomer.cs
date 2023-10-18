@@ -86,5 +86,10 @@ namespace OnlineFashionShopApp
         {
 
         }
+
+        private void SettingsFormCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

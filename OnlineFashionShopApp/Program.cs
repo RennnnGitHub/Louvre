@@ -24,6 +24,7 @@ namespace OnlineFashionShopApp
             Application.Run(new PaymentForm());
             Application.Run(new PaymentSuccessForm());*/
             Application.Run(new ProductCustomerForm());
+            Application.Run(new ProductAdminForm());
         }
     }
 }

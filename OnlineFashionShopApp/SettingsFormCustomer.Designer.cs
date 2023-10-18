@@ -472,6 +472,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "SettingsFormCustomer";
             Text = "Form1";
+            Load += SettingsFormCustomer_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
