@@ -27,9 +27,41 @@ namespace OnlineFashionShopApp
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private async void button9_Click(object sender, EventArgs e)
         {
+            string apiUrl = "https://localhost:7098/User/ChangeUserSettings"; // Replace with the actual API URL.
 
+            // Define the JSON payload as a string
+            string jsonPayload = "{\"userId\":2, \"firstname\": \""+textBox1.Text+"\", \"lastname\": \""+textBox2.Text+"\", \"email\": \""+textBox4.Text+"\", \"password\": \""+textBox3.Text+"\"}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Create a StringContent with the JSON payload and specify the content type
+                    StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                    // Make a POST request with the JSON payload
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = await response.Content.ReadAsStringAsync();
+                        // You can process the API response (result) as needed.
+                        MessageBox.Show("Settings Saved Sucessfully");
+                    }
+                    else
+                    {
+                        // Handle the response if it's not successful (e.g., display an error message).
+                        MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., network issues).
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
