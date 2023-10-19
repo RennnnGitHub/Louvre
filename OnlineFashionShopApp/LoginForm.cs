@@ -100,12 +100,12 @@ namespace OnlineFashionShopApp
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e) //email
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e) //password
         {
 
         }

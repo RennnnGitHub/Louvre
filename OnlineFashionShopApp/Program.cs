@@ -11,11 +11,11 @@ namespace OnlineFashionShopApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            //Application.Run(new LoginForm());
-            //Application.Run(new RegisterForm());
+            //DONE//Application.Run(new LoginForm()); 
+            Application.Run(new RegisterForm());
             //Application.Run(new HomeFormCustomer());
             //Application.Run(new HomeFormAdmin());
-            Application.Run(new SettingsFormCustomer());
+            //Application.Run(new SettingsFormCustomer());
             //Application.Run(new SettingsFormAdmin());
             //Application.Run(new CartForm());*/
             /*Application.Run(new AccessLogForm());
