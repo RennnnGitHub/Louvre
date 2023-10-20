@@ -46,6 +46,8 @@
             button2 = new Button();
             pictureBox2 = new PictureBox();
             linkLabel1 = new LinkLabel();
+            label7 = new Label();
+            textBox5 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -100,6 +102,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(8, 8, 8);
+            panel2.Controls.Add(textBox5);
+            panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label5);
@@ -112,7 +116,7 @@
             panel2.Controls.Add(button2);
             panel2.Location = new Point(144, 155);
             panel2.Name = "panel2";
-            panel2.Size = new Size(514, 286);
+            panel2.Size = new Size(514, 309);
             panel2.TabIndex = 3;
             // 
             // label6
@@ -131,7 +135,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(223, 169, 74);
-            label4.Location = new Point(304, 156);
+            label4.Location = new Point(305, 116);
             label4.Name = "label4";
             label4.Size = new Size(57, 15);
             label4.TabIndex = 8;
@@ -142,7 +146,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(223, 169, 74);
-            label5.Location = new Point(39, 156);
+            label5.Location = new Point(40, 116);
             label5.Name = "label5";
             label5.Size = new Size(81, 15);
             label5.TabIndex = 7;
@@ -153,7 +157,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(223, 169, 74);
-            label3.Location = new Point(304, 62);
+            label3.Location = new Point(304, 55);
             label3.Name = "label3";
             label3.Size = new Size(63, 15);
             label3.TabIndex = 6;
@@ -164,7 +168,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(223, 169, 74);
-            label2.Location = new Point(39, 62);
+            label2.Location = new Point(39, 55);
             label2.Name = "label2";
             label2.Size = new Size(64, 15);
             label2.TabIndex = 5;
@@ -173,7 +177,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(303, 174);
+            textBox3.Location = new Point(304, 134);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(177, 23);
             textBox3.TabIndex = 4;
@@ -182,7 +186,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(39, 174);
+            textBox4.Location = new Point(40, 134);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(177, 23);
             textBox4.TabIndex = 3;
@@ -191,7 +195,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(304, 80);
+            textBox2.Location = new Point(304, 73);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(177, 23);
             textBox2.TabIndex = 2;
@@ -200,7 +204,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(40, 80);
+            textBox1.Location = new Point(40, 73);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(177, 23);
             textBox1.TabIndex = 1;
@@ -213,7 +217,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.FromArgb(223, 169, 74);
-            button2.Location = new Point(190, 229);
+            button2.Location = new Point(188, 243);
             button2.Name = "button2";
             button2.Size = new Size(131, 54);
             button2.TabIndex = 0;
@@ -239,12 +243,32 @@
             linkLabel1.BackColor = Color.FromArgb(8, 8, 8);
             linkLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(310, 444);
+            linkLabel1.Location = new Point(312, 455);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(178, 15);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Already have an account? Log in";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(223, 169, 74);
+            label7.Location = new Point(169, 181);
+            label7.Name = "label7";
+            label7.Size = new Size(88, 15);
+            label7.TabIndex = 8;
+            label7.Text = "Phone Number";
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox5.Location = new Point(169, 199);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(177, 23);
+            textBox5.TabIndex = 6;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // RegisterForm
             // 
@@ -291,5 +315,7 @@
         private TextBox textBox4;
         private Label label6;
         private LinkLabel linkLabel1;
+        private TextBox textBox5;
+        private Label label7;
     }
 }
