@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using System.Text;
 
 namespace OnlineFashionShopApp
 {
@@ -99,14 +100,51 @@ namespace OnlineFashionShopApp
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        private void textBox1_TextChanged_1(object sender, EventArgs e) //email
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e) //password
         {
 
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            string apiUrl = "https://localhost:7098/User/Login"; // Replace with the actual API URL.
+
+            // Define the JSON payload as a string
+            string jsonPayload = "{\"email\": \"" + textBox1.Text + "\", \"password\": \"" + textBox3.Text + "\"}";
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Create a StringContent with the JSON payload and specify the content type
+                    StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                    // Make a POST request with the JSON payload
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string result = await response.Content.ReadAsStringAsync();
+                        // You can process the API response (result) as needed.
+                        MessageBox.Show(result);
+                    }
+                    else
+                    {
+                        // Handle the response if it's not successful (e.g., display an error message).
+                        MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., network issues).
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
         }
     }
 }
