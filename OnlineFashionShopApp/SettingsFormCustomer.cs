@@ -32,7 +32,7 @@ namespace OnlineFashionShopApp
             string apiUrl = "https://localhost:7098/User/ChangeUserSettings"; // Replace with the actual API URL.
 
             // Define the JSON payload as a string
-            string jsonPayload = "{\"userId\":2, \"firstname\": \""+textBox1.Text+"\", \"lastname\": \""+textBox2.Text+"\", \"email\": \""+textBox4.Text+"\", \"password\": \""+textBox3.Text+"\"}";
+            string jsonPayload = "{\"userId\":2, \"newFirstname\": \"" + textBox1.Text + "\", \"newLastname\": \"" + textBox2.Text + "\", \"newEmail\": \"" + textBox4.Text + "\", \"newPassword\": \"" + textBox3.Text + "\"}";
 
             using (HttpClient client = new HttpClient())
             {
@@ -69,7 +69,7 @@ namespace OnlineFashionShopApp
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e) //firstname
         {
 
         }
@@ -79,17 +79,17 @@ namespace OnlineFashionShopApp
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e) //lastname
         {
 
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox4_TextChanged(object sender, EventArgs e) //email address
         {
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e) //password
         {
 
         }
