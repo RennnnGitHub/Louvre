@@ -344,6 +344,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "HomeFormAdmin";
             Text = "Form1";
+            Load += HomeFormAdmin_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();

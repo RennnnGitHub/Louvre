@@ -11,24 +11,42 @@ namespace OnlineFashionShopApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm()); 
-            Application.Run(new RegisterForm()); //andrew
+            //Application.Run(new LoginForm()); 
+            //Application.Run(new RegisterForm()); //andrew
+            //Application.Run(new HomeFormCustomer());
+            //Application.Run(new HomeFormAdmin());
+            //Application.Run(new SettingsFormCustomer()); //andrew
+            //Application.Run(new SettingsFormAdmin()); //andrew
+            //Application.Run(new CartForm());
+            //Application.Run(new AccessLogForm()); //andrew
+            //Application.Run(new AddressForm()); //andrew
+            //Application.Run(new AddressListForm()); //andrew
+            //Application.Run(new PaymentForm()); //andrew
+            //Application.Run(new PaymentSuccessForm());
+            //Application.Run(new ProductCustomerForm());
+            //Application.Run(new ProductAdminForm());
+            //Application.Run(new AddProductForm());
+            //Application.Run(new TrackingForm());
+            //Application.Run(new OrderFormCustomer());
+            //Application.Run(new OrderFormAdmin());
+            Application.Run(new LoginForm());
+            /*Application.Run(new RegisterForm());
             Application.Run(new HomeFormCustomer());
             Application.Run(new HomeFormAdmin());
-            Application.Run(new SettingsFormCustomer()); //andrew
-            Application.Run(new SettingsFormAdmin()); //andrew
+            Application.Run(new SettingsFormCustomer());
+            Application.Run(new SettingsFormAdmin());
             Application.Run(new CartForm());
-            Application.Run(new AccessLogForm()); //andrew
-            Application.Run(new AddressForm()); //andrew
-            Application.Run(new AddressListForm()); //andrew
-            Application.Run(new PaymentForm()); //andrew
+            Application.Run(new AccessLogForm());
+            Application.Run(new AddressForm());
+            Application.Run(new AddressListForm());
+            Application.Run(new PaymentForm());
             Application.Run(new PaymentSuccessForm());
             Application.Run(new ProductCustomerForm());
             Application.Run(new ProductAdminForm());
             Application.Run(new AddProductForm());
             Application.Run(new TrackingForm());
             Application.Run(new OrderFormCustomer());
-            Application.Run(new OrderFormAdmin());
+            Application.Run(new OrderFormAdmin());*/
         }
     }
 }

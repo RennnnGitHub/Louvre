@@ -1,5 +1,9 @@
+using System;
 using System.Drawing.Drawing2D;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
@@ -131,7 +135,26 @@ namespace OnlineFashionShopApp
                     {
                         string result = await response.Content.ReadAsStringAsync();
                         // You can process the API response (result) as needed.
-                        MessageBox.Show(result);
+                        JsonNode obj = JsonObject.Parse(result);
+                        if (obj["success"].ToString() == "true")
+                        {
+                            //MessageBox.Show(obj["success"].ToString());
+                            MessageBox.Show("Welcome " + obj["data"]["firstname"].ToString());
+                            this.Hide();
+                            User u = new User()
+                            {
+                                Firstname = obj["data"]["firstname"].ToString(),
+                                Lastname = obj["data"]["lastname"].ToString(),
+                                Email = obj["data"]["email"].ToString()
+                            };
+                            HomeFormAdmin formHome = new HomeFormAdmin(u);
+                            formHome.ShowDialog();
+                            this.Close();
+                        }
+                        else
+                        {
+
+                        }
                     }
                     else
                     {
@@ -146,5 +169,7 @@ namespace OnlineFashionShopApp
                 }
             }
         }
+
+
     }
 }

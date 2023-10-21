@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
     public partial class HomeFormAdmin : Form
     {
-        public HomeFormAdmin()
+        private User _currentUser;
+        public HomeFormAdmin(User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,6 +63,11 @@ namespace OnlineFashionShopApp
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void HomeFormAdmin_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Welcome " + _currentUser.Firstname + " " + _currentUser.Lastname;
         }
     }
 }
