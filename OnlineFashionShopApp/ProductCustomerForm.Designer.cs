@@ -172,15 +172,11 @@
             pictureBox21 = new PictureBox();
             textBox40 = new TextBox();
             button22 = new Button();
-<<<<<<< Updated upstream
-            button25 = new Button();
-            button24 = new Button();
-            button23 = new Button();
-=======
+
             comboBox1 = new ComboBox();
             label42 = new Label();
             FilterButton = new Button();
->>>>>>> Stashed changes
+
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -463,18 +459,12 @@
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
             // 
-<<<<<<< Updated upstream
-=======
+
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(266, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 46);
-            label1.TabIndex = 7;
+           
             // 
->>>>>>> Stashed changes
+
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
@@ -499,12 +489,10 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-<<<<<<< Updated upstream
-            panel4.Location = new Point(226, 107);
-=======
+
             panel4.Location = new Point(266, 125);
             panel4.Margin = new Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             panel4.Name = "panel4";
             panel4.Size = new Size(650, 605);
             panel4.TabIndex = 8;
@@ -1678,12 +1666,10 @@
             // pictureBox21
             // 
             pictureBox21.Image = (Image)resources.GetObject("pictureBox21.Image");
-<<<<<<< Updated upstream
-            pictureBox21.Location = new Point(511, 63);
-=======
+
             pictureBox21.Location = new Point(560, 73);
             pictureBox21.Margin = new Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             pictureBox21.Name = "pictureBox21";
             pictureBox21.Size = new Size(27, 31);
             pictureBox21.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1693,12 +1679,10 @@
             // textBox40
             // 
             textBox40.ForeColor = Color.DarkGray;
-<<<<<<< Updated upstream
-            textBox40.Location = new Point(541, 63);
-=======
+
             textBox40.Location = new Point(593, 73);
             textBox40.Margin = new Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             textBox40.Name = "textBox40";
             textBox40.Size = new Size(189, 27);
             textBox40.TabIndex = 18;
@@ -1707,12 +1691,10 @@
             // 
             button22.BackColor = Color.FromArgb(223, 169, 74);
             button22.FlatStyle = FlatStyle.Flat;
-<<<<<<< Updated upstream
-            button22.Location = new Point(720, 63);
-=======
+
             button22.Location = new Point(797, 73);
             button22.Margin = new Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             button22.Name = "button22";
             button22.Size = new Size(86, 31);
             button22.TabIndex = 17;
@@ -1751,52 +1733,26 @@
             // 
             // button25
             // 
-            button25.BackColor = Color.FromArgb(223, 169, 74);
-            button25.FlatStyle = FlatStyle.Flat;
-            button25.Location = new Point(419, 55);
-            button25.Name = "button25";
-            button25.Size = new Size(75, 38);
-            button25.TabIndex = 38;
-            button25.Text = "Category3";
-            button25.UseVisualStyleBackColor = false;
+            
             // 
             // button24
             // 
-            button24.BackColor = Color.FromArgb(223, 169, 74);
-            button24.FlatStyle = FlatStyle.Flat;
-            button24.Location = new Point(329, 55);
-            button24.Name = "button24";
-            button24.Size = new Size(75, 38);
-            button24.TabIndex = 37;
-            button24.Text = "Category2";
-            button24.UseVisualStyleBackColor = false;
+            
             // 
             // button23
             // 
-            button23.BackColor = Color.FromArgb(223, 169, 74);
-            button23.FlatStyle = FlatStyle.Flat;
-            button23.Location = new Point(234, 55);
-            button23.Name = "button23";
-            button23.Size = new Size(75, 38);
-            button23.TabIndex = 36;
-            button23.Text = "Category1";
-            button23.UseVisualStyleBackColor = false;
+            
             // 
             // ProductCustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< Updated upstream
-            ClientSize = new Size(826, 573);
-            Controls.Add(button25);
-            Controls.Add(button24);
-            Controls.Add(button23);
-=======
+
             ClientSize = new Size(944, 764);
             Controls.Add(FilterButton);
             Controls.Add(label42);
             Controls.Add(comboBox1);
->>>>>>> Stashed changes
+
             Controls.Add(pictureBox21);
             Controls.Add(textBox40);
             Controls.Add(button22);
@@ -2011,8 +1967,7 @@
         private Button button25;
         private Button button24;
         private Button button23;
-<<<<<<< Updated upstream
-=======
+
         private ComboBox comboBox1;
         private Label label42;
         private Button FilterButton;
@@ -2051,6 +2006,6 @@
         private TextBox stockBox7;
         private TextBox priceBox7;
         private TextBox nameBox7;
->>>>>>> Stashed changes
+
     }
 }

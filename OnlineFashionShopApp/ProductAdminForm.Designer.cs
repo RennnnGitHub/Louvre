@@ -168,16 +168,12 @@
             pictureBox102 = new PictureBox();
             button6 = new Button();
             button23 = new Button();
-<<<<<<< Updated upstream
-            button22 = new Button();
-            button24 = new Button();
-            button25 = new Button();
-=======
+
             comboBox1 = new ComboBox();
             label42 = new Label();
             label43 = new Label();
             FilterButton = new Button();
->>>>>>> Stashed changes
+
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel17.SuspendLayout();
@@ -268,12 +264,10 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-<<<<<<< Updated upstream
-            panel4.Location = new Point(229, 108);
-=======
+
             panel4.Location = new Point(262, 123);
             panel4.Margin = new Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             panel4.Name = "panel4";
             panel4.Size = new Size(650, 605);
             panel4.TabIndex = 13;
@@ -1451,18 +1445,12 @@
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
             // 
-<<<<<<< Updated upstream
-=======
+
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(262, 64);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 46);
-            label1.TabIndex = 12;
+            
             // 
->>>>>>> Stashed changes
+
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(64, 64, 64);
@@ -1677,54 +1665,18 @@
             button23.BackColor = Color.FromArgb(0, 192, 0);
             button23.FlatAppearance.BorderSize = 3;
             button23.FlatStyle = FlatStyle.Flat;
-<<<<<<< Updated upstream
-            button23.Location = new Point(654, 55);
-            button23.Name = "button23";
-            button23.Size = new Size(125, 38);
-=======
+
             button23.Location = new Point(720, 64);
             button23.Margin = new Padding(3, 4, 3, 4);
             button23.Name = "button23";
             button23.Size = new Size(159, 51);
->>>>>>> Stashed changes
+
             button23.TabIndex = 32;
             button23.Text = "+ Add Product";
             button23.UseVisualStyleBackColor = false;
             // 
-<<<<<<< Updated upstream
-            // button22
-            // 
-            button22.BackColor = Color.FromArgb(223, 169, 74);
-            button22.FlatStyle = FlatStyle.Flat;
-            button22.Location = new Point(233, 55);
-            button22.Name = "button22";
-            button22.Size = new Size(75, 38);
-            button22.TabIndex = 33;
-            button22.Text = "Category1";
-            button22.UseVisualStyleBackColor = false;
-            // 
-            // button24
-            // 
-            button24.BackColor = Color.FromArgb(223, 169, 74);
-            button24.FlatStyle = FlatStyle.Flat;
-            button24.Location = new Point(328, 55);
-            button24.Name = "button24";
-            button24.Size = new Size(75, 38);
-            button24.TabIndex = 34;
-            button24.Text = "Category2";
-            button24.UseVisualStyleBackColor = false;
-            // 
-            // button25
-            // 
-            button25.BackColor = Color.FromArgb(223, 169, 74);
-            button25.FlatStyle = FlatStyle.Flat;
-            button25.Location = new Point(418, 55);
-            button25.Name = "button25";
-            button25.Size = new Size(75, 38);
-            button25.TabIndex = 35;
-            button25.Text = "Category3";
-            button25.UseVisualStyleBackColor = false;
-=======
+
+
             // comboBox1
             // 
             comboBox1.AllowDrop = true;
@@ -1762,24 +1714,19 @@
             FilterButton.Text = "Filter";
             FilterButton.UseVisualStyleBackColor = true;
             FilterButton.Click += filterButton_CLick;
->>>>>>> Stashed changes
+
             // 
             // ProductAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< Updated upstream
-            ClientSize = new Size(826, 573);
-            Controls.Add(button25);
-            Controls.Add(button24);
-            Controls.Add(button22);
-=======
+
             ClientSize = new Size(944, 764);
             Controls.Add(FilterButton);
             Controls.Add(label43);
             Controls.Add(label42);
             Controls.Add(comboBox1);
->>>>>>> Stashed changes
+
             Controls.Add(button23);
             Controls.Add(panel2);
             Controls.Add(panel4);
@@ -1984,11 +1931,8 @@
         private PictureBox pictureBox102;
         private Button button6;
         private Button button23;
-<<<<<<< Updated upstream
-        private Button button22;
-        private Button button24;
-        private Button button25;
-=======
+
+
         private TextBox nameBox2;
         private TextBox stockBox2;
         private TextBox priceBox2;
@@ -1997,6 +1941,6 @@
         private Label label42;
         private Label label43;
         private Button FilterButton;
->>>>>>> Stashed changes
+
     }
 }

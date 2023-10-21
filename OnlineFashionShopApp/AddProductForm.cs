@@ -64,7 +64,7 @@ namespace OnlineFashionShopApp
                                  "\"productStock\": " + textBox3.Text + ", " +
                                  "\"productImage\": \"" + Convert.ToBase64String(imageData) + "\", " +
                                  "\"category\": \"" + selectedCategory + "\"}";
-            
+
             using (HttpClient client = new HttpClient())
             {
                 try
