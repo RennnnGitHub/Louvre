@@ -151,7 +151,6 @@
             label4 = new Label();
             label3 = new Label();
             pictureBox8 = new PictureBox();
-            label1 = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
             pictureBox7 = new PictureBox();
@@ -169,6 +168,9 @@
             pictureBox3 = new PictureBox();
             button6 = new Button();
             button23 = new Button();
+            button22 = new Button();
+            button24 = new Button();
+            button25 = new Button();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel17.SuspendLayout();
@@ -257,7 +259,7 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-            panel4.Location = new Point(229, 92);
+            panel4.Location = new Point(229, 108);
             panel4.Name = "panel4";
             panel4.Size = new Size(569, 454);
             panel4.TabIndex = 13;
@@ -1349,16 +1351,6 @@
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(229, 48);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 38);
-            label1.TabIndex = 12;
-            label1.Text = "Products";
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(64, 64, 64);
@@ -1556,22 +1548,57 @@
             button23.BackColor = Color.FromArgb(0, 192, 0);
             button23.FlatAppearance.BorderSize = 3;
             button23.FlatStyle = FlatStyle.Flat;
-            button23.Location = new Point(630, 48);
+            button23.Location = new Point(654, 55);
             button23.Name = "button23";
-            button23.Size = new Size(139, 38);
+            button23.Size = new Size(125, 38);
             button23.TabIndex = 32;
             button23.Text = "+ Add Product";
             button23.UseVisualStyleBackColor = false;
+            // 
+            // button22
+            // 
+            button22.BackColor = Color.FromArgb(223, 169, 74);
+            button22.FlatStyle = FlatStyle.Flat;
+            button22.Location = new Point(233, 55);
+            button22.Name = "button22";
+            button22.Size = new Size(75, 38);
+            button22.TabIndex = 33;
+            button22.Text = "Category1";
+            button22.UseVisualStyleBackColor = false;
+            // 
+            // button24
+            // 
+            button24.BackColor = Color.FromArgb(223, 169, 74);
+            button24.FlatStyle = FlatStyle.Flat;
+            button24.Location = new Point(328, 55);
+            button24.Name = "button24";
+            button24.Size = new Size(75, 38);
+            button24.TabIndex = 34;
+            button24.Text = "Category2";
+            button24.UseVisualStyleBackColor = false;
+            // 
+            // button25
+            // 
+            button25.BackColor = Color.FromArgb(223, 169, 74);
+            button25.FlatStyle = FlatStyle.Flat;
+            button25.Location = new Point(418, 55);
+            button25.Name = "button25";
+            button25.Size = new Size(75, 38);
+            button25.TabIndex = 35;
+            button25.Text = "Category3";
+            button25.UseVisualStyleBackColor = false;
             // 
             // ProductAdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(button25);
+            Controls.Add(button24);
+            Controls.Add(button22);
             Controls.Add(button23);
             Controls.Add(panel2);
             Controls.Add(panel4);
-            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -1629,7 +1656,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -1756,7 +1782,6 @@
         private Label label4;
         private Label label3;
         private PictureBox pictureBox8;
-        private Label label1;
         private Panel panel2;
         private Panel panel3;
         private PictureBox pictureBox7;
@@ -1774,5 +1799,8 @@
         private PictureBox pictureBox3;
         private Button button6;
         private Button button23;
+        private Button button22;
+        private Button button24;
+        private Button button25;
     }
 }

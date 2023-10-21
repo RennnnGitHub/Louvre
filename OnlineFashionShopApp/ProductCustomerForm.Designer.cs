@@ -49,7 +49,6 @@
             button4 = new Button();
             button7 = new Button();
             button5 = new Button();
-            label1 = new Label();
             imageList1 = new ImageList(components);
             panel4 = new Panel();
             panel17 = new Panel();
@@ -173,6 +172,9 @@
             pictureBox21 = new PictureBox();
             textBox40 = new TextBox();
             button22 = new Button();
+            button25 = new Button();
+            button24 = new Button();
+            button23 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -437,16 +439,6 @@
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(233, 49);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 38);
-            label1.TabIndex = 7;
-            label1.Text = "Products";
-            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
@@ -471,7 +463,7 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-            panel4.Location = new Point(233, 94);
+            panel4.Location = new Point(226, 107);
             panel4.Name = "panel4";
             panel4.Size = new Size(569, 454);
             panel4.TabIndex = 8;
@@ -1566,7 +1558,7 @@
             // pictureBox21
             // 
             pictureBox21.Image = (Image)resources.GetObject("pictureBox21.Image");
-            pictureBox21.Location = new Point(489, 64);
+            pictureBox21.Location = new Point(511, 63);
             pictureBox21.Name = "pictureBox21";
             pictureBox21.Size = new Size(24, 23);
             pictureBox21.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1576,7 +1568,7 @@
             // textBox40
             // 
             textBox40.ForeColor = Color.DarkGray;
-            textBox40.Location = new Point(519, 64);
+            textBox40.Location = new Point(541, 63);
             textBox40.Name = "textBox40";
             textBox40.Size = new Size(166, 23);
             textBox40.TabIndex = 18;
@@ -1585,23 +1577,58 @@
             // 
             button22.BackColor = Color.FromArgb(223, 169, 74);
             button22.FlatStyle = FlatStyle.Flat;
-            button22.Location = new Point(698, 64);
+            button22.Location = new Point(720, 63);
             button22.Name = "button22";
             button22.Size = new Size(75, 23);
             button22.TabIndex = 17;
             button22.Text = "Search";
             button22.UseVisualStyleBackColor = false;
             // 
+            // button25
+            // 
+            button25.BackColor = Color.FromArgb(223, 169, 74);
+            button25.FlatStyle = FlatStyle.Flat;
+            button25.Location = new Point(419, 55);
+            button25.Name = "button25";
+            button25.Size = new Size(75, 38);
+            button25.TabIndex = 38;
+            button25.Text = "Category3";
+            button25.UseVisualStyleBackColor = false;
+            // 
+            // button24
+            // 
+            button24.BackColor = Color.FromArgb(223, 169, 74);
+            button24.FlatStyle = FlatStyle.Flat;
+            button24.Location = new Point(329, 55);
+            button24.Name = "button24";
+            button24.Size = new Size(75, 38);
+            button24.TabIndex = 37;
+            button24.Text = "Category2";
+            button24.UseVisualStyleBackColor = false;
+            // 
+            // button23
+            // 
+            button23.BackColor = Color.FromArgb(223, 169, 74);
+            button23.FlatStyle = FlatStyle.Flat;
+            button23.Location = new Point(234, 55);
+            button23.Name = "button23";
+            button23.Size = new Size(75, 38);
+            button23.TabIndex = 36;
+            button23.Text = "Category1";
+            button23.UseVisualStyleBackColor = false;
+            // 
             // ProductCustomerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(button25);
+            Controls.Add(button24);
+            Controls.Add(button23);
             Controls.Add(pictureBox21);
             Controls.Add(textBox40);
             Controls.Add(button22);
             Controls.Add(panel4);
-            Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(button1);
             Controls.Add(panel1);
@@ -1685,7 +1712,6 @@
         private Button button4;
         private Button button7;
         private Button button5;
-        private Label label1;
         private ImageList imageList1;
         private Panel panel4;
         private Panel panel5;
@@ -1809,5 +1835,8 @@
         private PictureBox pictureBox21;
         private TextBox textBox40;
         private Button button22;
+        private Button button25;
+        private Button button24;
+        private Button button23;
     }
 }
