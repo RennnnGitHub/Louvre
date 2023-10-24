@@ -49,17 +49,10 @@
             button7 = new Button();
             button5 = new Button();
             label1 = new Label();
-            label3 = new Label();
-            panel4 = new Panel();
-            vScrollBar1 = new VScrollBar();
-            button10 = new Button();
-            button9 = new Button();
-            textBox3 = new TextBox();
-            pictureBox9 = new PictureBox();
-            textBox2 = new TextBox();
             label4 = new Label();
             textBox1 = new TextBox();
             button11 = new Button();
+            cartItemsPanel = new ListView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -70,8 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -187,7 +178,6 @@
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // pictureBox5
             // 
@@ -213,7 +203,6 @@
             button3.TabIndex = 3;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // pictureBox4
             // 
@@ -239,7 +228,6 @@
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
             // 
             // pictureBox3
             // 
@@ -265,7 +253,6 @@
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
             // 
             // pictureBox2
             // 
@@ -291,7 +278,6 @@
             button4.TabIndex = 4;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
             // 
             // button7
             // 
@@ -306,7 +292,6 @@
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
             // 
             // button5
             // 
@@ -321,7 +306,6 @@
             button5.TabIndex = 5;
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
             // 
             // label1
             // 
@@ -332,93 +316,6 @@
             label1.Size = new Size(110, 46);
             label1.TabIndex = 32;
             label1.Text = "Cart";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(18, 31);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 24);
-            label3.TabIndex = 35;
-            label3.Text = "Products";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(64, 64, 64);
-            panel4.Controls.Add(vScrollBar1);
-            panel4.Controls.Add(button10);
-            panel4.Controls.Add(button9);
-            panel4.Controls.Add(textBox3);
-            panel4.Controls.Add(pictureBox9);
-            panel4.Controls.Add(textBox2);
-            panel4.Controls.Add(label3);
-            panel4.Location = new Point(250, 143);
-            panel4.Margin = new Padding(3, 4, 3, 4);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(680, 443);
-            panel4.TabIndex = 36;
-            // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(652, 31);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(17, 387);
-            vScrollBar1.TabIndex = 41;
-            vScrollBar1.Scroll += vScrollBar1_Scroll;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(606, 96);
-            button10.Margin = new Padding(3, 4, 3, 4);
-            button10.Name = "button10";
-            button10.Size = new Size(25, 31);
-            button10.TabIndex = 40;
-            button10.Text = "+";
-            button10.UseVisualStyleBackColor = true;
-            button10.Click += button10_Click;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(453, 96);
-            button9.Margin = new Padding(3, 4, 3, 4);
-            button9.Name = "button9";
-            button9.Size = new Size(25, 31);
-            button9.TabIndex = 39;
-            button9.Text = "-";
-            button9.UseVisualStyleBackColor = true;
-            button9.Click += button9_Click;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(122, 96);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(238, 27);
-            textBox3.TabIndex = 38;
-            textBox3.Text = "Product Name";
-            textBox3.TextChanged += textBox3_TextChanged;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Location = new Point(18, 80);
-            pictureBox9.Margin = new Padding(3, 4, 3, 4);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(81, 67);
-            pictureBox9.TabIndex = 37;
-            pictureBox9.TabStop = false;
-            pictureBox9.Click += pictureBox9_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(485, 96);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(114, 27);
-            textBox2.TabIndex = 36;
-            textBox2.Text = "Quantity";
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // label4
             // 
@@ -452,6 +349,17 @@
             button11.Size = new Size(146, 108);
             button11.TabIndex = 39;
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
+            // 
+            // cartItemsPanel
+            // 
+            cartItemsPanel.Location = new Point(251, 125);
+            cartItemsPanel.Margin = new Padding(3, 4, 3, 4);
+            cartItemsPanel.Name = "cartItemsPanel";
+            cartItemsPanel.Size = new Size(681, 472);
+            cartItemsPanel.TabIndex = 40;
+            cartItemsPanel.UseCompatibleStateImageBehavior = false;
+            cartItemsPanel.View = View.Details;
             // 
             // CartForm
             // 
@@ -461,10 +369,10 @@
             Controls.Add(button11);
             Controls.Add(textBox1);
             Controls.Add(label4);
-            Controls.Add(panel4);
             Controls.Add(label1);
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(cartItemsPanel);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "CartForm";
@@ -480,9 +388,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -509,16 +414,9 @@
         private Button button7;
         private Button button5;
         private Label label1;
-        private Label label3;
-        private Panel panel4;
         private Label label4;
         private TextBox textBox1;
-        private Button button10;
-        private Button button9;
-        private TextBox textBox3;
-        private PictureBox pictureBox9;
-        private TextBox textBox2;
         private Button button11;
-        private VScrollBar vScrollBar1;
+        private ListView cartItemsPanel;
     }
 }

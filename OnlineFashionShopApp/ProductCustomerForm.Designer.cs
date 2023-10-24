@@ -172,11 +172,9 @@
             pictureBox21 = new PictureBox();
             textBox40 = new TextBox();
             button22 = new Button();
-
             comboBox1 = new ComboBox();
             label42 = new Label();
             FilterButton = new Button();
-
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -458,13 +456,8 @@
             button5.TabIndex = 5;
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
-
-            // label1
-            // 
-           
-            // 
-
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
@@ -489,10 +482,8 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-
             panel4.Location = new Point(266, 125);
             panel4.Margin = new Padding(3, 4, 3, 4);
-
             panel4.Name = "panel4";
             panel4.Size = new Size(650, 605);
             panel4.TabIndex = 8;
@@ -525,6 +516,7 @@
             addToCart5.TabIndex = 7;
             addToCart5.Text = "Add to Cart";
             addToCart5.UseVisualStyleBackColor = false;
+            addToCart5.Click += addToCart_Click;
             // 
             // stockBox6
             // 
@@ -614,6 +606,7 @@
             addToCart4.TabIndex = 7;
             addToCart4.Text = "Add to Cart";
             addToCart4.UseVisualStyleBackColor = false;
+            addToCart4.Click += addToCart_Click;
             // 
             // stockBox5
             // 
@@ -703,6 +696,7 @@
             addToCart3.TabIndex = 7;
             addToCart3.Text = "Add to Cart";
             addToCart3.UseVisualStyleBackColor = false;
+            addToCart3.Click += addToCart_Click;
             // 
             // stockBox4
             // 
@@ -792,6 +786,7 @@
             addToCart2.TabIndex = 7;
             addToCart2.Text = "Add to Cart";
             addToCart2.UseVisualStyleBackColor = false;
+            addToCart2.Click += addToCart_Click;
             // 
             // stockBox3
             // 
@@ -881,6 +876,7 @@
             addToCart1.TabIndex = 7;
             addToCart1.Text = "Add to Cart";
             addToCart1.UseVisualStyleBackColor = false;
+            addToCart1.Click += addToCart_Click;
             // 
             // stockBox2
             // 
@@ -970,6 +966,7 @@
             addToCart0.TabIndex = 7;
             addToCart0.Text = "Add to Cart";
             addToCart0.UseVisualStyleBackColor = false;
+            addToCart0.Click += addToCart_Click;
             // 
             // stockBox1
             // 
@@ -1059,6 +1056,7 @@
             addToCart6.TabIndex = 7;
             addToCart6.Text = "Add to Cart";
             addToCart6.UseVisualStyleBackColor = false;
+            addToCart6.Click += addToCart_Click;
             // 
             // stockBox7
             // 
@@ -1666,10 +1664,8 @@
             // pictureBox21
             // 
             pictureBox21.Image = (Image)resources.GetObject("pictureBox21.Image");
-
             pictureBox21.Location = new Point(560, 73);
             pictureBox21.Margin = new Padding(3, 4, 3, 4);
-
             pictureBox21.Name = "pictureBox21";
             pictureBox21.Size = new Size(27, 31);
             pictureBox21.SizeMode = PictureBoxSizeMode.Zoom;
@@ -1679,10 +1675,8 @@
             // textBox40
             // 
             textBox40.ForeColor = Color.DarkGray;
-
             textBox40.Location = new Point(593, 73);
             textBox40.Margin = new Padding(3, 4, 3, 4);
-
             textBox40.Name = "textBox40";
             textBox40.Size = new Size(189, 27);
             textBox40.TabIndex = 18;
@@ -1691,10 +1685,8 @@
             // 
             button22.BackColor = Color.FromArgb(223, 169, 74);
             button22.FlatStyle = FlatStyle.Flat;
-
             button22.Location = new Point(797, 73);
             button22.Margin = new Padding(3, 4, 3, 4);
-
             button22.Name = "button22";
             button22.Size = new Size(86, 31);
             button22.TabIndex = 17;
@@ -1731,28 +1723,14 @@
             FilterButton.UseVisualStyleBackColor = true;
             FilterButton.Click += filterButton_CLick;
             // 
-            // button25
-            // 
-            
-            // 
-            // button24
-            // 
-            
-            // 
-            // button23
-            // 
-            
-            // 
             // ProductCustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-
             ClientSize = new Size(944, 764);
             Controls.Add(FilterButton);
             Controls.Add(label42);
             Controls.Add(comboBox1);
-
             Controls.Add(pictureBox21);
             Controls.Add(textBox40);
             Controls.Add(button22);

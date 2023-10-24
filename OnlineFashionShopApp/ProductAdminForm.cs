@@ -51,8 +51,11 @@ namespace OnlineFashionShopApp
                         {
                             if (i >= 10) // Assuming you have PictureBox, TextBox, and other controls named systematically
                                 break;
-
+                            
                             PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+                            
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
+                            pictureBox.Dock = DockStyle.Fill;
                             TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
                             TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
                             TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
@@ -234,6 +237,8 @@ namespace OnlineFashionShopApp
                                 break;
 
                             PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
+                            pictureBox.Dock = DockStyle.Fill;
                             TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
                             TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
                             TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();

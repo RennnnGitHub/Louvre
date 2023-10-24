@@ -29,24 +29,23 @@ namespace OnlineFashionShopApp
             //Application.Run(new TrackingForm());
             //Application.Run(new OrderFormCustomer());
             //Application.Run(new OrderFormAdmin());
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             /*Application.Run(new RegisterForm());
             Application.Run(new HomeFormCustomer());
             Application.Run(new HomeFormAdmin());
             Application.Run(new SettingsFormCustomer());
-            Application.Run(new SettingsFormAdmin());
-            Application.Run(new CartForm());
-            Application.Run(new AccessLogForm());
+            Application.Run(new SettingsFormAdmin());*/
+            //Application.Run(new CartForm());
+            /*Application.Run(new AccessLogForm());
             Application.Run(new AddressForm());
             Application.Run(new AddressListForm());
             Application.Run(new PaymentForm());
-            Application.Run(new PaymentSuccessForm());
-            Application.Run(new ProductCustomerForm());
-            Application.Run(new ProductAdminForm());
-            Application.Run(new AddProductForm());
-            Application.Run(new TrackingForm());
-            Application.Run(new OrderFormCustomer());
-            Application.Run(new OrderFormAdmin());*/
+            Application.Run(new PaymentSuccessForm());*/
+            // Application.Run(new ProductCustomerForm());
+            //Application.Run(new AddProductForm());
+            /* Application.Run(new TrackingForm());
+             Application.Run(new OrderFormCustomer());*/
+            Application.Run(new OrderFormAdmin());
         }
     }
 }

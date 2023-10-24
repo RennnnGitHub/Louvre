@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
+using System.Net.Http;
 
 
 namespace OnlineFashionShopApp
@@ -58,6 +59,8 @@ namespace OnlineFashionShopApp
                                 break;
 
                             PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
+                            pictureBox.Dock = DockStyle.Fill;
                             TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
                             TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
                             TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
@@ -186,6 +189,8 @@ namespace OnlineFashionShopApp
                                 break;
 
                             PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
+                            pictureBox.Dock = DockStyle.Fill;
                             TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
                             TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
                             TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
@@ -249,6 +254,11 @@ namespace OnlineFashionShopApp
                                 break;
 
                             PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+
+
+                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
+                            pictureBox.Dock = DockStyle.Fill;
+
                             TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
                             TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
                             TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
@@ -257,7 +267,7 @@ namespace OnlineFashionShopApp
                             {
                                 Image image = Base64StringToImage(products[i].ImageBase64);
                                 pictureBox.Image = image;
-
+                               
                                 nameBox.Text = products[i].ProductName;
                                 priceBox.Text = products[i].ProductPrice.ToString();
                                 stockBox.Text = products[i].ProductStock.ToString();
@@ -274,6 +284,81 @@ namespace OnlineFashionShopApp
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private async void addToCart_Click(object sender, EventArgs e)
+        {
+
+            if (sender is Button addToCart && int.TryParse(addToCart.Name.Replace("addToCart", ""), out int productIndex))
+            {
+                string apiUrl;
+
+                if (comboBox1.SelectedItem?.ToString() != null) // Category is selected
+                {
+                    // Get the selected category from the ComboBox
+                    string selectedCategory = comboBox1.SelectedItem.ToString();
+                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{productIndex}/{selectedCategory}";
+                }
+                else
+                {
+
+                    
+                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{productIndex}";
+                    Console.WriteLine($"apiUrl: {apiUrl}");
+                    Console.WriteLine($"productIndex: {productIndex}");
+
+                }
+
+                using (HttpClient client = new HttpClient())
+                {
+                    try
+                    {
+                        HttpResponseMessage response = await client.PostAsync(apiUrl, null);
+
+                        // Log request URL
+                        Console.WriteLine($"Request URL: {apiUrl}");
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Handle the successful addition to the cart here
+                            MessageBox.Show("Product added to the cart successfully");
+
+                            // Log successful response
+                            Console.WriteLine("Request succeeded");
+
+                            // You can update the UI to reflect the change in the cart, e.g., update the cart total or quantity.
+                            // Refresh the cart UI or update cart-related controls.
+                            // UpdateCartUI();
+
+                            // Optionally, you can load or refresh the cart products from the server.
+                            // LoadCartProducts();
+                        }
+                        else
+                        {
+                            // Handle the case where adding to the cart failed
+                            MessageBox.Show($"Failed to add the product to the cart. Status code: {response.StatusCode}");
+
+                            // Log failed response
+                            Console.WriteLine($"Request failed with status code: {response.StatusCode}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle any exceptions (e.g., network issues)
+                        MessageBox.Show($"Error: {ex.Message}");
+
+                        // Log exception details
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CartForm cat = new CartForm();
+            cat.ShowDialog();
+            this.Close();
         }
     }
 }
