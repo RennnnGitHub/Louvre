@@ -178,6 +178,7 @@
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // pictureBox5
             // 
@@ -228,6 +229,7 @@
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // pictureBox3
             // 
@@ -253,6 +255,7 @@
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // pictureBox2
             // 

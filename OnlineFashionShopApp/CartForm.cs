@@ -205,7 +205,7 @@ namespace OnlineFashionShopApp
                                     Image = Base64StringToImage(cartItem.ProductImageBase64),
                                 };
                                 pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
-                                
+
                                 var nameLabel = new Label
                                 {
                                     Location = new Point(120, 10),
@@ -378,6 +378,27 @@ namespace OnlineFashionShopApp
         {
             PaymentForm form = new PaymentForm();
             form.ShowDialog();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ProductCustomerForm form = new ProductCustomerForm();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormCustomer om = new HomeFormCustomer();
+            om.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrderFormCustomer oom = new OrderFormCustomer();
+            oom.ShowDialog();
             this.Close();
         }
     }

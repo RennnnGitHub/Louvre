@@ -147,7 +147,7 @@ namespace OnlineFashionShopApp
                                 Lastname = obj["data"]["lastname"].ToString(),
                                 Email = obj["data"]["email"].ToString()
                             };
-                            HomeFormCustomer formHome = new HomeFormCustomer();
+                            HomeFormAdmin formHome = new HomeFormAdmin(u);
                             formHome.ShowDialog();
                             this.Close();
                         }

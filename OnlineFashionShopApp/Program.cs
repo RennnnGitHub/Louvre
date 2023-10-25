@@ -29,7 +29,7 @@ namespace OnlineFashionShopApp
             //Application.Run(new TrackingForm());
             //Application.Run(new OrderFormCustomer());
             //Application.Run(new OrderFormAdmin());
-            //Application.Run(new LoginForm());
+            Application.Run(new LoginForm());
             /*Application.Run(new RegisterForm());
             Application.Run(new HomeFormCustomer());
             Application.Run(new HomeFormAdmin());
@@ -41,11 +41,11 @@ namespace OnlineFashionShopApp
             Application.Run(new AddressListForm());
             Application.Run(new PaymentForm());
             Application.Run(new PaymentSuccessForm());*/
-            // Application.Run(new ProductCustomerForm());
+            //Application.Run(new ProductCustomerForm());
             //Application.Run(new AddProductForm());
             /* Application.Run(new TrackingForm());
              Application.Run(new OrderFormCustomer());*/
-            Application.Run(new OrderFormAdmin());
+            //Application.Run(new OrderFormAdmin());
         }
     }
 }

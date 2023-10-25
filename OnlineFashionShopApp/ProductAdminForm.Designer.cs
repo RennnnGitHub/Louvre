@@ -33,69 +33,6 @@
             panel1 = new Panel();
             label2 = new Label();
             panel4 = new Panel();
-            panel17 = new Panel();
-            removeButton5 = new Button();
-            stockBox6 = new TextBox();
-            priceBox6 = new TextBox();
-            nameBox6 = new TextBox();
-            label36 = new Label();
-            label37 = new Label();
-            label38 = new Label();
-            pictureBox6 = new PictureBox();
-            panel18 = new Panel();
-            removeButton4 = new Button();
-            stockbox5 = new TextBox();
-            priceBox5 = new TextBox();
-            nameBox5 = new TextBox();
-            label39 = new Label();
-            label40 = new Label();
-            label41 = new Label();
-            pictureBox5 = new PictureBox();
-            panel15 = new Panel();
-            removeButton3 = new Button();
-            stockBox4 = new TextBox();
-            priceBox4 = new TextBox();
-            nameBox4 = new TextBox();
-            label30 = new Label();
-            label31 = new Label();
-            label32 = new Label();
-            pictureBox4 = new PictureBox();
-            panel16 = new Panel();
-            removeButton2 = new Button();
-            stockBox3 = new TextBox();
-            priceBox3 = new TextBox();
-            nameBox3 = new TextBox();
-            label33 = new Label();
-            label34 = new Label();
-            label35 = new Label();
-            pictureBox3 = new PictureBox();
-            panel14 = new Panel();
-            removeButton1 = new Button();
-            stockBox2 = new TextBox();
-            priceBox2 = new TextBox();
-            nameBox2 = new TextBox();
-            label27 = new Label();
-            label28 = new Label();
-            label29 = new Label();
-            pictureBox2 = new PictureBox();
-            panel12 = new Panel();
-            removeButton0 = new Button();
-            stockBox1 = new TextBox();
-            priceBox1 = new TextBox();
-            nameBox1 = new TextBox();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            pictureBox1 = new PictureBox();
-            panel13 = new Panel();
-            removeButton6 = new Button();
-            stockBox7 = new TextBox();
-            priceBox7 = new TextBox();
-            nameBox7 = new TextBox();
-            label24 = new Label();
-            label25 = new Label();
-            label26 = new Label();
-            pictureBox7 = new PictureBox();
             panel7 = new Panel();
             button13 = new Button();
             textBox13 = new TextBox();
@@ -168,28 +105,12 @@
             pictureBox102 = new PictureBox();
             button6 = new Button();
             button23 = new Button();
-
             comboBox1 = new ComboBox();
             label42 = new Label();
             label43 = new Label();
             FilterButton = new Button();
-
             panel1.SuspendLayout();
             panel4.SuspendLayout();
-            panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             panel11.SuspendLayout();
@@ -250,13 +171,6 @@
             // panel4
             // 
             panel4.AutoScroll = true;
-            panel4.Controls.Add(panel17);
-            panel4.Controls.Add(panel18);
-            panel4.Controls.Add(panel15);
-            panel4.Controls.Add(panel16);
-            panel4.Controls.Add(panel14);
-            panel4.Controls.Add(panel12);
-            panel4.Controls.Add(panel13);
             panel4.Controls.Add(panel7);
             panel4.Controls.Add(panel11);
             panel4.Controls.Add(panel9);
@@ -264,643 +178,11 @@
             panel4.Controls.Add(panel8);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(panel5);
-
             panel4.Location = new Point(262, 123);
             panel4.Margin = new Padding(3, 4, 3, 4);
-
             panel4.Name = "panel4";
             panel4.Size = new Size(650, 605);
             panel4.TabIndex = 13;
-            // 
-            // panel17
-            // 
-            panel17.BackColor = SystemColors.ActiveCaption;
-            panel17.Controls.Add(removeButton5);
-            panel17.Controls.Add(stockBox6);
-            panel17.Controls.Add(priceBox6);
-            panel17.Controls.Add(nameBox6);
-            panel17.Controls.Add(label36);
-            panel17.Controls.Add(label37);
-            panel17.Controls.Add(label38);
-            panel17.Controls.Add(pictureBox6);
-            panel17.Location = new Point(326, 793);
-            panel17.Margin = new Padding(3, 4, 3, 4);
-            panel17.Name = "panel17";
-            panel17.Size = new Size(290, 357);
-            panel17.TabIndex = 14;
-            // 
-            // removeButton5
-            // 
-            removeButton5.BackColor = Color.Red;
-            removeButton5.FlatStyle = FlatStyle.Flat;
-            removeButton5.Location = new Point(78, 283);
-            removeButton5.Margin = new Padding(3, 4, 3, 4);
-            removeButton5.Name = "removeButton5";
-            removeButton5.Size = new Size(136, 60);
-            removeButton5.TabIndex = 7;
-            removeButton5.Text = "Remove Product";
-            removeButton5.UseVisualStyleBackColor = false;
-            removeButton5.Click += RemoveButton_Click;
-            // 
-            // stockBox6
-            // 
-            stockBox6.Location = new Point(78, 244);
-            stockBox6.Margin = new Padding(3, 4, 3, 4);
-            stockBox6.Name = "stockBox6";
-            stockBox6.Size = new Size(171, 27);
-            stockBox6.TabIndex = 6;
-            // 
-            // priceBox6
-            // 
-            priceBox6.Location = new Point(78, 207);
-            priceBox6.Margin = new Padding(3, 4, 3, 4);
-            priceBox6.Name = "priceBox6";
-            priceBox6.Size = new Size(109, 27);
-            priceBox6.TabIndex = 5;
-            // 
-            // nameBox6
-            // 
-            nameBox6.Location = new Point(78, 168);
-            nameBox6.Margin = new Padding(3, 4, 3, 4);
-            nameBox6.Name = "nameBox6";
-            nameBox6.Size = new Size(171, 27);
-            nameBox6.TabIndex = 4;
-            // 
-            // label36
-            // 
-            label36.AutoSize = true;
-            label36.Location = new Point(18, 248);
-            label36.Name = "label36";
-            label36.Size = new Size(45, 20);
-            label36.TabIndex = 3;
-            label36.Text = "Stock";
-            // 
-            // label37
-            // 
-            label37.AutoSize = true;
-            label37.Location = new Point(18, 211);
-            label37.Name = "label37";
-            label37.Size = new Size(41, 20);
-            label37.TabIndex = 2;
-            label37.Text = "Price";
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(18, 172);
-            label38.Name = "label38";
-            label38.Size = new Size(49, 20);
-            label38.TabIndex = 1;
-            label38.Text = "Name";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Location = new Point(78, 4);
-            pictureBox6.Margin = new Padding(3, 4, 3, 4);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(136, 151);
-            pictureBox6.TabIndex = 0;
-            pictureBox6.TabStop = false;
-            // 
-            // panel18
-            // 
-            panel18.BackColor = SystemColors.ActiveCaption;
-            panel18.Controls.Add(removeButton4);
-            panel18.Controls.Add(stockbox5);
-            panel18.Controls.Add(priceBox5);
-            panel18.Controls.Add(nameBox5);
-            panel18.Controls.Add(label39);
-            panel18.Controls.Add(label40);
-            panel18.Controls.Add(label41);
-            panel18.Controls.Add(pictureBox5);
-            panel18.Location = new Point(15, 793);
-            panel18.Margin = new Padding(3, 4, 3, 4);
-            panel18.Name = "panel18";
-            panel18.Size = new Size(290, 357);
-            panel18.TabIndex = 13;
-            // 
-            // removeButton4
-            // 
-            removeButton4.BackColor = Color.Red;
-            removeButton4.FlatStyle = FlatStyle.Flat;
-            removeButton4.Location = new Point(78, 283);
-            removeButton4.Margin = new Padding(3, 4, 3, 4);
-            removeButton4.Name = "removeButton4";
-            removeButton4.Size = new Size(136, 60);
-            removeButton4.TabIndex = 7;
-            removeButton4.Text = "Remove Product";
-            removeButton4.UseVisualStyleBackColor = false;
-            removeButton4.Click += RemoveButton_Click;
-            // 
-            // stockbox5
-            // 
-            stockbox5.Location = new Point(78, 244);
-            stockbox5.Margin = new Padding(3, 4, 3, 4);
-            stockbox5.Name = "stockbox5";
-            stockbox5.Size = new Size(171, 27);
-            stockbox5.TabIndex = 6;
-            // 
-            // priceBox5
-            // 
-            priceBox5.Location = new Point(78, 207);
-            priceBox5.Margin = new Padding(3, 4, 3, 4);
-            priceBox5.Name = "priceBox5";
-            priceBox5.Size = new Size(109, 27);
-            priceBox5.TabIndex = 5;
-            // 
-            // nameBox5
-            // 
-            nameBox5.Location = new Point(78, 168);
-            nameBox5.Margin = new Padding(3, 4, 3, 4);
-            nameBox5.Name = "nameBox5";
-            nameBox5.Size = new Size(171, 27);
-            nameBox5.TabIndex = 4;
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(18, 248);
-            label39.Name = "label39";
-            label39.Size = new Size(45, 20);
-            label39.TabIndex = 3;
-            label39.Text = "Stock";
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Location = new Point(18, 211);
-            label40.Name = "label40";
-            label40.Size = new Size(41, 20);
-            label40.TabIndex = 2;
-            label40.Text = "Price";
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Location = new Point(18, 172);
-            label41.Name = "label41";
-            label41.Size = new Size(49, 20);
-            label41.TabIndex = 1;
-            label41.Text = "Name";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Location = new Point(78, 4);
-            pictureBox5.Margin = new Padding(3, 4, 3, 4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(136, 151);
-            pictureBox5.TabIndex = 0;
-            pictureBox5.TabStop = false;
-            // 
-            // panel15
-            // 
-            panel15.BackColor = SystemColors.ActiveCaption;
-            panel15.Controls.Add(removeButton3);
-            panel15.Controls.Add(stockBox4);
-            panel15.Controls.Add(priceBox4);
-            panel15.Controls.Add(nameBox4);
-            panel15.Controls.Add(label30);
-            panel15.Controls.Add(label31);
-            panel15.Controls.Add(label32);
-            panel15.Controls.Add(pictureBox4);
-            panel15.Location = new Point(327, 411);
-            panel15.Margin = new Padding(3, 4, 3, 4);
-            panel15.Name = "panel15";
-            panel15.Size = new Size(290, 357);
-            panel15.TabIndex = 12;
-            // 
-            // removeButton3
-            // 
-            removeButton3.BackColor = Color.Red;
-            removeButton3.FlatStyle = FlatStyle.Flat;
-            removeButton3.Location = new Point(78, 283);
-            removeButton3.Margin = new Padding(3, 4, 3, 4);
-            removeButton3.Name = "removeButton3";
-            removeButton3.Size = new Size(136, 60);
-            removeButton3.TabIndex = 7;
-            removeButton3.Text = "Remove Product";
-            removeButton3.UseVisualStyleBackColor = false;
-            removeButton3.Click += RemoveButton_Click;
-            // 
-            // stockBox4
-            // 
-            stockBox4.Location = new Point(78, 244);
-            stockBox4.Margin = new Padding(3, 4, 3, 4);
-            stockBox4.Name = "stockBox4";
-            stockBox4.Size = new Size(171, 27);
-            stockBox4.TabIndex = 6;
-            // 
-            // priceBox4
-            // 
-            priceBox4.Location = new Point(78, 207);
-            priceBox4.Margin = new Padding(3, 4, 3, 4);
-            priceBox4.Name = "priceBox4";
-            priceBox4.Size = new Size(109, 27);
-            priceBox4.TabIndex = 5;
-            // 
-            // nameBox4
-            // 
-            nameBox4.Location = new Point(78, 168);
-            nameBox4.Margin = new Padding(3, 4, 3, 4);
-            nameBox4.Name = "nameBox4";
-            nameBox4.Size = new Size(171, 27);
-            nameBox4.TabIndex = 4;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(18, 248);
-            label30.Name = "label30";
-            label30.Size = new Size(45, 20);
-            label30.TabIndex = 3;
-            label30.Text = "Stock";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Location = new Point(18, 211);
-            label31.Name = "label31";
-            label31.Size = new Size(41, 20);
-            label31.TabIndex = 2;
-            label31.Text = "Price";
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Location = new Point(18, 172);
-            label32.Name = "label32";
-            label32.Size = new Size(49, 20);
-            label32.TabIndex = 1;
-            label32.Text = "Name";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Location = new Point(78, 4);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(136, 151);
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
-            // 
-            // panel16
-            // 
-            panel16.BackColor = SystemColors.ActiveCaption;
-            panel16.Controls.Add(removeButton2);
-            panel16.Controls.Add(stockBox3);
-            panel16.Controls.Add(priceBox3);
-            panel16.Controls.Add(nameBox3);
-            panel16.Controls.Add(label33);
-            panel16.Controls.Add(label34);
-            panel16.Controls.Add(label35);
-            panel16.Controls.Add(pictureBox3);
-            panel16.Location = new Point(16, 411);
-            panel16.Margin = new Padding(3, 4, 3, 4);
-            panel16.Name = "panel16";
-            panel16.Size = new Size(290, 357);
-            panel16.TabIndex = 11;
-            // 
-            // removeButton2
-            // 
-            removeButton2.BackColor = Color.Red;
-            removeButton2.FlatStyle = FlatStyle.Flat;
-            removeButton2.Location = new Point(78, 283);
-            removeButton2.Margin = new Padding(3, 4, 3, 4);
-            removeButton2.Name = "removeButton2";
-            removeButton2.Size = new Size(136, 60);
-            removeButton2.TabIndex = 7;
-            removeButton2.Text = "Remove Product";
-            removeButton2.UseVisualStyleBackColor = false;
-            removeButton2.Click += RemoveButton_Click;
-            // 
-            // stockBox3
-            // 
-            stockBox3.Location = new Point(78, 244);
-            stockBox3.Margin = new Padding(3, 4, 3, 4);
-            stockBox3.Name = "stockBox3";
-            stockBox3.Size = new Size(171, 27);
-            stockBox3.TabIndex = 6;
-            // 
-            // priceBox3
-            // 
-            priceBox3.Location = new Point(78, 207);
-            priceBox3.Margin = new Padding(3, 4, 3, 4);
-            priceBox3.Name = "priceBox3";
-            priceBox3.Size = new Size(109, 27);
-            priceBox3.TabIndex = 5;
-            // 
-            // nameBox3
-            // 
-            nameBox3.Location = new Point(78, 168);
-            nameBox3.Margin = new Padding(3, 4, 3, 4);
-            nameBox3.Name = "nameBox3";
-            nameBox3.Size = new Size(171, 27);
-            nameBox3.TabIndex = 4;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Location = new Point(18, 248);
-            label33.Name = "label33";
-            label33.Size = new Size(45, 20);
-            label33.TabIndex = 3;
-            label33.Text = "Stock";
-            // 
-            // label34
-            // 
-            label34.AutoSize = true;
-            label34.Location = new Point(18, 211);
-            label34.Name = "label34";
-            label34.Size = new Size(41, 20);
-            label34.TabIndex = 2;
-            label34.Text = "Price";
-            // 
-            // label35
-            // 
-            label35.AutoSize = true;
-            label35.Location = new Point(18, 172);
-            label35.Name = "label35";
-            label35.Size = new Size(49, 20);
-            label35.TabIndex = 1;
-            label35.Text = "Name";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Location = new Point(78, 4);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(136, 151);
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            // 
-            // panel14
-            // 
-            panel14.BackColor = SystemColors.ActiveCaption;
-            panel14.Controls.Add(removeButton1);
-            panel14.Controls.Add(stockBox2);
-            panel14.Controls.Add(priceBox2);
-            panel14.Controls.Add(nameBox2);
-            panel14.Controls.Add(label27);
-            panel14.Controls.Add(label28);
-            panel14.Controls.Add(label29);
-            panel14.Controls.Add(pictureBox2);
-            panel14.Location = new Point(327, 19);
-            panel14.Margin = new Padding(3, 4, 3, 4);
-            panel14.Name = "panel14";
-            panel14.Size = new Size(290, 357);
-            panel14.TabIndex = 10;
-            // 
-            // removeButton1
-            // 
-            removeButton1.BackColor = Color.Red;
-            removeButton1.FlatStyle = FlatStyle.Flat;
-            removeButton1.Location = new Point(78, 283);
-            removeButton1.Margin = new Padding(3, 4, 3, 4);
-            removeButton1.Name = "removeButton1";
-            removeButton1.Size = new Size(136, 60);
-            removeButton1.TabIndex = 7;
-            removeButton1.Text = "Remove Product";
-            removeButton1.UseVisualStyleBackColor = false;
-            removeButton1.Click += RemoveButton_Click;
-            // 
-            // stockBox2
-            // 
-            stockBox2.Location = new Point(78, 244);
-            stockBox2.Margin = new Padding(3, 4, 3, 4);
-            stockBox2.Name = "stockBox2";
-            stockBox2.Size = new Size(171, 27);
-            stockBox2.TabIndex = 6;
-            // 
-            // priceBox2
-            // 
-            priceBox2.Location = new Point(78, 207);
-            priceBox2.Margin = new Padding(3, 4, 3, 4);
-            priceBox2.Name = "priceBox2";
-            priceBox2.Size = new Size(109, 27);
-            priceBox2.TabIndex = 5;
-            // 
-            // nameBox2
-            // 
-            nameBox2.Location = new Point(78, 168);
-            nameBox2.Margin = new Padding(3, 4, 3, 4);
-            nameBox2.Name = "nameBox2";
-            nameBox2.Size = new Size(171, 27);
-            nameBox2.TabIndex = 4;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(18, 248);
-            label27.Name = "label27";
-            label27.Size = new Size(45, 20);
-            label27.TabIndex = 3;
-            label27.Text = "Stock";
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(18, 211);
-            label28.Name = "label28";
-            label28.Size = new Size(41, 20);
-            label28.TabIndex = 2;
-            label28.Text = "Price";
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(18, 172);
-            label29.Name = "label29";
-            label29.Size = new Size(49, 20);
-            label29.TabIndex = 1;
-            label29.Text = "Name";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(78, 4);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(136, 151);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // panel12
-            // 
-            panel12.BackColor = SystemColors.ActiveCaption;
-            panel12.Controls.Add(removeButton0);
-            panel12.Controls.Add(stockBox1);
-            panel12.Controls.Add(priceBox1);
-            panel12.Controls.Add(nameBox1);
-            panel12.Controls.Add(label21);
-            panel12.Controls.Add(label22);
-            panel12.Controls.Add(label23);
-            panel12.Controls.Add(pictureBox1);
-            panel12.Location = new Point(16, 19);
-            panel12.Margin = new Padding(3, 4, 3, 4);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(290, 357);
-            panel12.TabIndex = 9;
-            // 
-            // removeButton0
-            // 
-            removeButton0.BackColor = Color.Red;
-            removeButton0.FlatStyle = FlatStyle.Flat;
-            removeButton0.Location = new Point(78, 283);
-            removeButton0.Margin = new Padding(3, 4, 3, 4);
-            removeButton0.Name = "removeButton0";
-            removeButton0.Size = new Size(136, 60);
-            removeButton0.TabIndex = 7;
-            removeButton0.Text = "Remove Product";
-            removeButton0.UseVisualStyleBackColor = false;
-            removeButton0.Click += RemoveButton_Click;
-            // 
-            // stockBox1
-            // 
-            stockBox1.Location = new Point(78, 244);
-            stockBox1.Margin = new Padding(3, 4, 3, 4);
-            stockBox1.Name = "stockBox1";
-            stockBox1.Size = new Size(171, 27);
-            stockBox1.TabIndex = 6;
-            // 
-            // priceBox1
-            // 
-            priceBox1.Location = new Point(78, 207);
-            priceBox1.Margin = new Padding(3, 4, 3, 4);
-            priceBox1.Name = "priceBox1";
-            priceBox1.Size = new Size(109, 27);
-            priceBox1.TabIndex = 5;
-            // 
-            // nameBox1
-            // 
-            nameBox1.Location = new Point(78, 168);
-            nameBox1.Margin = new Padding(3, 4, 3, 4);
-            nameBox1.Name = "nameBox1";
-            nameBox1.Size = new Size(171, 27);
-            nameBox1.TabIndex = 4;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(18, 248);
-            label21.Name = "label21";
-            label21.Size = new Size(45, 20);
-            label21.TabIndex = 3;
-            label21.Text = "Stock";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(18, 211);
-            label22.Name = "label22";
-            label22.Size = new Size(41, 20);
-            label22.TabIndex = 2;
-            label22.Text = "Price";
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(18, 172);
-            label23.Name = "label23";
-            label23.Size = new Size(49, 20);
-            label23.TabIndex = 1;
-            label23.Text = "Name";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(78, 4);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(136, 151);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // panel13
-            // 
-            panel13.BackColor = SystemColors.ActiveCaption;
-            panel13.Controls.Add(removeButton6);
-            panel13.Controls.Add(stockBox7);
-            panel13.Controls.Add(priceBox7);
-            panel13.Controls.Add(nameBox7);
-            panel13.Controls.Add(label24);
-            panel13.Controls.Add(label25);
-            panel13.Controls.Add(label26);
-            panel13.Controls.Add(pictureBox7);
-            panel13.Location = new Point(15, 1184);
-            panel13.Margin = new Padding(3, 4, 3, 4);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(290, 357);
-            panel13.TabIndex = 8;
-            // 
-            // removeButton6
-            // 
-            removeButton6.BackColor = Color.Red;
-            removeButton6.FlatStyle = FlatStyle.Flat;
-            removeButton6.Location = new Point(78, 283);
-            removeButton6.Margin = new Padding(3, 4, 3, 4);
-            removeButton6.Name = "removeButton6";
-            removeButton6.Size = new Size(136, 60);
-            removeButton6.TabIndex = 7;
-            removeButton6.Text = "Remove Product";
-            removeButton6.UseVisualStyleBackColor = false;
-            removeButton6.Click += RemoveButton_Click;
-            // 
-            // stockBox7
-            // 
-            stockBox7.Location = new Point(78, 244);
-            stockBox7.Margin = new Padding(3, 4, 3, 4);
-            stockBox7.Name = "stockBox7";
-            stockBox7.Size = new Size(171, 27);
-            stockBox7.TabIndex = 6;
-            // 
-            // priceBox7
-            // 
-            priceBox7.Location = new Point(78, 207);
-            priceBox7.Margin = new Padding(3, 4, 3, 4);
-            priceBox7.Name = "priceBox7";
-            priceBox7.Size = new Size(109, 27);
-            priceBox7.TabIndex = 5;
-            // 
-            // nameBox7
-            // 
-            nameBox7.Location = new Point(78, 168);
-            nameBox7.Margin = new Padding(3, 4, 3, 4);
-            nameBox7.Name = "nameBox7";
-            nameBox7.Size = new Size(171, 27);
-            nameBox7.TabIndex = 4;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(18, 248);
-            label24.Name = "label24";
-            label24.Size = new Size(45, 20);
-            label24.TabIndex = 3;
-            label24.Text = "Stock";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(18, 211);
-            label25.Name = "label25";
-            label25.Size = new Size(41, 20);
-            label25.TabIndex = 2;
-            label25.Text = "Price";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(18, 172);
-            label26.Name = "label26";
-            label26.Size = new Size(49, 20);
-            label26.TabIndex = 1;
-            label26.Text = "Name";
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Location = new Point(78, 4);
-            pictureBox7.Margin = new Padding(3, 4, 3, 4);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(136, 151);
-            pictureBox7.TabIndex = 0;
-            pictureBox7.TabStop = false;
             // 
             // panel7
             // 
@@ -1445,12 +727,6 @@
             pictureBox8.TabIndex = 0;
             pictureBox8.TabStop = false;
             // 
-
-            // label1
-            // 
-            
-            // 
-
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(64, 64, 64);
@@ -1659,24 +935,22 @@
             button6.TabIndex = 53;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button23
             // 
             button23.BackColor = Color.FromArgb(0, 192, 0);
             button23.FlatAppearance.BorderSize = 3;
             button23.FlatStyle = FlatStyle.Flat;
-
             button23.Location = new Point(720, 64);
             button23.Margin = new Padding(3, 4, 3, 4);
             button23.Name = "button23";
             button23.Size = new Size(159, 51);
-
             button23.TabIndex = 32;
             button23.Text = "+ Add Product";
             button23.UseVisualStyleBackColor = false;
+            button23.Click += button23_Click;
             // 
-
-
             // comboBox1
             // 
             comboBox1.AllowDrop = true;
@@ -1714,19 +988,16 @@
             FilterButton.Text = "Filter";
             FilterButton.UseVisualStyleBackColor = true;
             FilterButton.Click += filterButton_CLick;
-
             // 
             // ProductAdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-
             ClientSize = new Size(944, 764);
             Controls.Add(FilterButton);
             Controls.Add(label43);
             Controls.Add(label42);
             Controls.Add(comboBox1);
-
             Controls.Add(button23);
             Controls.Add(panel2);
             Controls.Add(panel4);
@@ -1739,27 +1010,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
-            panel17.ResumeLayout(false);
-            panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel18.ResumeLayout(false);
-            panel18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel15.ResumeLayout(false);
-            panel15.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel16.ResumeLayout(false);
-            panel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel14.ResumeLayout(false);
-            panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
@@ -1788,6 +1038,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox104).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox102).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -1796,69 +1047,10 @@
         private Panel panel1;
         private Label label2;
         private Panel panel4;
-        private Panel panel17;
-        private Button removeButton6;
-        private TextBox stockBox6;
-        private TextBox priceBox6;
-        private TextBox nameBox6;
-        private Label label36;
-        private Label label37;
-        private Label label38;
-        private PictureBox pictureBox6;
-        private Panel panel18;
-        private Button removeButton5;
-        private TextBox stockbox5;
-        private TextBox priceBox5;
-        private TextBox nameBox5;
-        private Label label39;
-        private Label label40;
-        private Label label41;
-        private PictureBox pictureBox5;
-        private Panel panel15;
-        private Button removeButton4;
-        private TextBox stockBox4;
-        private TextBox priceBox4;
-        private TextBox nameBox4;
-        private Label label30;
-        private Label label31;
-        private Label label32;
-        private PictureBox pictureBox4;
-        private Panel panel16;
-        private Button removeButton3;
-        private TextBox stockBox3;
-        private TextBox priceBox3;
-        private TextBox nameBox3;
-        private Label label33;
-        private Label label34;
-        private Label label35;
-        private PictureBox pictureBox3;
-        private Panel panel14;
-        private Button removeButton2;
         private TextBox textBox25;
         private TextBox textBox26;
         private TextBox textBox27;
-        private Label label27;
-        private Label label28;
-        private Label label29;
-        private PictureBox pictureBox2;
-        private Panel panel12;
-        private Button removeButton1;
-        private TextBox stockBox1;
-        private TextBox priceBox1;
-        private TextBox nameBox1;
-        private Label label21;
-        private Label label22;
-        private Label label23;
-        private PictureBox pictureBox1;
-        private Panel panel13;
         private Button removeButton7;
-        private TextBox stockBox7;
-        private TextBox priceBox7;
-        private TextBox nameBox7;
-        private Label label24;
-        private Label label25;
-        private Label label26;
-        private PictureBox pictureBox7;
         private Panel panel7;
         private Button button13;
         private TextBox textBox13;
@@ -1931,12 +1123,6 @@
         private PictureBox pictureBox102;
         private Button button6;
         private Button button23;
-
-
-        private TextBox nameBox2;
-        private TextBox stockBox2;
-        private TextBox priceBox2;
-        private Button removeButton0;
         private ComboBox comboBox1;
         private Label label42;
         private Label label43;

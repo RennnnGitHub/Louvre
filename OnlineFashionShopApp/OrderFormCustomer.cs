@@ -26,13 +26,13 @@ namespace OnlineFashionShopApp
         private async Task LoadOrderContentsAsync()
         {
             listView1.Items.Clear();
-            listView1.Columns.Add("Shipping Address",150);
-            listView1.Columns.Add("Grand Total",100);
-            listView1.Columns.Add("Cart Number",150);
-            listView1.Columns.Add("Expiration Month",80);
-            listView1.Columns.Add("Expiration Year",80);
+            listView1.Columns.Add("Shipping Address", 150);
+            listView1.Columns.Add("Grand Total", 100);
+            listView1.Columns.Add("Cart Number", 150);
+            listView1.Columns.Add("Expiration Month", 80);
+            listView1.Columns.Add("Expiration Year", 80);
             listView1.Columns.Add("CVV", 80);
-            listView1.Columns.Add("Ordered Products",500);
+            listView1.Columns.Add("Ordered Products", 500);
 
             try
             {
@@ -102,6 +102,36 @@ namespace OnlineFashionShopApp
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormCustomer hm = new HomeFormCustomer();
+            hm.ShowDialog();
+            this.Close();
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ProductCustomerForm pm = new ProductCustomerForm();
+            pm.ShowDialog();
+            this.Close();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrderFormCustomer omd = new OrderFormCustomer();
+            omd.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CartForm cf = new CartForm();
+            cf.ShowDialog();
+            this.Close();
         }
     }
 }

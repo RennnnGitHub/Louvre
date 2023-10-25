@@ -46,36 +46,108 @@ namespace OnlineFashionShopApp
                         var json = await response.Content.ReadAsStringAsync();
                         var products = System.Text.Json.JsonSerializer.Deserialize<List<ProductDTO>>(json, new JsonSerializerOptions
                         {
-                            PropertyNameCaseInsensitive = true // Use this option for case-insensitive property matching
+                            PropertyNameCaseInsensitive = true
                         });
+                        panel4.Controls.Clear();
+                        // Assuming a container (e.g., a panel) to hold the dynamically created elements.
+                        TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                        tableLayoutPanel.Dock = DockStyle.Fill;
 
+                        // Set the column count for the TableLayoutPanel (2 columns for two products per row)
+                        tableLayoutPanel.ColumnCount = 2;
 
-                        // No products available, clear or hide the UI elements.
+                        // Set the spacing between rows and columns
+                        tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
 
-
+                        // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
-                            if (i >= 10) // Assuming you have PictureBox, TextBox, and other controls named systematically
+                            if (i >= 10) // Limit the number of products.
                                 break;
+                            System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
+                            // Create a new panel for each product.
+                            Panel productPanel = new Panel();
+                            productPanel.BackColor = SystemColors.ActiveCaption;
+                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            // Calculate the position based on the product index
+                            productPanel.BackgroundImage = image;
+                            productPanel.BackgroundImageLayout = ImageLayout.Stretch;
 
-                            PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
-                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
-                            pictureBox.Dock = DockStyle.Fill;
-                            TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
-                            TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
-                            TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
 
-                            if (pictureBox != null && nameBox != null && priceBox != null && stockBox != null)
-                            {
-                                Image image = Base64StringToImage(products[i].ImageBase64);
-                                pictureBox.Image = image;
+                            productPanel.Size = new Size(290, 357);
+                            productPanel.TabIndex = 9;
 
-                                nameBox.Text = products[i].ProductName;
-                                priceBox.Text = products[i].ProductPrice.ToString();
-                                stockBox.Text = products[i].ProductStock.ToString();
-                            }
+                            // Create and customize other controls (e.g., PictureBox, TextBox).
+
+
+                            Label nameLabel = new Label();
+                            nameLabel.Text = "Name";
+                            nameLabel.Location = new Point(15, 170); // Adjust the location as needed.
+                            nameLabel.BackColor = Color.Transparent;
+                            nameLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(nameLabel);
+
+                            TextBox nameBox = new TextBox();
+                            nameBox.Location = new Point(78, 168); // Adjust the location as needed.
+                            nameBox.Size = new Size(171, 27);
+                            nameBox.Name = "nameBox" + i;
+                            nameBox.Text = products[i].ProductName; // Set the product name.
+
+                            Label priceLabel = new Label();
+                            priceLabel.Text = "Price";
+                            priceLabel.Location = new Point(15, 210); // Adjust the location as needed.
+                            priceLabel.BackColor = Color.Transparent;
+                            priceLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(priceLabel);
+
+                            TextBox priceBox = new TextBox();
+                            priceBox.Location = new Point(78, 207); // Adjust the location as needed.
+                            priceBox.Size = new Size(109, 27);
+                            priceBox.Name = "priceBox" + i;
+                            // Set the product price as needed.
+                            priceBox.Text = products[i].ProductPrice.ToString();
+
+                            Label stockLabel = new Label();
+                            stockLabel.Text = "Price";
+                            stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
+                            stockLabel.BackColor = Color.Transparent;
+                            stockLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(stockLabel);
+                            TextBox stockBox = new TextBox();
+                            stockBox.Location = new Point(78, 244); // Adjust the location as needed.
+                            stockBox.Size = new Size(171, 27);
+                            stockBox.Name = "stockBox" + i;
+                            // Set the product stock as needed.
+                            stockBox.Text = products[i].ProductStock.ToString();
+
+                            Button addToCart = new Button();
+                            addToCart.BackColor = Color.YellowGreen;
+                            addToCart.FlatStyle = FlatStyle.Flat;
+                            addToCart.Location = new Point(78, 283);
+                            addToCart.Margin = new Padding(3, 4, 3, 4);
+                            addToCart.Name = "addToCart" + i; // Use a unique name for each remove button.
+                            addToCart.Size = new Size(136, 60);
+                            addToCart.TabIndex = 7;
+                            addToCart.Text = "Add To Cart";
+                            addToCart.UseVisualStyleBackColor = false;
+                            addToCart.Click += addToCart_Click;
+                            addToCart.Click += async (sender, e) =>
+
+                            // Add controls to the product panel.
+
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(priceBox);
+                            productPanel.Controls.Add(stockBox);
+                            productPanel.Controls.Add(addToCart);
+
+                            // Add the product panel to the parent panel.
+                            tableLayoutPanel.Controls.Add(productPanel);
                         }
 
+                        // Add the parent panel to the form or container of your choice.
+                        panel4.Controls.Add(tableLayoutPanel);
                     }
                     else
                     {
@@ -89,61 +161,7 @@ namespace OnlineFashionShopApp
             }
         }
 
-        private void ClearProductUI(int productCount)
-        {
-            if (productCount < 7)
-            {
-                pictureBox7.Image = null;
-                nameBox7.Text = null;
-                priceBox7.Text = null;
-                stockBox7.Text = null;
-            }
-            if (productCount < 6)
-            {
-                pictureBox6.Image = null;
-                nameBox6.Text = null;
-                priceBox6.Text = null;
-                stockBox6.Text = null;
-            }
-            if (productCount < 5)
-            {
-                pictureBox5.Image = null;
-                nameBox5.Text = null;
-                priceBox5.Text = null;
-                stockBox5.Text = null;
 
-            }
-            if (productCount < 4)
-            {
-                pictureBox4.Image = null;
-                nameBox4.Text = null;
-                priceBox4.Text = null;
-                stockBox4.Text = null;
-            }
-            if (productCount < 3)
-            {
-                pictureBox3.Image = null;
-                nameBox3.Text = null;
-                priceBox3.Text = null;
-                stockBox3.Text = null;
-
-            }
-            if (productCount < 2)
-            {
-                pictureBox2.Image = null;
-                nameBox2.Text = null;
-                priceBox2.Text = null;
-                stockBox2.Text = null;
-
-            }
-            if (productCount < 1)
-            {
-                pictureBox1.Image = null;
-                nameBox1.Text = null;
-                priceBox1.Text = null;
-                stockBox1.Text = null;
-            }
-        }
         private Image Base64StringToImage(string base64String)
         {
             byte[] imageBytes = Convert.FromBase64String(base64String);
@@ -163,15 +181,25 @@ namespace OnlineFashionShopApp
 
         private async void SearchProductsByName(string productName)
         {
+            string apiUrl;  // Define apiUrl before the if block
+
+            if (textBox40.Text == "")
+            {
+
+                apiUrl = "https://localhost:7098/Product/GetProducts";
+            }
+            else
+            {
+                apiUrl = $"https://localhost:7098/Product/GetProductsByName?name={productName}";
+            }
             try
             {
                 using (var client = new HttpClient())
                 {
-                    // Construct the API URL for searching by product name
-                    string apiUrl = $"https://localhost:7098/Product/GetProductsByName?name={productName}";
+                    // Construct the API URL for filtering by category
+
 
                     var response = await client.GetAsync(apiUrl);
-                    ClearProductUI(0);
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -180,31 +208,106 @@ namespace OnlineFashionShopApp
                         {
                             PropertyNameCaseInsensitive = true
                         });
+                        panel4.Controls.Clear();
 
-                        // Clear or hide the UI elements if needed.
+                        TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                        tableLayoutPanel.Dock = DockStyle.Fill;
 
+                        // Set the column count for the TableLayoutPanel (2 columns for two products per row)
+                        tableLayoutPanel.ColumnCount = 2;
+
+                        // Set the spacing between rows and columns
+                        tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+
+                        // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
-                            if (i >= 10) // Assuming you have PictureBox, TextBox, and other controls named systematically
+                            if (i >= 10) // Limit the number of products.
                                 break;
+                            System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
+                            // Create a new panel for each product.
+                            Panel productPanel = new Panel();
+                            productPanel.BackColor = SystemColors.ActiveCaption;
+                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            // Calculate the position based on the product index
+                            productPanel.BackgroundImage = image;
+                            productPanel.BackgroundImageLayout = ImageLayout.Stretch;
 
-                            PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
-                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
-                            pictureBox.Dock = DockStyle.Fill;
-                            TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
-                            TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
-                            TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
 
-                            if (pictureBox != null && nameBox != null && priceBox != null && stockBox != null)
-                            {
-                                Image image = Base64StringToImage(products[i].ImageBase64);
-                                pictureBox.Image = image;
+                            productPanel.Size = new Size(290, 357);
+                            productPanel.TabIndex = 9;
 
-                                nameBox.Text = products[i].ProductName;
-                                priceBox.Text = products[i].ProductPrice.ToString();
-                                stockBox.Text = products[i].ProductStock.ToString();
-                            }
+                            // Create and customize other controls (e.g., PictureBox, TextBox).
+
+
+                            Label nameLabel = new Label();
+                            nameLabel.Text = "Name";
+                            nameLabel.Location = new Point(15, 170); // Adjust the location as needed.
+                            nameLabel.BackColor = Color.Transparent;
+                            nameLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(nameLabel);
+
+                            TextBox nameBox = new TextBox();
+                            nameBox.Location = new Point(78, 168); // Adjust the location as needed.
+                            nameBox.Size = new Size(171, 27);
+                            nameBox.Name = "nameBox" + i;
+                            nameBox.Text = products[i].ProductName; // Set the product name.
+
+                            Label priceLabel = new Label();
+                            priceLabel.Text = "Price";
+                            priceLabel.Location = new Point(15, 210); // Adjust the location as needed.
+                            priceLabel.BackColor = Color.Transparent;
+                            priceLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(priceLabel);
+
+                            TextBox priceBox = new TextBox();
+                            priceBox.Location = new Point(78, 207); // Adjust the location as needed.
+                            priceBox.Size = new Size(109, 27);
+                            priceBox.Name = "priceBox" + i;
+                            // Set the product price as needed.
+                            priceBox.Text = products[i].ProductPrice.ToString();
+
+                            Label stockLabel = new Label();
+                            stockLabel.Text = "Price";
+                            stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
+                            stockLabel.BackColor = Color.Transparent;
+                            stockLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(stockLabel);
+                            TextBox stockBox = new TextBox();
+                            stockBox.Location = new Point(78, 244); // Adjust the location as needed.
+                            stockBox.Size = new Size(171, 27);
+                            stockBox.Name = "stockBox" + i;
+                            // Set the product stock as needed.
+                            stockBox.Text = products[i].ProductStock.ToString();
+
+                            Button addToCart = new Button();
+                            addToCart.BackColor = Color.YellowGreen;
+                            addToCart.FlatStyle = FlatStyle.Flat;
+                            addToCart.Location = new Point(78, 283);
+                            addToCart.Margin = new Padding(3, 4, 3, 4);
+                            addToCart.Name = "addToCart" + i; // Use a unique name for each remove button.
+                            addToCart.Size = new Size(136, 60);
+                            addToCart.TabIndex = 7;
+                            addToCart.Text = "Add To Cart";
+                            addToCart.UseVisualStyleBackColor = false;
+                            addToCart.Click += addToCart_Click;
+                            addToCart.Click += async (sender, e) =>
+
+                            // Add controls to the product panel.
+
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(priceBox);
+                            productPanel.Controls.Add(stockBox);
+                            productPanel.Controls.Add(addToCart);
+
+                            // Add the product panel to the parent panel.
+                            tableLayoutPanel.Controls.Add(productPanel);
                         }
+
+                        // Add the parent panel to the form or container of your choice.
+                        panel4.Controls.Add(tableLayoutPanel);
                     }
                     else
                     {
@@ -212,12 +315,12 @@ namespace OnlineFashionShopApp
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
-
 
         private async void filterButton_CLick(object sender, EventArgs e)
         {
@@ -229,15 +332,26 @@ namespace OnlineFashionShopApp
         }
         private async Task FilterProductsByCategoryAsync(string category)
         {
+            string apiUrl;  // Define apiUrl before the if block
+
+            if (category == null)
+            {
+
+                apiUrl = "https://localhost:7098/Product/GetProducts";
+            }
+            else
+            {
+                apiUrl = $"https://localhost:7098/Product/GetProductsFilter?category={category}";
+            }
             try
             {
                 using (var client = new HttpClient())
                 {
                     // Construct the API URL for filtering by category
-                    string apiUrl = $"https://localhost:7098/Product/GetProductsFilter?category={category}";
+
 
                     var response = await client.GetAsync(apiUrl);
-                    ClearProductUI(0);
+
                     if (response.IsSuccessStatusCode)
                     {
                         var json = await response.Content.ReadAsStringAsync();
@@ -245,34 +359,106 @@ namespace OnlineFashionShopApp
                         {
                             PropertyNameCaseInsensitive = true
                         });
+                        panel4.Controls.Clear();
 
-                        // Clear or hide the UI elements if needed.
+                        TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+                        tableLayoutPanel.Dock = DockStyle.Fill;
 
+                        // Set the column count for the TableLayoutPanel (2 columns for two products per row)
+                        tableLayoutPanel.ColumnCount = 2;
+
+                        // Set the spacing between rows and columns
+                        tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+
+                        // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
-                            if (i >= 10) // Assuming you have PictureBox, TextBox, and other controls named systematically
+                            if (i >= 10) // Limit the number of products.
                                 break;
+                            System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
+                            // Create a new panel for each product.
+                            Panel productPanel = new Panel();
+                            productPanel.BackColor = SystemColors.ActiveCaption;
+                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            // Calculate the position based on the product index
+                            productPanel.BackgroundImage = image;
+                            productPanel.BackgroundImageLayout = ImageLayout.Stretch;
 
-                            PictureBox pictureBox = (PictureBox)this.Controls.Find("pictureBox" + (i + 1), true).FirstOrDefault();
+
+                            productPanel.Size = new Size(290, 357);
+                            productPanel.TabIndex = 9;
+
+                            // Create and customize other controls (e.g., PictureBox, TextBox).
 
 
-                            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // To display the image in its original size.
-                            pictureBox.Dock = DockStyle.Fill;
+                            Label nameLabel = new Label();
+                            nameLabel.Text = "Name";
+                            nameLabel.Location = new Point(15, 170); // Adjust the location as needed.
+                            nameLabel.BackColor = Color.Transparent;
+                            nameLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(nameLabel);
 
-                            TextBox nameBox = (TextBox)this.Controls.Find("nameBox" + (i + 1), true).FirstOrDefault();
-                            TextBox priceBox = (TextBox)this.Controls.Find("priceBox" + (i + 1), true).FirstOrDefault();
-                            TextBox stockBox = (TextBox)this.Controls.Find("stockBox" + (i + 1), true).FirstOrDefault();
+                            TextBox nameBox = new TextBox();
+                            nameBox.Location = new Point(78, 168); // Adjust the location as needed.
+                            nameBox.Size = new Size(171, 27);
+                            nameBox.Name = "nameBox" + i;
+                            nameBox.Text = products[i].ProductName; // Set the product name.
 
-                            if (pictureBox != null && nameBox != null && priceBox != null && stockBox != null)
-                            {
-                                Image image = Base64StringToImage(products[i].ImageBase64);
-                                pictureBox.Image = image;
-                               
-                                nameBox.Text = products[i].ProductName;
-                                priceBox.Text = products[i].ProductPrice.ToString();
-                                stockBox.Text = products[i].ProductStock.ToString();
-                            }
+                            Label priceLabel = new Label();
+                            priceLabel.Text = "Price";
+                            priceLabel.Location = new Point(15, 210); // Adjust the location as needed.
+                            priceLabel.BackColor = Color.Transparent;
+                            priceLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(priceLabel);
+
+                            TextBox priceBox = new TextBox();
+                            priceBox.Location = new Point(78, 207); // Adjust the location as needed.
+                            priceBox.Size = new Size(109, 27);
+                            priceBox.Name = "priceBox" + i;
+                            // Set the product price as needed.
+                            priceBox.Text = products[i].ProductPrice.ToString();
+
+                            Label stockLabel = new Label();
+                            stockLabel.Text = "Price";
+                            stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
+                            stockLabel.BackColor = Color.Transparent;
+                            stockLabel.Size = new Size(65, 27);
+                            productPanel.Controls.Add(stockLabel);
+                            TextBox stockBox = new TextBox();
+                            stockBox.Location = new Point(78, 244); // Adjust the location as needed.
+                            stockBox.Size = new Size(171, 27);
+                            stockBox.Name = "stockBox" + i;
+                            // Set the product stock as needed.
+                            stockBox.Text = products[i].ProductStock.ToString();
+
+                            Button addToCart = new Button();
+                            addToCart.BackColor = Color.YellowGreen;
+                            addToCart.FlatStyle = FlatStyle.Flat;
+                            addToCart.Location = new Point(78, 283);
+                            addToCart.Margin = new Padding(3, 4, 3, 4);
+                            addToCart.Name = "addToCart" + i; // Use a unique name for each remove button.
+                            addToCart.Size = new Size(136, 60);
+                            addToCart.TabIndex = 7;
+                            addToCart.Text = "Add To Cart";
+                            addToCart.UseVisualStyleBackColor = false;
+                            addToCart.Click += addToCart_Click;
+                            addToCart.Click += async (sender, e) =>
+
+                            // Add controls to the product panel.
+
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(nameBox);
+                            productPanel.Controls.Add(priceBox);
+                            productPanel.Controls.Add(stockBox);
+                            productPanel.Controls.Add(addToCart);
+
+                            // Add the product panel to the parent panel.
+                            tableLayoutPanel.Controls.Add(productPanel);
                         }
+
+                        // Add the parent panel to the form or container of your choice.
+                        panel4.Controls.Add(tableLayoutPanel);
                     }
                     else
                     {
@@ -285,7 +471,6 @@ namespace OnlineFashionShopApp
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
-
         private async void addToCart_Click(object sender, EventArgs e)
         {
 
@@ -302,7 +487,7 @@ namespace OnlineFashionShopApp
                 else
                 {
 
-                    
+
                     apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{productIndex}";
                     Console.WriteLine($"apiUrl: {apiUrl}");
                     Console.WriteLine($"productIndex: {productIndex}");
@@ -358,6 +543,27 @@ namespace OnlineFashionShopApp
         {
             CartForm cat = new CartForm();
             cat.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormCustomer Hm = new HomeFormCustomer();
+            Hm.ShowDialog();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ProductCustomerForm pm = new ProductCustomerForm();
+            pm.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrderFormCustomer of = new OrderFormCustomer(); 
+            of.ShowDialog();
             this.Close();
         }
     }

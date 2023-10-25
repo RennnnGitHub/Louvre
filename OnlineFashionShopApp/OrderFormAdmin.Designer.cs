@@ -267,6 +267,7 @@
             button8.TabIndex = 55;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // pictureBox4
             // 

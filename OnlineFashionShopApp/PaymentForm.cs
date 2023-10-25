@@ -246,7 +246,17 @@ namespace OnlineFashionShopApp
                         {
                             string result = await response.Content.ReadAsStringAsync();
                             // You can process the API response (result) as needed.
-                            MessageBox.Show("Order placed successfully.");
+
+                            // Clear the cart contents by calling an API endpoint
+                            if (await ClearCartContentsOnServer())
+                            {
+                                MessageBox.Show("Order placed successfully, and the cart has been cleared.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Order placed successfully, but failed to clear the cart.");
+                            }
+
                             this.Close(); // Close the payment form
                         }
                         else
@@ -266,10 +276,20 @@ namespace OnlineFashionShopApp
             {
                 MessageBox.Show("Invalid grand total value. Please enter a valid numeric value.");
             }
-            HomeFormCustomer formCust= new HomeFormCustomer();
+            PaymentSuccessForm formCust= new PaymentSuccessForm();
             formCust.ShowDialog();
+            this.Close();
         }
+        private async Task<bool> ClearCartContentsOnServer()
+        {
+            using (var client = new HttpClient())
+            {
+                var content = new StringContent(""); // Empty request body
+                var response = await client.PostAsync("https://localhost:7098/Cart/ClearUserCart", content);
 
+                return response.IsSuccessStatusCode;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
