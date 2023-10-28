@@ -50,13 +50,20 @@ namespace OnlineFashionShopApp
                         // Assuming a container (e.g., a panel) to hold the dynamically created elements.
                         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                         tableLayoutPanel.Dock = DockStyle.Fill;
+                        tableLayoutPanel.AutoScroll = true;
+                        tableLayoutPanel.HorizontalScroll.Enabled = false; // Enable vertical scrolling
+                        
 
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
 
                         // Set the spacing between rows and columns
                         tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+
+                        // Set a maximum width for the TableLayoutPanel to prevent horizontal scrolling
+                        
+
 
                         // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
@@ -67,7 +74,7 @@ namespace OnlineFashionShopApp
                             // Create a new panel for each product.
                             Panel productPanel = new Panel();
                             productPanel.BackColor = SystemColors.ActiveCaption;
-                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            productPanel.Margin = new Padding(3, 4, 45, 50);
                             // Calculate the position based on the product index
                             productPanel.BackgroundImage = image;
                             productPanel.BackgroundImageLayout = ImageLayout.Stretch;
@@ -266,13 +273,13 @@ namespace OnlineFashionShopApp
                         // Assuming a container (e.g., a panel) to hold the dynamically created elements.
                         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                         tableLayoutPanel.Dock = DockStyle.Fill;
-
+                        tableLayoutPanel.AutoScroll = true;
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
 
                         // Set the spacing between rows and columns
                         tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
                         // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
@@ -284,7 +291,7 @@ namespace OnlineFashionShopApp
                             // Create a new panel for each product.
                             Panel productPanel = new Panel();
                             productPanel.BackColor = SystemColors.ActiveCaption;
-                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            productPanel.Margin = new Padding(3, 4, 45, 50);
                             // Calculate the position based on the product index
                             productPanel.BackgroundImage = image;
                             productPanel.BackgroundImageLayout = ImageLayout.Stretch;

@@ -252,14 +252,15 @@ namespace OnlineFashionShopApp
                                             cartItem.Quantity++;
                                             quantityLabel.Text = "Quantity: " + cartItem.Quantity;
                                             MessageBox.Show("Item added successfully.");
+                                            totalPrice += cartItem.Price;
+                                            textBox1.Text = totalPrice.ToString("C");
                                         }
                                         else
                                         {
                                             MessageBox.Show("Failed to add item to the cart.");
                                         }
 
-                                        totalPrice += cartItem.Price;
-                                        textBox1.Text = totalPrice.ToString("C");
+                                        
                                     }
                                 };
                                 var quantitysLabel = new Label
@@ -295,7 +296,8 @@ namespace OnlineFashionShopApp
                                             // Update the quantity on the client side
                                             cartItem.Quantity--;
                                             quantityLabel.Text = "Quantity: " + cartItem.Quantity;
-
+                                            totalPrice -= cartItem.Price;
+                                            textBox1.Text = totalPrice.ToString("C");
                                             // Check if the quantity is zero and remove the item from the UI
                                             if (cartItem.Quantity == 0)
                                             {
@@ -309,8 +311,7 @@ namespace OnlineFashionShopApp
                                         {
                                             MessageBox.Show("Failed to remove item from the cart.");
                                         }
-                                        totalPrice -= cartItem.Price;
-                                        textBox1.Text = totalPrice.ToString("C");
+                                        
                                     }
                                 };
 
@@ -385,7 +386,7 @@ namespace OnlineFashionShopApp
         {
             ProductCustomerForm form = new ProductCustomerForm();
             form.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)

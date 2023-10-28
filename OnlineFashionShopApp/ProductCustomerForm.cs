@@ -49,27 +49,27 @@ namespace OnlineFashionShopApp
                             PropertyNameCaseInsensitive = true
                         });
                         panel4.Controls.Clear();
-                        // Assuming a container (e.g., a panel) to hold the dynamically created elements.
                         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                         tableLayoutPanel.Dock = DockStyle.Fill;
-
+                        tableLayoutPanel.AutoScroll = true;
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
 
                         // Set the spacing between rows and columns
                         tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
                         // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
+
                             if (i >= 10) // Limit the number of products.
                                 break;
                             System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
                             // Create a new panel for each product.
                             Panel productPanel = new Panel();
                             productPanel.BackColor = SystemColors.ActiveCaption;
-                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            productPanel.Margin = new Padding(3, 4, 45, 50);
                             // Calculate the position based on the product index
                             productPanel.BackgroundImage = image;
                             productPanel.BackgroundImageLayout = ImageLayout.Stretch;
@@ -109,7 +109,7 @@ namespace OnlineFashionShopApp
                             priceBox.Text = products[i].ProductPrice.ToString();
 
                             Label stockLabel = new Label();
-                            stockLabel.Text = "Price";
+                            stockLabel.Text = "Stock";
                             stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
                             stockLabel.BackColor = Color.Transparent;
                             stockLabel.Size = new Size(65, 27);
@@ -212,24 +212,25 @@ namespace OnlineFashionShopApp
 
                         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                         tableLayoutPanel.Dock = DockStyle.Fill;
-
+                        tableLayoutPanel.AutoScroll = true;
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
 
                         // Set the spacing between rows and columns
                         tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
                         // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
+
                             if (i >= 10) // Limit the number of products.
                                 break;
                             System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
                             // Create a new panel for each product.
                             Panel productPanel = new Panel();
                             productPanel.BackColor = SystemColors.ActiveCaption;
-                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            productPanel.Margin = new Padding(3, 4, 45, 50);
                             // Calculate the position based on the product index
                             productPanel.BackgroundImage = image;
                             productPanel.BackgroundImageLayout = ImageLayout.Stretch;
@@ -269,7 +270,7 @@ namespace OnlineFashionShopApp
                             priceBox.Text = products[i].ProductPrice.ToString();
 
                             Label stockLabel = new Label();
-                            stockLabel.Text = "Price";
+                            stockLabel.Text = "Stock";
                             stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
                             stockLabel.BackColor = Color.Transparent;
                             stockLabel.Size = new Size(65, 27);
@@ -363,24 +364,25 @@ namespace OnlineFashionShopApp
 
                         TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
                         tableLayoutPanel.Dock = DockStyle.Fill;
-
+                        tableLayoutPanel.AutoScroll = true;
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
 
                         // Set the spacing between rows and columns
                         tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50));
+                        tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
                         // Create UI elements for each product.
                         for (int i = 0; i < products.Count; i++)
                         {
+
                             if (i >= 10) // Limit the number of products.
                                 break;
                             System.Drawing.Image image = Base64StringToImage(products[i].ImageBase64);
                             // Create a new panel for each product.
                             Panel productPanel = new Panel();
                             productPanel.BackColor = SystemColors.ActiveCaption;
-                            productPanel.Margin = new Padding(3, 4, 3, 10);
+                            productPanel.Margin = new Padding(3, 4, 45, 50);
                             // Calculate the position based on the product index
                             productPanel.BackgroundImage = image;
                             productPanel.BackgroundImageLayout = ImageLayout.Stretch;
@@ -420,7 +422,7 @@ namespace OnlineFashionShopApp
                             priceBox.Text = products[i].ProductPrice.ToString();
 
                             Label stockLabel = new Label();
-                            stockLabel.Text = "Price";
+                            stockLabel.Text = "Stock";
                             stockLabel.Location = new Point(15, 248); // Adjust the location as needed.
                             stockLabel.BackColor = Color.Transparent;
                             stockLabel.Size = new Size(65, 27);
@@ -516,7 +518,7 @@ namespace OnlineFashionShopApp
                             // UpdateCartUI();
 
                             // Optionally, you can load or refresh the cart products from the server.
-                            // LoadCartProducts();
+                             LoadProducts();
                         }
                         else
                         {
@@ -543,7 +545,7 @@ namespace OnlineFashionShopApp
         {
             CartForm cat = new CartForm();
             cat.ShowDialog();
-            this.Close();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
