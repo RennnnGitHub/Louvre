@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using System.Net.Http;
-
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
@@ -18,11 +18,12 @@ namespace OnlineFashionShopApp
     {
         string apiUrl = "https://localhost:7098/Product/GetProducts";
         private List<ProductDTO> products = new List<ProductDTO>();
+        private User _currentUser;
 
-
-        public ProductCustomerForm()
+        public ProductCustomerForm(User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
             LoadProducts();
             comboBox1.Items.Add("Apparel");
             comboBox1.Items.Add("Footwear");
@@ -479,18 +480,18 @@ namespace OnlineFashionShopApp
             if (sender is Button addToCart && int.TryParse(addToCart.Name.Replace("addToCart", ""), out int productIndex))
             {
                 string apiUrl;
-
+                int userID = _currentUser.Id;
                 if (comboBox1.SelectedItem?.ToString() != null) // Category is selected
                 {
                     // Get the selected category from the ComboBox
                     string selectedCategory = comboBox1.SelectedItem.ToString();
-                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{productIndex}/{selectedCategory}";
+                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{userID}/{productIndex}/{selectedCategory}";
                 }
                 else
                 {
 
 
-                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{productIndex}";
+                    apiUrl = $"https://localhost:7098/Cart/AddProductToCart/{userID}/{productIndex}";
                     Console.WriteLine($"apiUrl: {apiUrl}");
                     Console.WriteLine($"productIndex: {productIndex}");
 
@@ -518,7 +519,7 @@ namespace OnlineFashionShopApp
                             // UpdateCartUI();
 
                             // Optionally, you can load or refresh the cart products from the server.
-                             LoadProducts();
+                            LoadProducts();
                         }
                         else
                         {
@@ -543,29 +544,36 @@ namespace OnlineFashionShopApp
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CartForm cat = new CartForm();
-            cat.ShowDialog();
-            this.Hide();
+            CartForm cat = new CartForm(_currentUser);
+            cat.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer Hm = new HomeFormCustomer();
-            Hm.ShowDialog();
+            HomeFormCustomer Hm = new HomeFormCustomer(_currentUser);
+            Hm.Show();
             this.Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductCustomerForm pm = new ProductCustomerForm();
-            pm.ShowDialog();
+            ProductCustomerForm pm = new ProductCustomerForm(_currentUser);
+            pm.Show();
             this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormCustomer of = new OrderFormCustomer(); 
-            of.ShowDialog();
+            OrderFormCustomer of = new OrderFormCustomer(_currentUser);
+            of.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingForm tf = new TrackingForm(_currentUser);
+            tf.Show();
             this.Close();
         }
     }

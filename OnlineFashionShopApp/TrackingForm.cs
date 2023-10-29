@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
 {
     public partial class TrackingForm : Form
     {
-        public TrackingForm()
+        private User _currentUser;
+        public TrackingForm(User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,6 +55,7 @@ namespace OnlineFashionShopApp
             {
                 using (var client = new HttpClient())
                 {
+
                     // Replace with the actual API endpoint to get the order status
                     string apiUrl = $"https://localhost:7098/Order/GetOrderStatus/{orderId}";
 

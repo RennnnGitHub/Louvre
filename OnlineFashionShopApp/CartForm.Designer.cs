@@ -295,6 +295,7 @@
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button5
             // 
@@ -309,6 +310,7 @@
             button5.TabIndex = 5;
             button5.Text = "Cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label1
             // 

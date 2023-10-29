@@ -143,13 +143,14 @@ namespace OnlineFashionShopApp
                             this.Hide();
                             User u = new User()
                             {
-                                Firstname = obj["data"]["firstname"].ToString(),
+                                Id = int.Parse(obj["data"]["id"].ToString()),
+                            Firstname = obj["data"]["firstname"].ToString(),
                                 Lastname = obj["data"]["lastname"].ToString(),
                                 Email = obj["data"]["email"].ToString()
                             };
-                            HomeFormAdmin formHome = new HomeFormAdmin(u);
+                            HomeFormCustomer formHome = new HomeFormCustomer(u);
                             formHome.ShowDialog();
-                            this.Close();
+                            this.Hide();
                         }
                         else
                         {

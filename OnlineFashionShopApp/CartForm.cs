@@ -16,17 +16,17 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Reflection.Metadata;
-
+using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
 {
     public partial class CartForm : Form
     {
+        private User _currentUser;
 
-
-        public CartForm()
+        public CartForm(User currentUser)
         {
             InitializeComponent();
-
+            _currentUser = currentUser;
             // Create and configure a FlowLayoutPanel for displaying cart items
 
             Controls.Add(cartItemsPanel);
@@ -130,10 +130,16 @@ namespace OnlineFashionShopApp
         {
             try
             {
-                using (var client = new HttpClient())
+                using (HttpClient client = new HttpClient())
                 {
+                    int userID = _currentUser.Id;
+                    MessageBox.Show(userID.ToString());
 
-                    var response = await client.GetAsync("https://localhost:7098/Cart/GetCartContents");
+                    // Use string interpolation to include the userID in the URL
+                    var response = await client.GetAsync($"https://localhost:7098/Cart/GetCartContents/{userID}");
+
+                    // Rest of your code to handle the response
+
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -237,9 +243,9 @@ namespace OnlineFashionShopApp
 
                                     // Capture the 'productId' variable
                                     string productId = cartItem.productId;
-
+                                    int userID = _currentUser.Id;
                                     // Send an update request to the server to increment the quantity for the product with the specified product ID
-                                    var apiUrl = $"https://localhost:7098/Cart/IncrementProductQuantity/{productId}";
+                                    var apiUrl = $"https://localhost:7098/Cart/IncrementProductQuantity/{userID}/{productId}";
 
                                     // Send the update request to the server here using the apiUrl
                                     using (var client = new HttpClient())
@@ -260,7 +266,7 @@ namespace OnlineFashionShopApp
                                             MessageBox.Show("Failed to add item to the cart.");
                                         }
 
-                                        
+
                                     }
                                 };
                                 var quantitysLabel = new Label
@@ -282,9 +288,9 @@ namespace OnlineFashionShopApp
 
                                     // Capture the 'productId' variable
                                     string productId = cartItem.productId;
-
+                                    int userID = _currentUser.Id;
                                     // Send an update request to the server to decrement the quantity for the product with the specified product ID
-                                    var apiUrl = $"https://localhost:7098/Cart/DecrementProductQuantity/{productId}";
+                                    var apiUrl = $"https://localhost:7098/Cart/DecrementProductQuantity/{userID}/{productId}";
 
                                     // Send the update request to the server here using the apiUrl
                                     using (var client = new HttpClient())
@@ -309,9 +315,9 @@ namespace OnlineFashionShopApp
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Failed to remove item from the cart.");
+                                            MessageBox.Show("Failed to remove item from the cart");
                                         }
-                                        
+
                                     }
                                 };
 
@@ -344,7 +350,7 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        MessageBox.Show("Failed to retrieve cart.");
+                        MessageBox.Show("Failed to retrieve cart or the cart is empty.");
                     }
                 }
             }
@@ -377,30 +383,44 @@ namespace OnlineFashionShopApp
 
         private void button11_Click(object sender, EventArgs e)
         {
-            PaymentForm form = new PaymentForm();
-            form.ShowDialog();
+            PaymentForm form = new PaymentForm(_currentUser);
+            form.Show();
             this.Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductCustomerForm form = new ProductCustomerForm();
-            form.ShowDialog();
-            this.Hide();
+            ProductCustomerForm form = new ProductCustomerForm(_currentUser);
+            form.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer om = new HomeFormCustomer();
-            om.ShowDialog();
+            HomeFormCustomer om = new HomeFormCustomer(_currentUser);
+            om.Show();
             this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormCustomer oom = new OrderFormCustomer();
-            oom.ShowDialog();
+            OrderFormCustomer oom = new OrderFormCustomer(_currentUser);
+            oom.Show();
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CartForm cf = new CartForm(_currentUser);
+            cf.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingForm form = new TrackingForm(_currentUser);
+            form.Show();
+                this.Close();
         }
     }
 }

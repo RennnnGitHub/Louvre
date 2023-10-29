@@ -11,16 +11,19 @@ using System.Windows.Forms;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-
+using OnlineFashionShopApp.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OnlineFashionShopApp
 {
     public partial class OrderFormCustomer : Form
     {
-        public OrderFormCustomer()
+        private User _currentUser;
+        public OrderFormCustomer(User currentUser)
         {
+
             InitializeComponent();
+            _currentUser = currentUser;
             LoadOrderContentsAsync();
         }
         private async Task LoadOrderContentsAsync()
@@ -36,9 +39,13 @@ namespace OnlineFashionShopApp
 
             try
             {
+                int userID = _currentUser.Id;
+
                 using (var client = new HttpClient())
                 {
-                    HttpResponseMessage response = await client.GetAsync("https://localhost:7098/Order/GetOrderContentsByUserId");
+
+                    MessageBox.Show(userID.ToString());
+                    var response = await client.GetAsync($"https://localhost:7098/Order/GetOrderContentsByUserId/{userID}");
                     if (response.IsSuccessStatusCode)
                     {
                         string content = await response.Content.ReadAsStringAsync();
@@ -106,31 +113,38 @@ namespace OnlineFashionShopApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer hm = new HomeFormCustomer();
-            hm.ShowDialog();
+            HomeFormCustomer hm = new HomeFormCustomer(_currentUser);
+            hm.Show();
             this.Close();
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductCustomerForm pm = new ProductCustomerForm();
-            pm.ShowDialog();
+            ProductCustomerForm pm = new ProductCustomerForm(_currentUser);
+            pm.Show();
             this.Close();
 
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormCustomer omd = new OrderFormCustomer();
-            omd.ShowDialog();
+            OrderFormCustomer omd = new OrderFormCustomer(_currentUser);
+            omd.Show();
             this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CartForm cf = new CartForm();
-            cf.ShowDialog();
+            CartForm cf = new CartForm(_currentUser);
+            cf.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingForm customer = new TrackingForm(_currentUser);
+            customer.Show();
             this.Close();
         }
     }

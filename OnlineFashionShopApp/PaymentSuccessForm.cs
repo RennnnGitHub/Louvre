@@ -5,26 +5,52 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
 {
     public partial class PaymentSuccessForm : Form
     {
-        public PaymentSuccessForm()
+        private User _currentUser;
+        public PaymentSuccessForm(User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
+            loadPage();
         }
+        private async void loadPage()
+        {
+            int userID = _currentUser.Id;
 
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync($"https://localhost:7098/Order/GetLastOrderID/{userID}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    try
+                    {
+                        var json = await response.Content.ReadAsStringAsync();
+                        int lastOrderID = int.Parse(json);
+
+                        textBox1.Text = lastOrderID.ToString();
+                    }
+                    catch (JsonException ex)
+                    {
+                        MessageBox.Show("An error occurred during deserialization: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve the latest order ID.");
+                }
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button10_Click(object sender, EventArgs e)

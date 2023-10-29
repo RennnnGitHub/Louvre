@@ -8,16 +8,18 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
 {
     public partial class PaymentForm : Form
     {
         private List<PaymentProduct> paymentProducts = new List<PaymentProduct>();
-
-        public PaymentForm()
+        private OnlineFashionShopApp.Models.User _currentUser;
+        public PaymentForm(OnlineFashionShopApp.Models.User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
             LoadPaymentProducts();
         }
         private async Task LoadPaymentProducts()
@@ -26,7 +28,8 @@ namespace OnlineFashionShopApp
             {
                 using (var client = new HttpClient())
                 {
-                    var response = await client.GetAsync("https://localhost:7098/Cart/GetCartContents");
+                    int userID = _currentUser.Id;
+                    var response = await client.GetAsync($"https://localhost:7098/Cart/GetCartContents/{userID}");
 
                     if (response.IsSuccessStatusCode)
                     {
@@ -159,7 +162,8 @@ namespace OnlineFashionShopApp
         {
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync("https://localhost:7098/Cart/GetCartContents");
+                int userID = _currentUser.Id;
+                var response = await client.GetAsync($"https://localhost:7098/Cart/GetCartContents/{userID}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -190,13 +194,14 @@ namespace OnlineFashionShopApp
                     {
                         MessageBox.Show("An error occurred during deserialization: " + ex.Message);
                     }
-                } } 
-                        // Ensure that required fields are filled
-                        if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox3.Text) ||
-                string.IsNullOrWhiteSpace(textBox4.Text) ||
-                string.IsNullOrWhiteSpace(textBox5.Text))
+                }
+            }
+            // Ensure that required fields are filled
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+    string.IsNullOrWhiteSpace(textBox2.Text) ||
+    string.IsNullOrWhiteSpace(textBox3.Text) ||
+    string.IsNullOrWhiteSpace(textBox4.Text) ||
+    string.IsNullOrWhiteSpace(textBox5.Text))
             {
                 MessageBox.Show("Please fill in all required information.");
                 return;
@@ -230,7 +235,8 @@ namespace OnlineFashionShopApp
                 string jsonPayload = JsonSerializer.Serialize(orderData);
                 MessageBox.Show(jsonPayload);
                 // Define the API URL
-                string apiUrl = "https://localhost:7098/Order/AddOrder"; // Replace with your actual API URL.
+                int userID = _currentUser.Id;
+                string apiUrl = $"https://localhost:7098/Order/AddOrder/{userID}"; // Replace with your actual API URL.
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -248,7 +254,9 @@ namespace OnlineFashionShopApp
                             // You can process the API response (result) as needed.
 
                             // Clear the cart contents by calling an API endpoint
-                            if (await ClearCartContentsOnServer())
+
+
+                            if (await ClearCartContentsOnServer(userID))
                             {
                                 MessageBox.Show("Order placed successfully, and the cart has been cleared.");
                             }
@@ -276,16 +284,17 @@ namespace OnlineFashionShopApp
             {
                 MessageBox.Show("Invalid grand total value. Please enter a valid numeric value.");
             }
-            PaymentSuccessForm formCust= new PaymentSuccessForm();
+
+            PaymentSuccessForm formCust = new PaymentSuccessForm(_currentUser);
             formCust.ShowDialog();
             this.Close();
         }
-        private async Task<bool> ClearCartContentsOnServer()
+        private async Task<bool> ClearCartContentsOnServer(int userId)
         {
             using (var client = new HttpClient())
             {
-                var content = new StringContent(""); // Empty request body
-                var response = await client.PostAsync("https://localhost:7098/Cart/ClearUserCart", content);
+                string url = $"https://localhost:7098/Cart/ClearCartContents/{userId}";
+                var response = await client.PostAsync(url, null); // Use null for the request content if not needed.
 
                 return response.IsSuccessStatusCode;
             }
@@ -293,6 +302,12 @@ namespace OnlineFashionShopApp
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormCustomer Hm = new HomeFormCustomer();
+            Hm.Show();
         }
     }
 }
