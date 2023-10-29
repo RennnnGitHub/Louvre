@@ -124,6 +124,22 @@ namespace OnlineFashionShopApp
                             }
                         }
                         MessageBox.Show("Shipment Selected");
+                        User u = new User()
+                        {
+                            Id = _currentUser.Id,
+                            Firstname = _currentUser.Firstname,
+                            Lastname = _currentUser.Lastname,
+                            Email = _currentUser.Email,
+                            Userrole = _currentUser.Userrole,
+                            Phonenumber = _currentUser.Phonenumber,
+                            ShipmentId = (int)lvwAddress.SelectedItems[0].Tag
+                        };
+                        ObjectCache cache = MemoryCache.Default;
+                        CacheItemPolicy policy = new CacheItemPolicy
+                        {
+                            AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(60)
+                        };
+                        cache.Set("currentUser", u, policy);
 
                     }
                     else

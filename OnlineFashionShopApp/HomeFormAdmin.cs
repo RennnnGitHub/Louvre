@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineFashionShopApp.Models;
@@ -71,9 +72,45 @@ namespace OnlineFashionShopApp
             this.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private async void button3_Click(object sender, EventArgs e) //logout button
         {
-            Close();
+            string apiUrl = "https://localhost:7098/User/Logout";
+
+
+            string jsonPayload = JsonSerializer.Serialize(new
+            {
+                id = _currentUser.Id
+            });
+
+            // Define the JSON payload as a string
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Create a StringContent with the JSON payload and specify the content type
+                    StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+                    // Make a POST request with the JSON payload
+                    HttpResponseMessage response = await client.PostAsync(apiUrl, content);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+
+                        Close();
+
+                    }
+                    else
+                    {
+                        // Handle the response if it's not successful (e.g., display an error message).
+                        MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions (e.g., network issues).
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

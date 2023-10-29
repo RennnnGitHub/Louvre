@@ -140,7 +140,7 @@ namespace OnlineFashionShopApp
                 {
                     StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
-        
+
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
@@ -167,22 +167,30 @@ namespace OnlineFashionShopApp
                             {
                                 AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(60)
                             };
-                            cache.Add("currentUser", u, policy);
-                            if(u.Userrole == 1)
+                            if (cache.Contains("currentUser"))
+                            {
+                                cache.Set("currentUser", u, policy);
+                            }
+                            else
+                            {
+                                cache.Add("currentUser", u, policy);
+                            }
+                            if (u.Userrole == 1)
                             {
                                 HomeFormCustomer formHomeCustomer = new HomeFormCustomer(u);
                                 formHomeCustomer.ShowDialog();
-                                
+
                             }
-                            else 
+                            else
                             {
                                 HomeFormAdmin formHomeAdmin = new HomeFormAdmin(u);
                                 formHomeAdmin.ShowDialog();
-                                
+
                             }
                             this.Show();
                         }
-                        else {
+                        else
+                        {
 
                             MessageBox.Show(obj["message"].ToString());
                         }

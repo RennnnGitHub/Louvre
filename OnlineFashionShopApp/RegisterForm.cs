@@ -57,7 +57,7 @@ namespace OnlineFashionShopApp
 
             var payload = new
             {
-                role = cbxRole.SelectedText,
+                role = cbxRole.SelectedItem.ToString(),
                 email = textBox4.Text,
                 password = textBox3.Text,
                 firstname = textBox1.Text,
@@ -66,7 +66,6 @@ namespace OnlineFashionShopApp
             };
 
             string jsonPayload = JsonSerializer.Serialize(payload);
-
 
             using (HttpClient client = new HttpClient())
             {
@@ -83,7 +82,7 @@ namespace OnlineFashionShopApp
                         if (obj["success"].ToString() == "true")
                         {
                             //MessageBox.Show(obj["success"].ToString());
-                            MessageBox.Show("You have registered Succesfully");
+                            MessageBox.Show("You have registered Successfully");
                             this.Close();
                         }
                     }

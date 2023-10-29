@@ -138,5 +138,42 @@ namespace OnlineFashionShopApp
         {
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            ProductAdminForm pm = new ProductAdminForm(_currentUser);
+            pm.Show();
+            this.Close();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            OrderFormAdmin of = new OrderFormAdmin(_currentUser);
+            of.Show();
+            this.Close();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            TrackingFormAdmin tf = new TrackingFormAdmin(_currentUser);
+            tf.Show();
+            this.Close();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            //settings
+            SettingsForm form = new SettingsForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }

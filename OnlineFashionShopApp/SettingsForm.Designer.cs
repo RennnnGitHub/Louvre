@@ -33,7 +33,6 @@
             panel3 = new Panel();
             pictureBox7 = new PictureBox();
             pictureBox1 = new PictureBox();
-            button5 = new Button();
             pictureBox6 = new PictureBox();
             button7 = new Button();
             button2 = new Button();
@@ -42,7 +41,6 @@
             pictureBox2 = new PictureBox();
             button3 = new Button();
             button8 = new Button();
-            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             button6 = new Button();
             button1 = new Button();
@@ -68,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -86,7 +83,6 @@
             // 
             panel3.Controls.Add(pictureBox7);
             panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(button5);
             panel3.Controls.Add(pictureBox6);
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button2);
@@ -95,7 +91,6 @@
             panel3.Controls.Add(pictureBox2);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(button8);
-            panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(button6);
             panel3.Location = new Point(12, 15);
@@ -106,7 +101,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(15, 401);
+            pictureBox7.Location = new Point(15, 343);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(42, 46);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,24 +118,10 @@
             pictureBox1.TabIndex = 56;
             pictureBox1.TabStop = false;
             // 
-            // button5
-            // 
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(63, 284);
-            button5.Name = "button5";
-            button5.Size = new Size(84, 23);
-            button5.TabIndex = 52;
-            button5.Text = "Access Log";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(15, 333);
+            pictureBox6.Location = new Point(15, 275);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(42, 46);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -182,7 +163,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(63, 347);
+            button4.Location = new Point(63, 287);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 51;
@@ -216,7 +197,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(63, 412);
+            button3.Location = new Point(63, 356);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 50;
@@ -237,16 +218,6 @@
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
             button8.Click += button8_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(15, 270);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(42, 46);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 59;
-            pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -457,7 +428,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -473,7 +443,6 @@
         private Label label2;
         private PictureBox pictureBox7;
         private PictureBox pictureBox1;
-        private Button button5;
         private PictureBox pictureBox6;
         private Button button7;
         private Button button2;
@@ -482,7 +451,6 @@
         private PictureBox pictureBox2;
         private Button button3;
         private Button button8;
-        private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Button button6;
         private Label label8;

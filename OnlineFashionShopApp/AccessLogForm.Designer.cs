@@ -211,6 +211,7 @@
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click_1;
             // 
             // pictureBox5
             // 
@@ -257,6 +258,7 @@
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click_1;
             // 
             // pictureBox3
             // 
@@ -280,6 +282,7 @@
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click_1;
             // 
             // pictureBox2
             // 
@@ -303,6 +306,7 @@
             button4.TabIndex = 4;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // button7
             // 
@@ -316,6 +320,7 @@
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click_1;
             // 
             // button5
             // 
