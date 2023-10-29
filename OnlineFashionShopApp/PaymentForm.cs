@@ -306,8 +306,7 @@ namespace OnlineFashionShopApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer Hm = new HomeFormCustomer();
-            Hm.Show();
+            
         }
     }
 }

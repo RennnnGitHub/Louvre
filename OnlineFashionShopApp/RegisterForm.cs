@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +15,20 @@ namespace OnlineFashionShopApp
 {
     public partial class RegisterForm : Form
     {
+        ComboBox cbxRole = new ComboBox();
         public RegisterForm()
         {
             InitializeComponent();
+            cbxRole.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbxRole.Location = new Point(lblRole.Location.X, textBox5.Location.Y);
+            cbxRole.Name = "cbxRole";
+            cbxRole.Size = new Size(177, 23);
+            cbxRole.TabIndex = 8;
+            cbxRole.Items.Add("Admin");
+            cbxRole.Items.Add("Customer");
+            panel2.Controls.Add(cbxRole);
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,27 +55,37 @@ namespace OnlineFashionShopApp
         {
             string apiUrl = "https://localhost:7098/User/Register"; // Replace with the actual API URL.
 
-            // Define the JSON payload as a string
-            string jsonPayload = "{\"email\": \"" + textBox4.Text + "\", " +
-                         "\"password\": \"" + textBox3.Text + "\", " +
-                         "\"firstname\": \"" + textBox1.Text + "\", " +
-                         "\"lastname\": \"" + textBox2.Text + "\"}";
+            var payload = new
+            {
+                role = cbxRole.SelectedText,
+                email = textBox4.Text,
+                password = textBox3.Text,
+                firstname = textBox1.Text,
+                lastname = textBox2.Text,
+                phonenumber = textBox5.Text
+            };
+
+            string jsonPayload = JsonSerializer.Serialize(payload);
+
 
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    // Create a StringContent with the JSON payload and specify the content type
                     StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-                    // Make a POST request with the JSON payload
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
 
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
                         // You can process the API response (result) as needed.
-                        MessageBox.Show("User Registered Sucessfully");
+                        JsonNode obj = JsonObject.Parse(result);
+                        if (obj["success"].ToString() == "true")
+                        {
+                            //MessageBox.Show(obj["success"].ToString());
+                            MessageBox.Show("You have registered Succesfully");
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -93,6 +117,20 @@ namespace OnlineFashionShopApp
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label8_Click_1(object sender, EventArgs e)
         {
 
         }

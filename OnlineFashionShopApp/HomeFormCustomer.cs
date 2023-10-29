@@ -68,12 +68,16 @@ namespace OnlineFashionShopApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            //settings
+            SettingsForm form = new SettingsForm();
+            this.Hide();
+            form.ShowDialog();
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -86,6 +90,11 @@ namespace OnlineFashionShopApp
             ProductCustomerForm productCustomer = new ProductCustomerForm(_currentUser);
             productCustomer.ShowDialog();
             this.Hide();
+        }
+
+        private void HomeFormCustomer_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Welcome " + _currentUser.Firstname + " " + _currentUser.Lastname;
         }
     }
 }

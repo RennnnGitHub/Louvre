@@ -4,6 +4,8 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using OnlineFashionShopApp.Models;
+using System.Runtime.Caching;
+using System.Net;
 
 namespace OnlineFashionShopApp
 {
@@ -71,6 +73,11 @@ namespace OnlineFashionShopApp
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // register 
+            this.Hide();
+            RegisterForm form = new RegisterForm();
+            form.ShowDialog();
+            this.Show();
 
         }
 
@@ -118,19 +125,22 @@ namespace OnlineFashionShopApp
         {
             string apiUrl = "https://localhost:7098/User/Login"; // Replace with the actual API URL.
 
-            // Define the JSON payload as a string
-            string jsonPayload = "{\"email\": \"" + textBox1.Text + "\", \"password\": \"" + textBox3.Text + "\"}";
+            var payload = new
+            {
+                email = textBox1.Text,
+                password = textBox3.Text
+            };
+
+            string jsonPayload = JsonSerializer.Serialize(payload);
+
 
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    // Create a StringContent with the JSON payload and specify the content type
                     StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-                    // Make a POST request with the JSON payload
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
-
+        
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
@@ -143,18 +153,38 @@ namespace OnlineFashionShopApp
                             this.Hide();
                             User u = new User()
                             {
-                                Id = int.Parse(obj["data"]["id"].ToString()),
-                            Firstname = obj["data"]["firstname"].ToString(),
+                                Id = (int)obj["data"]["id"],
+                                Firstname = obj["data"]["firstname"].ToString(),
                                 Lastname = obj["data"]["lastname"].ToString(),
-                                Email = obj["data"]["email"].ToString()
+                                Email = obj["data"]["email"].ToString(),
+                                Userrole = (int)obj["data"]["userrole"],
+                                Phonenumber = obj["data"]["phonenumber"].ToString(),
+                                ShipmentId = (int)obj["data"]["shipmentId"]
                             };
-                            HomeFormCustomer formHome = new HomeFormCustomer(u);
-                            formHome.ShowDialog();
-                            this.Hide();
-                        }
-                        else
-                        {
 
+                            ObjectCache cache = MemoryCache.Default;
+                            CacheItemPolicy policy = new CacheItemPolicy
+                            {
+                                AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(60)
+                            };
+                            cache.Add("currentUser", u, policy);
+                            if(u.Userrole == 1)
+                            {
+                                HomeFormCustomer formHomeCustomer = new HomeFormCustomer(u);
+                                formHomeCustomer.ShowDialog();
+                                
+                            }
+                            else 
+                            {
+                                HomeFormAdmin formHomeAdmin = new HomeFormAdmin(u);
+                                formHomeAdmin.ShowDialog();
+                                
+                            }
+                            this.Show();
+                        }
+                        else {
+
+                            MessageBox.Show(obj["message"].ToString());
                         }
                     }
                     else

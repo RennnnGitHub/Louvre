@@ -1,6 +1,6 @@
 ﻿namespace OnlineFashionShopApp
 {
-    partial class SettingsFormAdmin
+    partial class SettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsFormAdmin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             panel2 = new Panel();
             panel3 = new Panel();
             pictureBox7 = new PictureBox();
@@ -48,7 +48,6 @@
             button1 = new Button();
             panel1 = new Panel();
             label2 = new Label();
-            button10 = new Button();
             label8 = new Label();
             textBox6 = new TextBox();
             label6 = new Label();
@@ -61,6 +60,7 @@
             button9 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
+            btnAddress = new Button();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -135,6 +135,7 @@
             button5.TabIndex = 52;
             button5.Text = "Access Log";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // pictureBox6
             // 
@@ -158,6 +159,7 @@
             button7.TabIndex = 54;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button2
             // 
@@ -172,6 +174,7 @@
             button2.TabIndex = 49;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 
@@ -185,6 +188,7 @@
             button4.TabIndex = 51;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox5
             // 
@@ -218,6 +222,7 @@
             button3.TabIndex = 50;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button8
             // 
@@ -231,6 +236,7 @@
             button8.TabIndex = 55;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // pictureBox4
             // 
@@ -264,6 +270,7 @@
             button6.TabIndex = 53;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button1
             // 
@@ -295,19 +302,6 @@
             label2.Size = new Size(66, 15);
             label2.TabIndex = 3;
             label2.Text = "Louvre Ltd.";
-            // 
-            // button10
-            // 
-            button10.BackColor = Color.Brown;
-            button10.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
-            button10.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.Location = new Point(666, 517);
-            button10.Name = "button10";
-            button10.Size = new Size(139, 44);
-            button10.TabIndex = 45;
-            button10.Text = "Delete Account";
-            button10.UseVisualStyleBackColor = false;
-            button10.Click += button10_Click;
             // 
             // label8
             // 
@@ -417,12 +411,26 @@
             label1.TabIndex = 31;
             label1.Text = "Settings";
             // 
-            // SettingsFormAdmin
+            // btnAddress
+            // 
+            btnAddress.BackColor = Color.Green;
+            btnAddress.FlatAppearance.BorderColor = Color.FromArgb(223, 169, 74);
+            btnAddress.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddress.Location = new Point(436, 501);
+            btnAddress.Name = "btnAddress";
+            btnAddress.Size = new Size(139, 44);
+            btnAddress.TabIndex = 46;
+            btnAddress.Text = "Change/View Address";
+            btnAddress.UseVisualStyleBackColor = false;
+            btnAddress.Visible = false;
+            btnAddress.Click += btnAddress_Click;
+            // 
+            // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
-            Controls.Add(button10);
+            Controls.Add(btnAddress);
             Controls.Add(label8);
             Controls.Add(textBox6);
             Controls.Add(label6);
@@ -439,8 +447,9 @@
             Controls.Add(button1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "SettingsFormAdmin";
+            Name = "SettingsForm";
             Text = "Form1";
+            Load += SettingsForm_Load;
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -476,7 +485,6 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox3;
         private Button button6;
-        private Button button10;
         private Label label8;
         private TextBox textBox6;
         private Label label6;
@@ -489,5 +497,7 @@
         private Button button9;
         private TextBox textBox1;
         private Label label1;
+        private Button btnPayment;
+        private Button btnAddress;
     }
 }

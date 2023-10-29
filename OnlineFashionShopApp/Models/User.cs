@@ -18,6 +18,11 @@ namespace OnlineFashionShopApp.Models
 
         public string Password { get; set; }
 
+        public string Phonenumber { get; set; }
+        public int ShipmentId { get; set; }
+
+        public int Userrole { get; set; }
+
         public virtual ICollection<AccessLog> AccessLogs { get; set; } = new List<AccessLog>();
 
         public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();

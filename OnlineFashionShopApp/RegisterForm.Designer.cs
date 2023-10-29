@@ -34,6 +34,8 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            textBox5 = new TextBox();
+            label7 = new Label();
             label6 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -46,8 +48,7 @@
             button2 = new Button();
             pictureBox2 = new PictureBox();
             linkLabel1 = new LinkLabel();
-            label7 = new Label();
-            textBox5 = new TextBox();
+            lblRole = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -102,6 +103,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(8, 8, 8);
+            panel2.Controls.Add(lblRole);
             panel2.Controls.Add(textBox5);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
@@ -118,6 +120,26 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(514, 309);
             panel2.TabIndex = 3;
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox5.Location = new Point(40, 199);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(177, 23);
+            textBox5.TabIndex = 6;
+            textBox5.TextChanged += textBox5_TextChanged;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(223, 169, 74);
+            label7.Location = new Point(40, 181);
+            label7.Name = "label7";
+            label7.Size = new Size(88, 15);
+            label7.TabIndex = 8;
+            label7.Text = "Phone Number";
             // 
             // label6
             // 
@@ -250,25 +272,17 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Already have an account? Log in";
             // 
-            // label7
+            // lblRole
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(223, 169, 74);
-            label7.Location = new Point(169, 181);
-            label7.Name = "label7";
-            label7.Size = new Size(88, 15);
-            label7.TabIndex = 8;
-            label7.Text = "Phone Number";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(169, 199);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(177, 23);
-            textBox5.TabIndex = 6;
-            textBox5.TextChanged += textBox5_TextChanged;
+            lblRole.AutoSize = true;
+            lblRole.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRole.ForeColor = Color.FromArgb(223, 169, 74);
+            lblRole.Location = new Point(305, 181);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(30, 15);
+            lblRole.TabIndex = 10;
+            lblRole.Text = "Role";
+            lblRole.Click += label8_Click_1;
             // 
             // RegisterForm
             // 
@@ -317,5 +331,6 @@
         private LinkLabel linkLabel1;
         private TextBox textBox5;
         private Label label7;
+        private Label lblRole;
     }
 }
