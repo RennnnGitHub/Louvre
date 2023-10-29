@@ -9,26 +9,31 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
     public partial class OrderFormAdmin : Form
     {
-        public OrderFormAdmin()
+        private User _currentUser;
+        
+        public OrderFormAdmin(User currentUser)
         {
             InitializeComponent();
             LoadOrderContentsAsync();
+            _currentUser = currentUser;
         }
         private async Task LoadOrderContentsAsync()
         {
             listView1.Items.Clear();
+            listView1.Columns.Add("Tracking ID", 80);
             listView1.Columns.Add("Shipping Address", 150);
             listView1.Columns.Add("Grand Total", 100);
             listView1.Columns.Add("Cart Number", 150);
             listView1.Columns.Add("Expiration Month", 80);
             listView1.Columns.Add("Expiration Year", 80);
             listView1.Columns.Add("CVV", 80);
-            listView1.Columns.Add("Ordered Products", 500);
+            listView1.Columns.Add("Ordered Products", 600);
 
             try
             {
@@ -42,10 +47,12 @@ namespace OnlineFashionShopApp
                         {
                             PropertyNameCaseInsensitive = true
                         });
-
+                        int orderid = 1;
                         foreach (var order in orderContents)
                         {
-                            var item = new ListViewItem(order.ShippingAddress);
+                            // Initialize order ID
+                            var item = new ListViewItem(orderid.ToString());
+                             item.SubItems.Add(order.ShippingAddress);
                             item.SubItems.Add(order.GrandTotal.ToString());
                             item.SubItems.Add(order.CartNumber);
                             item.SubItems.Add(order.ExpirationMonth.ToString());
@@ -53,7 +60,7 @@ namespace OnlineFashionShopApp
                             item.SubItems.Add(order.CVV); // Display the CVV
 
                             var orderedProductsSubItem = new ListViewItem.ListViewSubItem(item, "Products: ");
-
+                            orderid++;
                             if (!string.IsNullOrWhiteSpace(order.OrderedProducts))
                             {
                                 try
@@ -107,8 +114,29 @@ namespace OnlineFashionShopApp
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductAdminForm form = new ProductAdminForm();
-            form.ShowDialog();
+            ProductAdminForm form = new ProductAdminForm(_currentUser);
+            form.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrderFormAdmin orderFormAdmin = new OrderFormAdmin(_currentUser);
+            orderFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
+            track.Show();
             this.Close();
         }
     }

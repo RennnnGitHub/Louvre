@@ -7,18 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
     public partial class AddProductForm : Form
     {
         private byte[] imageData;
-        public AddProductForm()
+        private User _currentUser;
+        public AddProductForm(User currentUser)
         {
             InitializeComponent();
             comboBox1.Items.Add("Apparel");
             comboBox1.Items.Add("Footwear");
             comboBox1.Items.Add("Accessories");
+            _currentUser = currentUser;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,7 +86,7 @@ namespace OnlineFashionShopApp
                         this.Hide();
 
                         // Open the ProductAdminForm to refresh the product listing
-                        AddProductForm Addprod = new AddProductForm();
+                        AddProductForm Addprod = new AddProductForm(_currentUser);
                         Addprod.Show();
                     }
                     else
@@ -102,19 +105,29 @@ namespace OnlineFashionShopApp
 
         private void productsPage_Click(object sender, EventArgs e)
         {
-            ProductAdminForm prodAdmin = new ProductAdminForm();
+            ProductAdminForm prodAdmin = new ProductAdminForm(_currentUser);
             prodAdmin.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormAdmin orfor= new OrderFormAdmin();
+            OrderFormAdmin orfor = new OrderFormAdmin(_currentUser);
             orfor.ShowDialog();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
+            track.ShowDialog();
             this.Close();
         }
     }

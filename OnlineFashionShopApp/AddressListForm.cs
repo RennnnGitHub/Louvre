@@ -90,7 +90,7 @@ namespace OnlineFashionShopApp
 
         }
 
-        private async void button10_Click(object sender, EventArgs e)
+        private async void button10_Click(object sender, EventArgs e) //button for selecting shipment
         {
             //change selected shipment
             string apiUrl = "https://localhost:7098/User/UpdateSelectedShipment"; // Replace with the actual API URL.

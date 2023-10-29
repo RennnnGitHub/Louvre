@@ -819,6 +819,7 @@
             button7.TabIndex = 54;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button2
             // 
@@ -834,6 +835,7 @@
             button2.TabIndex = 49;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button4
             // 

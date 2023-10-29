@@ -16,6 +16,7 @@ namespace OnlineFashionShopApp
 {
     public partial class ProductCustomerForm : Form
     {
+
         string apiUrl = "https://localhost:7098/Product/GetProducts";
         private List<ProductDTO> products = new List<ProductDTO>();
         private User _currentUser;

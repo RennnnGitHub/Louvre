@@ -27,17 +27,23 @@ namespace OnlineFashionShopApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            ProductAdminForm productAdminForm = new ProductAdminForm(_currentUser);
+            productAdminForm.Show();
+            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            OrderFormAdmin orderFormAdmin = new OrderFormAdmin(_currentUser);
+            orderFormAdmin.Show();
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -51,7 +57,9 @@ namespace OnlineFashionShopApp
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            TrackingFormAdmin trackingForm = new TrackingFormAdmin(_currentUser);
+            trackingForm.Show();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
