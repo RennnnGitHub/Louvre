@@ -306,8 +306,37 @@ namespace OnlineFashionShopApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer Hm = new HomeFormCustomer();
-            Hm.Show();
+            HomeFormCustomer Hma = new HomeFormCustomer(_currentUser);
+            Hma.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ProductCustomerForm Hmb = new ProductCustomerForm(_currentUser);
+            Hmb.Show();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OrderFormCustomer Hmc = new OrderFormCustomer(_currentUser);
+            Hmc.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CartForm Cf = new CartForm(_currentUser);
+            Cf.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingForm trackingForm = new TrackingForm(_currentUser);
+            trackingForm.Show();
+            this.Close();
         }
     }
 }

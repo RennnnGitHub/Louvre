@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
+
     public partial class TrackingFormAdmin : Form
     {
-        public TrackingFormAdmin()
+        private User _currentUser;
+        public TrackingFormAdmin(User currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
         }
 
         private async void button12_Click(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace OnlineFashionShopApp
             }
         }
 
-        
+
         private async void button10_Click(object sender, EventArgs e)
         {
             // Check if textBox1 is empty
@@ -200,6 +204,34 @@ namespace OnlineFashionShopApp
                 // Handle any exceptions, e.g., network issues or unexpected errors
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ProductAdminForm productAdminForm = new ProductAdminForm(_currentUser);
+            productAdminForm.Show();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            OrderFormAdmin orderFormAdmin = new OrderFormAdmin(_currentUser);
+            orderFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingFormAdmin trackingFormAdmin = new TrackingFormAdmin(_currentUser);
+            trackingFormAdmin.Show();
+            this.Close();
         }
     }
 }

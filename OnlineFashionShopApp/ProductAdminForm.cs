@@ -9,22 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
+using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
+
     public partial class ProductAdminForm : Form
     {
         private TableLayoutPanel tableLayoutPanel;
-
+        private User _currentUser;
         string apiUrl = "https://localhost:7098/Product/GetProducts";
         private List<ProductDTO> products = new List<ProductDTO>();
-        public ProductAdminForm()
+        public ProductAdminForm(User currentUser)
         {
             InitializeComponent();
             LoadProducts();
             comboBox1.Items.Add("Apparel");
             comboBox1.Items.Add("Footwear");
             comboBox1.Items.Add("Accessories");
+            _currentUser = currentUser;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,7 +55,7 @@ namespace OnlineFashionShopApp
                         tableLayoutPanel.Dock = DockStyle.Fill;
                         tableLayoutPanel.AutoScroll = true;
                         tableLayoutPanel.HorizontalScroll.Enabled = false; // Enable vertical scrolling
-                        
+
 
                         // Set the column count for the TableLayoutPanel (2 columns for two products per row)
                         tableLayoutPanel.ColumnCount = 2;
@@ -62,7 +65,7 @@ namespace OnlineFashionShopApp
                         tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
 
                         // Set a maximum width for the TableLayoutPanel to prevent horizontal scrolling
-                        
+
 
 
                         // Create UI elements for each product.
@@ -229,8 +232,9 @@ namespace OnlineFashionShopApp
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductAdminForm podmin = new ProductAdminForm();
+            ProductAdminForm podmin = new ProductAdminForm(_currentUser);
             podmin.Show();
+            this.Close();
         }
         private async void filterButton_CLick(object sender, EventArgs e)
         {
@@ -393,16 +397,30 @@ namespace OnlineFashionShopApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormAdmin orfor = new OrderFormAdmin();
-            orfor.ShowDialog();
+            OrderFormAdmin orfor = new OrderFormAdmin(_currentUser);
+            orfor.Show();
             this.Close();
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
-            AddProductForm addProd = new AddProductForm();
-            addProd.ShowDialog();
-            this.Close( );
+            AddProductForm addProd = new AddProductForm(_currentUser);
+            addProd.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HomeFormAdmin homeFormAdmin = new HomeFormAdmin(_currentUser);
+            homeFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
+            track.Show();
+            this.Close();
         }
     }
 }
