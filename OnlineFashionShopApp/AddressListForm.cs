@@ -16,7 +16,7 @@ namespace OnlineFashionShopApp
 {
     public partial class AddressListForm : Form
     {
-
+        //This Is the page for address list
         private User _currentUser;
         public AddressListForm()
         {
@@ -67,12 +67,17 @@ namespace OnlineFashionShopApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            SettingsForm st = new SettingsForm();
+            st.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -93,7 +98,7 @@ namespace OnlineFashionShopApp
         private async void button10_Click(object sender, EventArgs e) //button for selecting shipment
         {
             //change selected shipment
-            string apiUrl = "https://localhost:7098/User/UpdateSelectedShipment"; // Replace with the actual API URL.
+            string apiUrl = "https://localhost:7098/User/UpdateSelectedShipment"; 
 
 
             string jsonPayload = JsonSerializer.Serialize(new
@@ -144,13 +149,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -163,7 +168,7 @@ namespace OnlineFashionShopApp
 
         private async void btnAddAddress_Click(object sender, EventArgs e)
         {
-            string apiUrl = "https://localhost:7098/Shipping/InsertAddress"; // Replace with the actual API URL.
+            string apiUrl = "https://localhost:7098/Shipping/InsertAddress";
 
 
             string jsonPayload = JsonSerializer.Serialize(new
@@ -191,7 +196,7 @@ namespace OnlineFashionShopApp
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
-                        // You can process the API response (result) as needed.
+                        //process the API response
 
                         JsonNode obj = JsonObject.Parse(result);
                         int i = lvwAddress.Items.Count + 1;
@@ -205,13 +210,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -219,7 +224,7 @@ namespace OnlineFashionShopApp
 
         private async void AddressListForm_Load(object sender, EventArgs e)
         {
-            string apiUrl = "https://localhost:7098/Shipping/GetShipmentsByUserId"; // Replace with the actual API URL.
+            string apiUrl = "https://localhost:7098/Shipping/GetShipmentsByUserId";
 
 
             string jsonPayload = JsonSerializer.Serialize(new
@@ -241,7 +246,7 @@ namespace OnlineFashionShopApp
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
-                        // You can process the API response (result) as needed.
+                        // process the API response (result) as needed.
 
                         JsonNode obj = JsonObject.Parse(result);
                         int i = 1;
@@ -264,13 +269,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -295,7 +300,7 @@ namespace OnlineFashionShopApp
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
-                        // You can process the API response (result) as needed.
+                        //process the API response (result) as needed.
                         MessageBox.Show("Address Deleted");
                         lvwAddress.SelectedItems[0].Remove();
                         int i = 1;
@@ -307,13 +312,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }

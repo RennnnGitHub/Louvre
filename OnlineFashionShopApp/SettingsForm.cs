@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OnlineFashionShopApp
 {
+    //This is the Setting page
     public partial class SettingsForm : Form
     {
         private User _currentUser;
@@ -67,7 +68,7 @@ namespace OnlineFashionShopApp
 
         private async void button9_Click_1(object sender, EventArgs e)
         {
-            string apiUrl = "https://localhost:7098/User/ChangeUserSettings"; // Replace with the actual API URL.
+            string apiUrl = "https://localhost:7098/User/ChangeUserSettings"; 
 
             var payload = new
             {
@@ -92,7 +93,7 @@ namespace OnlineFashionShopApp
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
-                        // You can process the API response (result) as needed.
+                        // process the API response (result) as needed.
                         JsonNode obj = JsonObject.Parse(result);
                         if (obj["status"].ToString() == "true")
                         {
@@ -117,13 +118,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -157,44 +158,85 @@ namespace OnlineFashionShopApp
         {
             //address
             AddressListForm form = new AddressListForm();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            
+            form.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            HomeFormCustomer Hm = new HomeFormCustomer(_currentUser);
-            Hm.Show();
-            this.Close();
+            if (_currentUser.Userrole == 1)
+            {
+                HomeFormCustomer Hm = new HomeFormCustomer(_currentUser);
+                Hm.Show();
+                this.Close();
+            }
+            else
+            {
+                HomeFormAdmin Customer = new HomeFormAdmin(_currentUser);
+                Customer.Show();
+                this.Close();
+            }
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ProductCustomerForm pm = new ProductCustomerForm(_currentUser);
-            pm.Show();
-            this.Close();
-        }
+            if (_currentUser.Userrole == 1)
+            {
+                ProductCustomerForm pm = new ProductCustomerForm(_currentUser);
+                pm.Show();
+                this.Close();
+            }
+            else
+            {
+                ProductAdminForm productAdminForm = new ProductAdminForm(_currentUser);
+                productAdminForm.Show();
+                this.Close();
+            }
+            }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            OrderFormCustomer of = new OrderFormCustomer(_currentUser);
+            if (_currentUser.Userrole == 1)
+            {
+                OrderFormCustomer of = new OrderFormCustomer(_currentUser);
             of.Show();
             this.Close();
+            }
+            else
+            {
+                OrderFormAdmin Customer = new OrderFormAdmin(_currentUser);
+                Customer.Show();
+                this.Close();
+            }
         }
+    
 
         private void button7_Click(object sender, EventArgs e)
+        {
+        if (_currentUser.Userrole == 1)
         {
             TrackingForm tf = new TrackingForm(_currentUser);
             tf.Show();
             this.Close();
         }
+            else
+            {
+                TrackingFormAdmin trackingFormAdmin = new TrackingFormAdmin(_currentUser); 
+                trackingFormAdmin.Show();
+                this.Close();
+            }
+            
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AccessLogForm tf = new AccessLogForm();
-            tf.Show();
-            this.Close();
+           
+                AccessLogForm tf = new AccessLogForm();
+                tf.Show();
+                this.Close();
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -204,7 +246,10 @@ namespace OnlineFashionShopApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

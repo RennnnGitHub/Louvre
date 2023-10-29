@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic.ApplicationServices;
 using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
-{
+{// This is the page for Payment Form
     public partial class PaymentForm : Form
     {
         private List<PaymentProduct> paymentProducts = new List<PaymentProduct>();
@@ -20,7 +20,9 @@ namespace OnlineFashionShopApp
         {
             InitializeComponent();
             _currentUser = currentUser;
+            
             LoadPaymentProducts();
+            
         }
         private async Task LoadPaymentProducts()
         {
@@ -96,6 +98,7 @@ namespace OnlineFashionShopApp
             {
                 MessageBox.Show("An error occurred: " + ex.Message);
             }
+            DisplayShipmentDetails();
         }
         private async Task<decimal> GetProductPriceFromServer(int productKey)
         {
@@ -140,6 +143,26 @@ namespace OnlineFashionShopApp
                 {
                     Console.WriteLine($"Failed to retrieve product name. Status code: {response.StatusCode}");
                     return string.Empty; // Return an empty string or handle errors.
+                }
+            }
+        }
+        private async void DisplayShipmentDetails()
+        {
+            // Get the shipment ID from the current user
+            int shipmentId = _currentUser.ShipmentId;
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync($"https://localhost:7098/Order/GetShipmentByShipmentId/{shipmentId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var shipmentAddress1 = await response.Content.ReadAsStringAsync();
+                    textBox1.Text = shipmentAddress1;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to retrieve shipment details.");
                 }
             }
         }
@@ -224,16 +247,11 @@ namespace OnlineFashionShopApp
                     CVV = textBox6.Text,
                     OrderedProducts = paymentProducts // Assuming paymentProducts is a list of ordered products
                 };
-                MessageBox.Show($"ShippingAddress: {orderData.ShippingAddress}");
-                MessageBox.Show($"GrandTotal: {orderData.GrandTotal}");
-                MessageBox.Show($"CartNumber: {orderData.CartNumber}");
-                MessageBox.Show($"ExpirationMonth: {orderData.ExpirationMonth}");
-                MessageBox.Show($"ExpirationYear: {orderData.ExpirationYear}");
-                MessageBox.Show($"CVV: {orderData.CVV}");
+
 
                 // Serialize the order object to JSON
                 string jsonPayload = JsonSerializer.Serialize(orderData);
-                MessageBox.Show(jsonPayload);
+
                 // Define the API URL
                 int userID = _currentUser.Id;
                 string apiUrl = $"https://localhost:7098/Order/AddOrder/{userID}"; // Replace with your actual API URL.
@@ -258,7 +276,7 @@ namespace OnlineFashionShopApp
 
                             if (await ClearCartContentsOnServer(userID))
                             {
-                                MessageBox.Show("Order placed successfully, and the cart has been cleared.");
+                                MessageBox.Show("Order placed successfully");
                             }
                             else
                             {
@@ -336,6 +354,21 @@ namespace OnlineFashionShopApp
         {
             TrackingForm trackingForm = new TrackingForm(_currentUser);
             trackingForm.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm SettingsForm = new SettingsForm();
+            SettingsForm.Show();
             this.Close();
         }
     }

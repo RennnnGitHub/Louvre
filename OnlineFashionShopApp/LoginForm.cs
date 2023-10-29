@@ -187,7 +187,7 @@ namespace OnlineFashionShopApp
                                 formHomeAdmin.ShowDialog();
 
                             }
-                            this.Show();
+                            
                         }
                         else
                         {

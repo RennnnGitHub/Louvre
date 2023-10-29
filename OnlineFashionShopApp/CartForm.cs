@@ -18,7 +18,7 @@ using System.Text.Json.Serialization;
 using System.Reflection.Metadata;
 using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
-{
+{//This is the page for the Cart Page
     public partial class CartForm : Form
     {
         private User _currentUser;
@@ -133,12 +133,12 @@ namespace OnlineFashionShopApp
                 using (HttpClient client = new HttpClient())
                 {
                     int userID = _currentUser.Id;
-                    MessageBox.Show(userID.ToString());
+
 
                     // Use string interpolation to include the userID in the URL
                     var response = await client.GetAsync($"https://localhost:7098/Cart/GetCartContents/{userID}");
 
-                    // Rest of your code to handle the response
+                    
 
 
                     if (response.IsSuccessStatusCode)
@@ -350,7 +350,7 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        MessageBox.Show("Failed to retrieve cart or the cart is empty.");
+                        MessageBox.Show("cart is empty.");
                     }
                 }
             }
@@ -361,7 +361,7 @@ namespace OnlineFashionShopApp
         }
 
 
-        // ... (Rest of your event handlers)
+        
         private Image Base64StringToImage(string base64String)
         {
             byte[] imageBytes = Convert.FromBase64String(base64String);
@@ -383,6 +383,8 @@ namespace OnlineFashionShopApp
 
         private void button11_Click(object sender, EventArgs e)
         {
+            SettingsForm settings= new SettingsForm();
+            settings.Close();
             PaymentForm form = new PaymentForm(_currentUser);
             form.Show();
             this.Close();
@@ -420,7 +422,22 @@ namespace OnlineFashionShopApp
         {
             TrackingForm form = new TrackingForm(_currentUser);
             form.Show();
-                this.Close();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
+            this.Close();
         }
     }
 }
@@ -438,5 +455,5 @@ public class Product
     public decimal ProductPrice { get; set; }
 
     public string ProductImageBase64 { get; set; }
-    // Add other properties as needed
+    
 }

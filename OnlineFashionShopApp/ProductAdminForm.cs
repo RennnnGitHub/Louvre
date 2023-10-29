@@ -13,7 +13,7 @@ using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
-
+    // This is the page for product Admin form
     public partial class ProductAdminForm : Form
     {
         private TableLayoutPanel tableLayoutPanel;
@@ -222,7 +222,7 @@ namespace OnlineFashionShopApp
                     }
                     catch (Exception ex)
                     {
-                        // Handle any exceptions (e.g., network issues)
+                        // Handle any exceptions
                         MessageBox.Show($"Error: {ex.Message}");
                     }
                 }
@@ -304,7 +304,7 @@ namespace OnlineFashionShopApp
                             productPanel.Size = new Size(290, 357);
                             productPanel.TabIndex = 9;
 
-                            // Create and customize other controls (e.g., PictureBox, TextBox).
+                            // Create and customize other control
 
 
                             Label nameLabel = new Label();
@@ -420,6 +420,28 @@ namespace OnlineFashionShopApp
         {
             TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
             track.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AccessLogForm accessLogForm = new AccessLogForm();
+            accessLogForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

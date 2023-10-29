@@ -71,8 +71,9 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(826, 35);
+            panel1.Size = new Size(944, 47);
             panel1.TabIndex = 5;
             // 
             // button1
@@ -81,9 +82,10 @@
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.BackgroundImageLayout = ImageLayout.Zoom;
             button1.FlatAppearance.BorderSize = 0;
-            button1.Location = new Point(799, 6);
+            button1.Location = new Point(913, 8);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(24, 23);
+            button1.Size = new Size(27, 31);
             button1.TabIndex = 5;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -92,9 +94,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 10);
+            label2.Location = new Point(14, 13);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(81, 20);
             label2.TabIndex = 3;
             label2.Text = "Louvre Ltd.";
             // 
@@ -102,9 +104,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(411, 50);
+            label1.Location = new Point(470, 67);
             label1.Name = "label1";
-            label1.Size = new Size(193, 38);
+            label1.Size = new Size(242, 46);
             label1.TabIndex = 32;
             label1.Text = "Access Log";
             // 
@@ -113,9 +115,10 @@
             lvwAccessLog.Columns.AddRange(new ColumnHeader[] { User, Action, Timestamp });
             lvwAccessLog.FullRowSelect = true;
             lvwAccessLog.GridLines = true;
-            lvwAccessLog.Location = new Point(214, 91);
+            lvwAccessLog.Location = new Point(245, 121);
+            lvwAccessLog.Margin = new Padding(3, 4, 3, 4);
             lvwAccessLog.Name = "lvwAccessLog";
-            lvwAccessLog.Size = new Size(600, 451);
+            lvwAccessLog.Size = new Size(685, 600);
             lvwAccessLog.TabIndex = 33;
             lvwAccessLog.UseCompatibleStateImageBehavior = false;
             lvwAccessLog.View = View.Details;
@@ -140,9 +143,10 @@
             // 
             panel2.BackColor = Color.FromArgb(64, 64, 64);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(0, 52);
+            panel2.Location = new Point(0, 69);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 493);
+            panel2.Size = new Size(229, 657);
             panel2.TabIndex = 34;
             panel2.Paint += panel2_Paint;
             // 
@@ -162,18 +166,20 @@
             panel3.Controls.Add(button4);
             panel3.Controls.Add(button7);
             panel3.Controls.Add(button5);
-            panel3.Location = new Point(12, 15);
+            panel3.Location = new Point(14, 20);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(165, 475);
+            panel3.Size = new Size(189, 633);
             panel3.TabIndex = 9;
             panel3.Paint += panel3_Paint;
             // 
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(18, 400);
+            pictureBox7.Location = new Point(21, 533);
+            pictureBox7.Margin = new Padding(3, 4, 3, 4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(42, 46);
+            pictureBox7.Size = new Size(48, 61);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 15;
             pictureBox7.TabStop = false;
@@ -181,9 +187,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(18, 24);
+            pictureBox1.Location = new Point(21, 32);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 46);
+            pictureBox1.Size = new Size(48, 61);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -191,9 +198,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(18, 332);
+            pictureBox6.Location = new Point(21, 443);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(42, 46);
+            pictureBox6.Size = new Size(48, 61);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 14;
             pictureBox6.TabStop = false;
@@ -205,9 +213,10 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(66, 37);
+            button2.Location = new Point(75, 49);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(86, 31);
             button2.TabIndex = 0;
             button2.Text = "Home";
             button2.UseVisualStyleBackColor = true;
@@ -216,9 +225,10 @@
             // pictureBox5
             // 
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(18, 209);
+            pictureBox5.Location = new Point(21, 279);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(42, 46);
+            pictureBox5.Size = new Size(48, 61);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 13;
             pictureBox5.TabStop = false;
@@ -229,19 +239,22 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(66, 411);
+            button3.Location = new Point(75, 548);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(86, 31);
             button3.TabIndex = 3;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(18, 269);
+            pictureBox4.Location = new Point(21, 359);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(42, 46);
+            pictureBox4.Size = new Size(48, 61);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 12;
             pictureBox4.TabStop = false;
@@ -252,9 +265,10 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(66, 160);
+            button6.Location = new Point(75, 213);
+            button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Size = new Size(75, 23);
+            button6.Size = new Size(86, 31);
             button6.TabIndex = 6;
             button6.Text = "Orders";
             button6.UseVisualStyleBackColor = true;
@@ -263,9 +277,10 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(18, 147);
+            pictureBox3.Location = new Point(21, 196);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(42, 46);
+            pictureBox3.Size = new Size(48, 61);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 11;
             pictureBox3.TabStop = false;
@@ -276,9 +291,10 @@
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = Color.White;
-            button8.Location = new Point(66, 97);
+            button8.Location = new Point(75, 129);
+            button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
-            button8.Size = new Size(75, 23);
+            button8.Size = new Size(86, 31);
             button8.TabIndex = 8;
             button8.Text = "Products";
             button8.UseVisualStyleBackColor = true;
@@ -287,9 +303,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(18, 85);
+            pictureBox2.Location = new Point(21, 113);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 46);
+            pictureBox2.Size = new Size(48, 61);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
@@ -300,9 +317,10 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(66, 346);
+            button4.Location = new Point(75, 461);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(86, 31);
             button4.TabIndex = 4;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
@@ -314,9 +332,10 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(66, 221);
+            button7.Location = new Point(75, 295);
+            button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Size = new Size(75, 23);
+            button7.Size = new Size(86, 31);
             button7.TabIndex = 7;
             button7.Text = "Track";
             button7.UseVisualStyleBackColor = true;
@@ -328,23 +347,25 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Georgia", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(66, 283);
+            button5.Location = new Point(75, 377);
+            button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(84, 23);
+            button5.Size = new Size(96, 31);
             button5.TabIndex = 5;
             button5.Text = "Access Log";
             button5.UseVisualStyleBackColor = true;
             // 
             // AccessLogForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(826, 573);
+            ClientSize = new Size(944, 764);
             Controls.Add(panel2);
             Controls.Add(lvwAccessLog);
             Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "AccessLogForm";
             Text = "Form1";
             Load += AccessLogForm_Load;

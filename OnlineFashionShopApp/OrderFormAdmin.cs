@@ -12,11 +12,11 @@ using System.Windows.Forms;
 using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
-{
+{// This is the form for Admin Order
     public partial class OrderFormAdmin : Form
     {
         private User _currentUser;
-        
+
         public OrderFormAdmin(User currentUser)
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace OnlineFashionShopApp
             _currentUser = currentUser;
         }
         private async Task LoadOrderContentsAsync()
-        {
+        {// Add column table
             listView1.Items.Clear();
             listView1.Columns.Add("Tracking ID", 80);
             listView1.Columns.Add("Shipping Address", 150);
@@ -52,12 +52,12 @@ namespace OnlineFashionShopApp
                         {
                             // Initialize order ID
                             var item = new ListViewItem(orderid.ToString());
-                             item.SubItems.Add(order.ShippingAddress);
+                            item.SubItems.Add(order.ShippingAddress);
                             item.SubItems.Add(order.GrandTotal.ToString());
                             item.SubItems.Add(order.CartNumber);
                             item.SubItems.Add(order.ExpirationMonth.ToString());
                             item.SubItems.Add(order.ExpirationYear.ToString());
-                            item.SubItems.Add(order.CVV); // Display the CVV
+                            item.SubItems.Add(order.CVV); 
 
                             var orderedProductsSubItem = new ListViewItem.ListViewSubItem(item, "Products: ");
                             orderid++;
@@ -137,6 +137,28 @@ namespace OnlineFashionShopApp
         {
             TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
             track.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AccessLogForm accessLogForm = new AccessLogForm();
+            accessLogForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

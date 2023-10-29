@@ -11,6 +11,7 @@ using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
+    // This is the Page foe Add Product
     public partial class AddProductForm : Form
     {
         private byte[] imageData;
@@ -42,13 +43,13 @@ namespace OnlineFashionShopApp
                 // Read the image file and convert it to a byte array
                 imageData = File.ReadAllBytes(selectedImagePath);
 
-                // Optionally, you can display the selected image in a PictureBox control if needed.
+                // display the selected image in a PictureBox control
                 imagePictureBox.Image = Image.FromFile(selectedImagePath);
             }
         }
         private async void AddProductButton_Click(object sender, EventArgs e)
         {
-            string apiUrl = "https://localhost:7098/Product/AddProduct"; // Replace with the actual API URL for adding a product.
+            string apiUrl = "https://localhost:7098/Product/AddProduct";
             if (imageData == null)
             {
                 MessageBox.Show("Please upload an image.");
@@ -72,16 +73,16 @@ namespace OnlineFashionShopApp
             {
                 try
                 {
-                    // Create a StringContent with the JSON payload and specify the content type
+                    // Create a StringContent with the JSON payload
                     StringContent content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
-                    // Make a POST request with the JSON payload to add the product
+                    // Make a POST requestt
                     HttpResponseMessage response = await client.PostAsync(apiUrl, content);
 
                     if (response.IsSuccessStatusCode)
                     {
                         string result = await response.Content.ReadAsStringAsync();
-                        // You can process the API response (result) as needed.
+                        //process the API response as needed.
                         MessageBox.Show("Product added successfully");
                         this.Hide();
 
@@ -91,13 +92,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to add the product. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -128,6 +129,28 @@ namespace OnlineFashionShopApp
         {
             TrackingFormAdmin track = new TrackingFormAdmin(_currentUser);
             track.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AccessLogForm accessLogForm = new AccessLogForm();
+            accessLogForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

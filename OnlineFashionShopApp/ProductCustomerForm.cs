@@ -16,7 +16,7 @@ namespace OnlineFashionShopApp
 {
     public partial class ProductCustomerForm : Form
     {
-
+        //This is the Page for product Customer Form
         string apiUrl = "https://localhost:7098/Product/GetProducts";
         private List<ProductDTO> products = new List<ProductDTO>();
         private User _currentUser;
@@ -545,6 +545,10 @@ namespace OnlineFashionShopApp
 
         private void button5_Click(object sender, EventArgs e)
         {
+            SettingsForm form = new SettingsForm();
+            form.Close();
+            OrderFormCustomer orderFormCustomer = new OrderFormCustomer(_currentUser);
+            orderFormCustomer.Close();
             CartForm cat = new CartForm(_currentUser);
             cat.Show();
             this.Close();
@@ -575,6 +579,21 @@ namespace OnlineFashionShopApp
         {
             TrackingForm tf = new TrackingForm(_currentUser);
             tf.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

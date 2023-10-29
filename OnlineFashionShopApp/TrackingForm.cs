@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
-{
+{// This is the tracking Order Form
     public partial class TrackingForm : Form
     {
         private User _currentUser;
@@ -79,7 +79,7 @@ namespace OnlineFashionShopApp
             }
             catch (Exception ex)
             {
-                // Handle any exceptions, e.g., network issues or unexpected errors
+                // Handle any exceptions, 
                 textBox2.Text = "Error: " + ex.Message;
             }
         }
@@ -116,6 +116,21 @@ namespace OnlineFashionShopApp
         {
             TrackingForm trackingForm = new TrackingForm(_currentUser);
             trackingForm.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

@@ -12,7 +12,7 @@ using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
 {
-
+    //This is the admin tracking form
     public partial class TrackingFormAdmin : Form
     {
         private User _currentUser;
@@ -231,6 +231,28 @@ namespace OnlineFashionShopApp
         {
             TrackingFormAdmin trackingFormAdmin = new TrackingFormAdmin(_currentUser);
             trackingFormAdmin.Show();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AccessLogForm accessLogForm = new AccessLogForm();
+            accessLogForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
             this.Close();
         }
     }

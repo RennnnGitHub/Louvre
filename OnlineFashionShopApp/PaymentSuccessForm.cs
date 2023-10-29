@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
-{
+{// This is the page for Payment Success form
     public partial class PaymentSuccessForm : Form
     {
         private User _currentUser;
@@ -22,11 +22,12 @@ namespace OnlineFashionShopApp
         }
         private async void loadPage()
         {
+            //fetch userID
             int userID = _currentUser.Id;
 
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync($"https://localhost:7098/Order/GetLastOrderID/{userID}");
+                var response = await client.GetAsync($"https://localhost:7098/Order/GetLastOrderID/{userID}");// String api url
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -104,12 +105,17 @@ namespace OnlineFashionShopApp
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            SettingsForm settings = new SettingsForm();
+            settings.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

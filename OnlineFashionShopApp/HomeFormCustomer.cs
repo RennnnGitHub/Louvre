@@ -14,7 +14,7 @@ using OnlineFashionShopApp.Models;
 namespace OnlineFashionShopApp
 {
     public partial class HomeFormCustomer : Form
-
+        //This is the page for Customer Home Form
     {
         private User _currentUser;
         public HomeFormCustomer(User currentUser)
@@ -41,8 +41,9 @@ namespace OnlineFashionShopApp
         private void button8_Click(object sender, EventArgs e)
         {
             ProductCustomerForm prodCust = new ProductCustomerForm(_currentUser);
+            this.Hide();
             prodCust.Show(); // Use Show() to open the new form
-            this.Close(); // Close the current form
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -72,12 +73,15 @@ namespace OnlineFashionShopApp
             SettingsForm form = new SettingsForm();
             this.Hide();
             form.ShowDialog();
-            this.Show();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)

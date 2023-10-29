@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using OnlineFashionShopApp.Models;
 
 namespace OnlineFashionShopApp
-{
+{//This is the page for Admin Home Form
     public partial class HomeFormAdmin : Form
     {
         private User _currentUser;
@@ -51,9 +51,9 @@ namespace OnlineFashionShopApp
         {
             //access log
             AccessLogForm form = new AccessLogForm();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            
+            form.Show();
+            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -67,9 +67,9 @@ namespace OnlineFashionShopApp
         {
             //settings
             SettingsForm form = new SettingsForm();
-            this.Hide();
-            form.ShowDialog();
-            this.Show();
+            
+            form.Show();
+            this.Close();
         }
 
         private async void button3_Click(object sender, EventArgs e) //logout button
@@ -101,13 +101,13 @@ namespace OnlineFashionShopApp
                     }
                     else
                     {
-                        // Handle the response if it's not successful (e.g., display an error message).
+                        // Handle the response if it's not successful
                         MessageBox.Show($"Failed to post data. Status code: {response.StatusCode}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle any exceptions (e.g., network issues).
+                    // Handle any exceptions
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }

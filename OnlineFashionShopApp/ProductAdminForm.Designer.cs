@@ -794,6 +794,7 @@
             button5.TabIndex = 52;
             button5.Text = "Access Log";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // pictureBox105
             // 
@@ -850,6 +851,7 @@
             button4.TabIndex = 51;
             button4.Text = "Settings";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox103
             // 
@@ -886,6 +888,7 @@
             button3.TabIndex = 50;
             button3.Text = "Logout";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button8
             // 

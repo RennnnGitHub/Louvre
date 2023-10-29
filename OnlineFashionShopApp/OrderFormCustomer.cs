@@ -15,7 +15,7 @@ using OnlineFashionShopApp.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace OnlineFashionShopApp
-{
+{// This is the form foe Order Customer
     public partial class OrderFormCustomer : Form
     {
         private User _currentUser;
@@ -27,7 +27,7 @@ namespace OnlineFashionShopApp
             LoadOrderContentsAsync();
         }
         private async Task LoadOrderContentsAsync()
-        {
+        {// Add column to table
             listView1.Items.Clear();
             listView1.Columns.Add("Shipping Address", 150);
             listView1.Columns.Add("Grand Total", 100);
@@ -39,12 +39,13 @@ namespace OnlineFashionShopApp
 
             try
             {
+                //Fetch current user id
                 int userID = _currentUser.Id;
 
                 using (var client = new HttpClient())
                 {
 
-                    MessageBox.Show(userID.ToString());
+
                     var response = await client.GetAsync($"https://localhost:7098/Order/GetOrderContentsByUserId/{userID}");
                     if (response.IsSuccessStatusCode)
                     {
@@ -61,7 +62,7 @@ namespace OnlineFashionShopApp
                             item.SubItems.Add(order.CartNumber);
                             item.SubItems.Add(order.ExpirationMonth.ToString());
                             item.SubItems.Add(order.ExpirationYear.ToString());
-                            item.SubItems.Add(order.CVV); // Display the CVV
+                            item.SubItems.Add(order.CVV); 
 
                             var orderedProductsSubItem = new ListViewItem.ListViewSubItem(item, "Products: ");
 
@@ -145,6 +146,21 @@ namespace OnlineFashionShopApp
         {
             TrackingForm customer = new TrackingForm(_currentUser);
             customer.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm(); 
+            settingsForm.Show();
             this.Close();
         }
     }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using OnlineFashionShopApp.Models;
 
-
+// This is the page for Access Log
 namespace OnlineFashionShopApp
 {
     public partial class AccessLogForm : Form
@@ -171,9 +171,17 @@ namespace OnlineFashionShopApp
         {
             //settings
             SettingsForm form = new SettingsForm();
-            this.Hide();
+
             form.ShowDialog();
-            this.Show();
+            this.Close();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Close();
         }
     }
 }
